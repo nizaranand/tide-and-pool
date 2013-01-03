@@ -57,7 +57,7 @@ wp_head();
 
 </head>
 <body <?php body_class(); ?>>
-hello ben
+
 
 <header role="banner" class="main-header">
 	<div class="inner">
@@ -66,10 +66,13 @@ hello ben
 	<?php wp_nav_menu( array( 'menu' => 'User Utility' )); ?>
 	</nav>
 	
-	<h1 class="logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	<h2 class="tag-line"><?php bloginfo( 'description' ); ?></h2>
+	<h1 class="logo">
+		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+		<?php bloginfo( 'name' ); ?>
+		</a>
+	</h1>
 	
-
+	<h2 class="tag-line"><?php bloginfo( 'description' ); ?></h2>
 	
 	<div class="clear"></div>
 	
