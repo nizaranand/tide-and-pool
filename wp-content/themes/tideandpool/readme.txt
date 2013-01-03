@@ -1,4 +1,4 @@
-=== Theme Name ===
+=== TIDE AND POOL ===
 Contributors: aarontgrogg
 Tags: html5, boilerplate
 
