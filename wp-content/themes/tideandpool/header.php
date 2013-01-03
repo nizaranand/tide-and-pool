@@ -58,6 +58,7 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
+another hello by dom
 
 <header role="banner" class="main-header">
 	<div class="inner">
