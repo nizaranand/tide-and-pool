@@ -13,20 +13,26 @@
  */
 
 get_header(); ?>
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php if ( is_front_page() ) { ?>
-					<h2 class="entry-title"><?php the_title(); ?></h2>
-				<?php } else { ?>	
-					<h1 class="entry-title"><?php the_title(); ?></h1>
-				<?php } ?>
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'boilerplate' ), 'after' => '' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'boilerplate' ), '', '' ); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-## -->
-				<?php comments_template( '', true ); ?>
-<?php endwhile; ?>
-<?php get_sidebar(); ?>
+
+<?php if (is_page('homepage')) { ?>
+<!-- home slideshow -->
+<div class="slideshow home rsDefault">
+	<?php $my_query = new WP_Query('page_id=21&showposts=1'); ?>
+	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<?php if(get_field('home_page_slideshow')): ?>
+	<?php while(the_repeater_field('home_page_slideshow')): ?>
+	<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
+		<img src="<?php echo $image[0]; ?>" />
+	
+	<?php endwhile; ?>
+	<?php endif; ?>
+	<?php endwhile; ?>
+</div>
+<!-- end home slideshow -->
+<?php } elseif (is_page('collection')) { ?>
+
+<?php } else { ?>
+				
+<?php } ?>
+
 <?php get_footer(); ?>

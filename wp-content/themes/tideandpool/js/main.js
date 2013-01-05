@@ -8,6 +8,26 @@
 
 
 $(function() {
+	// slideshow
+    $('.slideshow').royalSlider({
+    	autoPlay: { enabled: true, pauseOnHover: true },
+    	arrowsNav: true,
+    	transitionSpeed: 500,
+    	delay:3000,
+    	controlNavigation: 'none',
+    	arrowsNavAutoHide: true,
+    	fadeinLoadedSlide: true,
+    	imageScaleMode: 'fill',
+    	imageAlignCenter:true,
+    	imageScalePadding: 0,
+    	loop: false,
+    	loopRewind: false,
+    	slidesOrientation: 'horizontal',
+    	slidesSpacing: 0,
+    	sliderDrag: true,
+    	keyboardNavEnabled: true,
+    	autoScaleSlider: true
+    });
 
 function hideBar() {  
 

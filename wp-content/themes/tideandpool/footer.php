@@ -11,14 +11,15 @@
 * @since Boilerplate 1.0
 */
 ?>
-</section><!-- .content -->
+</section>
+<!-- .content -->
 <footer role="contentinfo" class="main-footer clear">
 <div class="inner">
 	<ul class="social">
-		<li><a href="">FACEBOOK</a></li>
-		<li><a href="">TWITTER</a></li>
-		<li><a href="">PNTEREST</a></li>
-		<li><a href="">TUMBLR</a></li>
+		<li class="facebook"><a href="">FACEBOOK</a></li>
+		<li class="twitter"><a href="">TWITTER</a></li>
+		<li class="pinterest"><a href="">PNTEREST</a></li>
+		<li class="tumblr"><a href="">TUMBLR</a></li>
 	</ul>
 	
 	<?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?>

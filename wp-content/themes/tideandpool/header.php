@@ -29,6 +29,10 @@ wp_title( '|', true, 'right' );
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+<!-- css files for dev -->
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/royalslider.css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/default/rs-default.css" />
 <?php
 /* We add some JavaScript to pages with the comment form
 * to support sites with threaded comments (when in use).
@@ -47,8 +51,8 @@ wp_head();
 
 <!-- plugin files for dev -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/jquery.royalslider.min.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/galleria-1.2.7.min.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>
+<!-- <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/galleria-1.2.7.min.js"></script> 
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>-->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.masonry.min.js"></script>
 
 <!-- main site files for production -->
@@ -96,7 +100,6 @@ wp_head();
 
 
 <section class="content" role="main">
-<div class="inner">
 
 <div class="announcement">
 	<p>Free shippign on all order... </p>

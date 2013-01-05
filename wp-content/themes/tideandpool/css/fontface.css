@@ -1,0 +1,10 @@
+@font-face {
+	font-family: 'Futura-Condensed-Bold';
+	src: url('fonts/futura4.eot');
+	src: url('fonts/futura4.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/futura4.woff') format('woff'),
+		 url('fonts/futura4.ttf') format('truetype'),
+		 url('fonts/futura4.svg#futura4') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

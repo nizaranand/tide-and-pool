@@ -37,7 +37,11 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
-
+if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
+ 	add_theme_support( 'post-thumbnails' );
+ 	set_post_thumbnail_size( 600, 50, true ); // Normal post thumbnails
+ 	add_image_size( 'home-slideshow',1500, 9999 ); // Permalink thumbnail
+}
 /**
  * Set the content width based on the theme's design and stylesheet.
  *

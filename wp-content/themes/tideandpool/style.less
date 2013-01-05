@@ -28,29 +28,44 @@ Comment blocks indicate where each begins and ends, like this, for example...
 @logo-color: #1A809D;
 @dark-blue: #1093AB;
 @light-blue: #9FC9D2;
+@light-blue-opacity: rgba(159,201,210,0.9);
 @light-green: #D3E70F;
 @purple: #38193A;
+
+@font-face {
+    font-family: 'futura_condensedbold';
+    src: url('css/fonts/futura_condensed_bold-webfont.eot');
+    src: url('css/fonts/futura_condensed_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('css/fonts/futura_condensed_bold-webfont.woff') format('woff'),
+         url('css/fonts/futura_condensed_bold-webfont.ttf') format('truetype'),
+         url('css/fonts/futura_condensed_bold-webfont.svg#futura_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 html {
 /* 	background: url(css/img/bkg.jpg) no-repeat center 0; */
-	height: 100%;
+	width:100%;
+	/* height: 100%; */
 	background: #ddd;
 }
 body {
-	height: 100%;
+	width:100%;
+	/* height: 100%; */
 	font-size: 13px;
 	font-family: arial, sans-serif;
 }
 .main-header {
-	border: solid 1px blue;
+	/* border: solid 1px blue; */
 	background: url(css/img/header-bkg.png) center top no-repeat
 }
 .inner {
 
 }
 header .inner {
-	border: solid 1px @dark-blue;
+	/* border: solid 1px @dark-blue; */
 	margin: 0 auto;
 	max-width: 970px;
 	margin: 0 auto;
@@ -80,15 +95,19 @@ header .inner {
 	display: none;
 }
 .main-nav {
-	height: 40px;
-	background: @light-blue;
-	line-height: 40px;
+	height: 30px;
+	background: @light-blue-opacity;
+	line-height: 30px;
 	overflow: hidden;
 	height: auto;
-	font-size: 0.9em
+	font-family: 'futura_condensedbold';
+	font-size: 11px;
+	letter-spacing: 2px;
+	position: relative;
+	z-index: 200;
 }
 .main-nav .inner {
-	min-height: 40px;
+	min-height: 30px;
 	}
 .main-nav ul {
 	display: inline;
@@ -98,13 +117,20 @@ header .inner {
 	a {
 		float: left;
 		display: block;
-		padding: 0 5px;
+		border-right:1px solid white;
+		height: 30px;
+		padding: 0 20px;
 		color: white;
 		text-transform: uppercase;
+		font-weight: normal;
 	}
-
 }
-.main-nav ul li a:hover {
+.main-nav ul li:first-child {
+	a {
+		border-left:1px solid white;	
+	}
+}
+.main-nav ul li a:hover, .main-nav ul li.current-menu-item a {
 		background: @dark-blue;
 	}
 .user-utility {
@@ -120,22 +146,35 @@ header .inner {
 }
 
 .announcement {
-	height: 30px;
-	line-height: 30px;
-	margin: 0 auto;
+	height: 48px;
+	line-height: 40px;
+	position: relative;
+	color:#4d004e;
+	text-transform: uppercase;
 	text-align: center;
-	background: rgba(255, 255, 255, 0.8);
-	-webkit-mask: -webkit-linear-gradient(
+	background: url('css/img/global/anouncement-bg.png') no-repeat center top;
+	z-index: 200;
+	/*
+-webkit-mask: -webkit-linear-gradient(
           left,
          rgba(255,255,255,0),
          rgba(255,255,255,1) 20%,
          rgba(255,255,255,1) 85%,
          rgba(255,255,255,0)
      );
+*/
 }
 .content {
 	margin: 0 auto ;
-	padding-bottom: 60px;
+	/* overflow: auto;
+	/* padding-bottom: 60px; */
+}
+body.home {
+	.content {
+		height: 90%;
+		/* border:1px solid red; */
+		overflow: hidden;
+	}
 }
 .content .inner {
 	max-width: 970px;
@@ -148,23 +187,29 @@ header .inner {
 	left: 0;
 	right:0;
 	height: 30px;
-	background: @light-blue;
+	font-family: 'futura_condensedbold' !important; 
+	background: @light-blue-opacity;
 	color: white;
+	z-index: 200;
 }
-.main-footer .inner {
-	max-width: 970px;
-	margin: 0 auto;
-	border: solid 1px blue;
+.main-footer {
+	.inner {
+		max-width: 970px;
+		margin: 0 auto;
+		/* border: solid 1px blue; */
+	}
 }
 .main-footer ul {
 	display: inline;
 	li {
 		display: inline;
 		line-height: 30px;
+		text-transform: uppercase;
 		a{
 			float: left;
 			display: block;
-			
+			padding:0 10px;
+			/* margin:0 20px 0 0; */
 		}
 	}
 }
@@ -181,18 +226,40 @@ header .inner {
 	line-height: 30px;
 	
 }
-.main-footer .social li a {
-	width: 30px;
-	height: 30px;
-	border: solid 1px red;
-	overflow: hidden;
-	margin: 0 5px 0 0;
-	
+.main-footer { 
+	.social {
+		li a {
+			width: 21px;
+			height: 21px;
+			display: block;
+			text-indent: -1000px;
+			/* border: solid 1px red; */
+			overflow: hidden;
+			margin: 5px 5px 0 0;
+			padding:0;
+		}
+		li.facebook a {
+			background: url('css/img/logos/facebook.png') no-repeat;
+		}
+		li.twitter a {
+			background: url('css/img/logos/twitter.png') no-repeat;
+		}
+		li.pinterest a {
+			background: url('css/img/logos/pinterest.png') no-repeat;
+		}
+		li.tumblr a {
+			background: url('css/img/logos/tumblr.png') no-repeat;
+		}
+	}	
 }
 .slideshow {
-	height: 600px;
-	border: dashed 2px red;
+	width:100%;
+	height: 100% !important;
+	overflow: hidden;
+	/* border: dashed 2px red; */
 	position: relative;
+	margin:-78px 0 0 0;
+	z-index: 100;
 }
 #toggle-nav {
 	height: 40px;
@@ -269,6 +336,7 @@ header .inner {
 			line-height: 30px;
 			a	{
 				float: none;
+				font-family: 'futura_condensedbold';
 				border-bottom: @dark-blue 1px solid;
 				padding: 0 20px;
 				}
