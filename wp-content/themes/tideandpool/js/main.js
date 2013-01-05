@@ -29,15 +29,24 @@ $(function() {
     	autoScaleSlider: true
     });
     // fade in team content
+/*
     $(".details-btn").hover(
     	function () {
 	    	$('.free-shipping-flyaway').fadeIn(500);
 	    },
 	    function () {
 		    $('.free-shipping-flyaway').delay(3000).fadeOut(300);
-		}
-	);
+		});
+*/
+		
+		$(".details-btn").mouseover(function() {
+			$('.free-shipping-flyaway').fadeIn(500);
+		});
+		$(".details-btn").mouseleave(function() {
+			$('.free-shipping-flyaway').delay(1000).fadeOut(500);
+		});
 
+//for mobiles, scroll top hide the address bar
 function hideBar() {  
 
 (function( win ){
@@ -79,6 +88,7 @@ hideBar();
 	
 	
 	$("#toggle-nav").click(function() {
+	
 		//hide the address bar id needed
 		hideBar();
 		
