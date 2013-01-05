@@ -102,5 +102,7 @@ wp_head();
 <section class="content" role="main">
 
 <div class="announcement">
-	<p>Free shippign on all order... </p>
+	<p>
+		<span class="font-18pt">Free shipping</span> <span class="font-11pt">on orders of 2 towels or more!</span><span class="details-btn italic">Details<span class="free-shipping-flyaway hide"><a href="#">Free Shipping</a></span></span>
+	</p>
 </div>

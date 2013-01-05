@@ -28,6 +28,15 @@ $(function() {
     	keyboardNavEnabled: true,
     	autoScaleSlider: true
     });
+    // fade in team content
+    $(".details-btn").hover(
+    	function () {
+	    	$('.free-shipping-flyaway').fadeIn(500);
+	    },
+	    function () {
+		    $('.free-shipping-flyaway').delay(3000).fadeOut(300);
+		}
+	);
 
 function hideBar() {  
 

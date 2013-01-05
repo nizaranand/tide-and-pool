@@ -31,6 +31,8 @@ Comment blocks indicate where each begins and ends, like this, for example...
 @light-blue-opacity: rgba(159,201,210,0.9);
 @light-green: #D3E70F;
 @purple: #38193A;
+@font-18pt: 18px;
+@font-11pt: 11px;
 
 @font-face {
     font-family: 'futura_condensedbold';
@@ -56,6 +58,18 @@ body {
 	/* height: 100%; */
 	font-size: 13px;
 	font-family: arial, sans-serif;
+}
+.font-18pt {
+	font-size: @font-18pt;
+}
+.font-11pt {
+	font-size: @font-11pt;
+}
+.italic {
+	font-style: italic;
+}
+.hide {
+	display: none;
 }
 .main-header {
 	/* border: solid 1px blue; */
@@ -163,6 +177,30 @@ header .inner {
          rgba(255,255,255,0)
      );
 */
+	p {
+		span.details-btn {
+			position: relative;
+			padding:0 0 20px 0; 
+			margin:0 20px;
+			/* border:1px solid red; */
+			text-transform: lowercase;
+			text-decoration: underline;
+			font-family: serif;
+			cursor: pointer;
+				
+		}
+	}
+	.free-shipping-flyaway a {
+				width:248px;
+				height: 254px;
+				display: block;
+				text-indent: -10000px;
+				background: url('css/img/global/free-shipping-flyaway.png') no-repeat;
+				position: absolute;
+				right:-110px;
+				top:20px;
+			}
+	
 }
 .content {
 	margin: 0 auto ;
