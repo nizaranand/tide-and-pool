@@ -42,7 +42,7 @@ $(function() {
 		$(".details-btn").mouseover(function() {
 			$('.free-shipping-flyaway').fadeIn(500);
 		});
-		$(".details-btn").mouseleave(function() {
+		$(".free-shipping-flyaway").mouseleave(function() {
 			$('.free-shipping-flyaway').delay(1000).fadeOut(500);
 		});
 
