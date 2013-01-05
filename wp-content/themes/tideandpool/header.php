@@ -30,7 +30,7 @@ wp_title( '|', true, 'right' );
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-<!-- css files for dev -->
+<!-- css plugin files -->
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/royalslider.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/default/rs-default.css" />
 <?php
@@ -47,12 +47,16 @@ wp_enqueue_script( 'comment-reply' );
 */
 wp_head();
 ?>
+
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
 <!-- plugin files for dev -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/jquery.royalslider.min.js"></script>
-<!-- <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/galleria-1.2.7.min.js"></script> 
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>-->
+<? /*
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/galleria-1.2.7.min.js"></script> 
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>
+*/ ?>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.masonry.min.js"></script>
 
 <!-- main site files for production -->
@@ -64,7 +68,8 @@ wp_head();
 
 
 <header role="banner" class="main-header">
-	<div class="inner">
+
+<div class="inner">
 	
 	<nav class="user-utility">
 	<?php wp_nav_menu( array( 'menu' => 'User Utility' )); ?>
@@ -80,17 +85,17 @@ wp_head();
 	
 	<div class="clear"></div>
 	
-	</div><!-- .inner -->
+</div><!-- .inner -->
 	
 	
 	
-		<nav id="access" role="navigation" class="main-nav clear">
-		<div class="inner">
-	<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-	<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-			<div class="clear"></div>
-		</div>
-	</nav><!-- #access -->
+<nav id="access" role="navigation" class="main-nav clear">
+<div class="inner">
+<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
+<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+	<div class="clear"></div>
+</div>
+</nav><!-- #access -->
 	
 	<div id="toggle-nav">&#9776;</div>
 	
@@ -103,6 +108,12 @@ wp_head();
 
 <div class="announcement">
 	<p>
-		<span class="font-18pt">Free shipping</span> <span class="font-11pt">on orders of 2 towels or more!</span><span class="details-btn italic">Details<span class="free-shipping-flyaway hide"><a href="#">Free Shipping</a></span></span>
+		<span class="font-18pt">Free shipping</span>
+		<span class="font-11pt">on orders of 2 towels or more!</span>
+		<span class="details-btn italic">Details
+			<span class="free-shipping-flyaway hide">
+				<a href="#">Free Shipping</a>
+			</span>
+		</span>
 	</p>
-</div>
+</div><!-- END announcement -->
