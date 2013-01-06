@@ -58,6 +58,7 @@ wp_head();
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>
 */ ?>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.masonry.min.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/respond.min.js"></script>
 
 <!-- main site files for production -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
