@@ -29,19 +29,19 @@ $(function() {
     	autoScaleSlider: true
     });
     // free shipping fly away fade in/out
-	$(".details-btn").mouseover(function() {
-		$('.free-shipping-flyaway').fadeIn(500);
-	});
-	$(".free-shipping-flyaway").mouseleave(function() {
-		$('.free-shipping-flyaway').delay(1000).fadeOut(500);
+	$(".details-btn").hover(function() {
+		$('.free-shipping-flyaway').stop(true,true).fadeIn(500);
+	},
+	function() {
+		$('.free-shipping-flyaway').stop(true,true).delay(2000).fadeOut(500);
 	});
 	
 	// email signup form fade in/out
-	$(".email-signup").mouseover(function() {
-		$('.email-signup form').fadeIn(500);
-	});
-	$(".email-signup").mouseleave(function() {
-		$('.email-signup form').delay(1000).fadeOut(500);
+	$(".email-signup").hover(function() {
+		$('.email-signup form').stop(true,true).fadeIn(500);
+	},
+	function() {
+		$('.email-signup form').stop(true,true).delay(1000).fadeOut(500);
 	});
 
 //for mobiles, scroll top hide the address bar
