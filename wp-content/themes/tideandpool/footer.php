@@ -37,8 +37,17 @@
 -->
 	
 	<div class="signup">
-		<input type="email" placeholder="EMAIL SIGN UP">
-		<input  type="submit">
+		<!-- email signup btn -->
+		<div class="email-signup">
+			Email Signup
+			<!-- form -->
+			<form class="hide">
+				<input type="email" class="italic" placeholder="Your Email Address...">
+				<!-- <input  type="submit"> -->
+			<!-- end form -->
+			</form>
+		</div>
+		<!-- end email signup btn -->
 	</div>
 	
 		<address>&copy; <?php the_time('Y'); ?> <?php bloginfo( 'title' ); ?></address>

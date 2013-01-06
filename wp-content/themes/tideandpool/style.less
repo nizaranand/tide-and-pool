@@ -68,6 +68,15 @@ body {
 .italic {
 	font-style: italic;
 }
+*:focus {
+    outline: none;
+    border:0;
+}
+/*
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{   
+	border : 0px;
+}
+*/
 .hide {
 	display: none;
 }
@@ -259,10 +268,57 @@ body.home {
 	line-height: 30px;
 	font-style: normal;
 }
-.main-footer .signup {
+.main-footer {
+	address {
+		float:right;
+		border-right:1px solid white;
+		padding:0 10px 0 0;
+	} 
+	.signup {
 	float: right;
+	display: block;
 	line-height: 30px;
-	
+	border-right:1px solid white;
+	position: relative;
+		.email-signup {
+			width:152px;
+			height: 30px;
+			display: inline-block;
+			text-indent: -10000px;
+			position: relative;
+			background: url('css/img/global/email-signup-btn.png') no-repeat;
+			form {
+				width:215px;
+				height: 84px;
+				/* display: inline-block; */
+				background: url('css/img/global/email-signup-bg.png') no-repeat;
+				position: absolute;
+				bottom:2px;
+				right:-35px;
+				color:#1093AB !important;
+				/* border:1px solid red; */
+				input {
+					border: none;
+					/* text-indent: 12px; *
+					height:39px;
+					line-height: 40px;*/
+					color:#1093AB !important;
+					font-family: serif;
+					position: absolute;
+					top:27px;
+					left:30px;
+					width:150px;
+				}
+				input:focus {
+					outline:none;
+				}
+			}
+		}
+		.email-signup:hover {
+			background: #1093AB url('css/img/global/email-signup-btn.png') no-repeat;
+			background-position: 0 -30px;
+		}
+	}
 }
 .main-footer { 
 	.social {
@@ -403,8 +459,9 @@ body.home {
 			}
 	}
 	.main-footer address {
-		float: none;
+		float: right;
 		display: block;
+		border-right:1px solid white;
 		text-align: center;
 		font-size: 0.8em
 	}
