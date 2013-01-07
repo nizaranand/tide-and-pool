@@ -22,7 +22,16 @@ get_header(); ?>
 	<?php if(get_field('home_page_slideshow')): ?>
 	<?php while(the_repeater_field('home_page_slideshow')): ?>
 	<div class="rsImg">
-		<a href="<?php the_sub_field('home_slideshow_link'); ?>">
+		<a href="
+			<?php if(get_sub_field('home_slideshow_link'))
+				{
+				the_sub_field('home_slideshow_link');
+				}
+				else {
+					echo('#');
+				}
+			?>
+			">
 			<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
 			<img src="<?php echo $image[0]; ?>" />
 		</a>
