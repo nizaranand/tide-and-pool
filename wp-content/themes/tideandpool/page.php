@@ -21,10 +21,12 @@ get_header(); ?>
 	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 	<?php if(get_field('home_page_slideshow')): ?>
 	<?php while(the_repeater_field('home_page_slideshow')): ?>
-	<a href="<?php the_sub_field('home_slideshow_link'); ?>">
-		<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
-		<img src="<?php echo $image[0]; ?>" />
-	</a>
+	<div class="rsImg">
+		<a href="<?php the_sub_field('home_slideshow_link'); ?>">
+			<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
+			<img src="<?php echo $image[0]; ?>" />
+		</a>
+	</div>
 	<?php endwhile; ?>
 	<?php endif; ?>
 	<?php endwhile; ?>
