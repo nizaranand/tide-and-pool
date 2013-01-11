@@ -28,6 +28,67 @@ $(function() {
     	keyboardNavEnabled: true,
     	autoScaleSlider: true
     });
+    
+// collections masonry
+
+$("#collections").append('<div id=loading></div>');
+
+var $container = $('#collections');
+
+$container.imagesLoaded(function() {
+	
+	$("#loading").remove();
+
+	var lis = $('.thumb'); //tis is the image item 
+			
+			var i = 0; //set counter to 0
+			
+			//loops thru itself
+			(function displayImages() {
+				lis.eq(i++).fadeIn(150, displayImages);
+					//adjust line height for view more
+
+			})();
+			
+	$container.masonry({
+		itemSelector: '.thumb',
+		isAnimated: true,
+		isFitWidth: false,
+		columnWidth:  1
+	});
+	 
+	$(window).resize(function() {
+		$(".thumb").each(function() {
+			var theHeight = Math.floor($(this).height() / 2 - 16);
+		 });
+	});
+      
+    // hover z-index class
+    $(".thumb").hover(function() { 
+    	$(this).addClass('img-hover');
+    }, 
+    function() {
+		$(this).removeClass('img-hover'); 
+    });
+
+    // image hover grow
+    $(".thumb img").hover(function() {
+      
+	  var $this = $(this);
+    $this.stop(true,true).animate({
+        //'height': $this.height() * 1.2,
+        'width' : $this.width() * 1.5
+    });
+    },function() {
+       var $this = $(this);
+       $this.stop(true,true).animate({
+        //'height': $this.height() / 1.2,
+        'width' : $this.width() / 1.5
+    });
+});
+
+
+});
     // free shipping fly away fade in/out
 	$(".details-btn").hover(function() {
 		$('.free-shipping-flyaway').stop(true,true).fadeIn(500);
