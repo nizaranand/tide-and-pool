@@ -24,7 +24,7 @@ define('DB_NAME', 'tide-and-pool-local');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'greengoose');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
