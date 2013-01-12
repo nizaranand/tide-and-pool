@@ -41,7 +41,39 @@ get_header(); ?>
 	<?php endwhile; ?>
 </div>
 <!-- end home slideshow -->
-<?php } elseif (is_page('collection')) { ?>
+<?php } elseif (is_page('collections')) { ?>
+
+<!-- collections container -->
+<div id="collections" class="thumb-container">
+	<?php $my_query = new WP_Query('page_id=4&showposts=1'); ?>
+	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<?php $images = get_field('collections_gallery'); if( $images ): ?>
+	<?php foreach( $images as $image ): ?>
+	<div class="thumb">
+		<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+	</div>
+	<?php endforeach; ?>
+	<?php endif; ?>
+	<?php endwhile; ?>
+</div>
+<!-- end collection container -->
+
+<?php } elseif (is_page('collections-test-2')) { ?>
+
+<!-- collections container -->
+<div id="collections" class="thumb-container">
+	<?php $my_query = new WP_Query('page_id=103&showposts=1'); ?>
+	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<?php $images = get_field('collection_test_gallery'); if( $images ): ?>
+	<?php foreach( $images as $image ): ?>
+	<div class="thumb">
+		<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+	</div>
+	<?php endforeach; ?>
+	<?php endif; ?>
+	<?php endwhile; ?>
+</div>
+<!-- end collection container -->
 
 <?php } else { ?>
 				
