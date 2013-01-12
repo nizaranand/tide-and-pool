@@ -67,8 +67,6 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
-hello header
-
 <header role="banner" class="main-header">
 
 <div class="inner">
