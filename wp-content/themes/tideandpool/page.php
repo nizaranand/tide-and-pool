@@ -44,18 +44,33 @@ get_header(); ?>
 <?php } elseif (is_page('collections')) { ?>
 
 <!-- collections container -->
-<div id="collections" class="thumb-container">
+<section id="collections" class="thumb-container">
 	<?php $my_query = new WP_Query('page_id=4&showposts=1'); ?>
 	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-	<?php $images = get_field('collections_gallery'); if( $images ): ?>
-	<?php foreach( $images as $image ): ?>
-	<div class="thumb">
-		<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-	</div>
-	<?php endforeach; ?>
+	<?php if(get_field('collections_gallery')): ?>
+	<?php while(the_repeater_field('collections_gallery')): ?>
+	<!-- thumb -->
+	<article class="thumb">
+		<a <?php if(! get_sub_field('link')) { ?>class="fancybox"<?php } ?> href="
+			<?php if(get_sub_field('link'))
+				{
+				the_sub_field('link');
+				}
+				else {
+					$image = wp_get_attachment_image_src(get_sub_field('zoom_image'), 'large');
+					echo $image[0];
+				}
+			?>
+			">
+			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'large'); ?>
+			<img src="<?php echo $image[0]; ?>" alt="" />
+		</a>
+	</article>
+	<!-- end thumb -->
+	<?php endwhile; ?>
 	<?php endif; ?>
 	<?php endwhile; ?>
-</div>
+</section>
 <!-- end collection container -->
 
 <?php } elseif (is_page('collections-test-2')) { ?>

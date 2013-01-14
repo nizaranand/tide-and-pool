@@ -29,6 +29,21 @@ $(function() {
     	autoScaleSlider: true
     });
     
+    //collections fancybox
+    $(".fancybox").fancybox({
+		padding:0,
+		type:'image',
+		autoScale:true
+	});
+	
+	// collections isotope
+	/*$('#collections').isotope({
+		sortBy: 'original-order',
+		itemSelector : '.thumb'
+	});*/
+
+
+    
 // collections masonry
 
 $("#collections").append('<div id=loading></div>');
