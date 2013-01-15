@@ -69,6 +69,17 @@ wp_head();
 <script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 
+<!-- bug herd -->
+<script type='text/javascript'>
+(function (d, t) {
+  var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+  bh.type = 'text/javascript';
+  bh.src = '//www.bugherd.com/sidebarv2.js?apikey=hntmy0g37nhcx70tntqh4a';
+  s.parentNode.insertBefore(bh, s);
+  })(document, 'script');
+</script>
+<!-- end bug herd -->
+
 </head>
 <body <?php body_class(); ?>>
 

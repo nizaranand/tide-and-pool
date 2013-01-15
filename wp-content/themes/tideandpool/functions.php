@@ -38,55 +38,32 @@
  * @since Boilerplate 1.0
  */
  
-/* 
-	 * Override WooCommerce Breadcrumbs 
-	 */
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
-	
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
-	remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-	remove_action( 'woocommerce_pagination', 'woocommerce_catalog_ordering', 20 );
-	
-	/* ********************************************
-	 * *
-	 * *	Customise Product page
-	 * *
-	 * ********************************************/
-	
-	/* Before Single Products Summary Div */
-	remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
-	remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
-	remove_action( 'woocommerce_product_tab_panels', 'woocommerce_product_reviews_panel', 30);
-	
-	/* After Single Products Summary Div */
-	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
-	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
-	
-	/* Product Summary Box */
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
-	
-	/* After Single Products */
-	remove_action('woocommerce_after_single_product', 'woocommerce_upsell_display');
-	
-	/* Product Add to cart */
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
-	remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 ); 
-	remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 ); 
-	remove_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 ); 
-	remove_action( 'woocommerce_external_add_to_cart', 'woocommerce_external_add_to_cart', 30 );
-	
-	/* re-add actions in the correct order */
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 10);
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 15); // add to cart is included in here
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_thumbnails', 20 );
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_output_related_products', 25);
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_product_reviews_panel', 30 );
+// clean up the <head>
+function removeHeadLinks() {
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+}
+add_action('init', 'removeHeadLinks');
+remove_action('wp_head', 'wp_generator');
+     
+/* remove wooCommerce block */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);	
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_pagination', 'woocommerce_catalog_ordering', 20 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_product_reviews_panel', 30 );
+
+/* re-add actions in the correct order */
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_thumbnails', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 15);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20); 
+add_action( 'woocommerce_single_product_summary', 'woocommerce_output_related_products', 25);
+add_action( 'woocommerce_single_product_summary', 'woocommerce_product_reviews_panel', 30 );
 		
+/* image sizes */
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
  	add_theme_support( 'post-thumbnails' );
  	set_post_thumbnail_size( 600, 50, true ); // Normal post thumbnails
