@@ -12,7 +12,8 @@ $(function() {
 	// products carousel
 	$("#carousel").touchCarousel({
          scrollbar: false,
-         loopItems: true,		
+         loopItems: true,
+         itemFallbackWidth: 500		
     });
     
     // products carousel details hover
@@ -22,6 +23,17 @@ $(function() {
     function() {
 		$('.product-details',this).stop(true,true).fadeOut(300); 
     });
+    
+    // couresel arrover mouse follow
+
+    $(".arrow-holder").mousemove(function(e){
+  		$(this).find('.arrow-icon').stop().css({top:(e.pageY - $(this).offset().top)});
+ 	});
+ 	$(".arrow-holder").mouseleave(function(){
+ 		var containerHeight = $('#carousel').height();
+ 		var newPosition = containerHeight / 2;
+  		$(this).find('.arrow-icon').animate({top:newPosition+'px'}, 300);
+ 	});
 	
 	// slideshow
     $('.slideshow').royalSlider({

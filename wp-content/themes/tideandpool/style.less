@@ -262,34 +262,46 @@ header .inner {
 }
 section.products {
 	width:100%;
-	height: 499px;
+	height: auto;
 	position: absolute;
 	left:0;
-	top:50%;
-	margin:-195px 0 0 0;
-	li.slide {
-		width:408px;
-		height: 499px;
-		display: block;
-		position: relative;
-		.product-details {
-			width:100%;
-			height: 71px;
-			padding:30px 0 0 0;
-			text-transform: uppercase;
-			font-size: 1.2em;
-			/* line-height: 1.5em ;*/
-			text-align: center;
-			background: rgba(59,163,182,0.8);
-			color:white;
-			position: absolute;
-			left:0;
-			top:50%;
-			margin:-50px 0 0 0;
-			font-family: 'ProximaNovaLight';
+	top:145px;
+	bottom:30px;
+	margin:0 0 0 0;
+	background: red;
+	ul {
+		width:100%;
+		height: 100%;
+			li.slide {
+				/* width:20%; */
+				height: 100%;
+				display: inline-block;
+				position: relative;
+				background: blue;
+				padding:0 100px 0 0;
+				img {
+					width:auto !important;
+					height: 100% !important;
+				}
+				.product-details {
+					width:100%;
+					height: 71px;
+					padding:30px 0 0 0;
+					text-transform: uppercase;
+					font-size: 1.2em;
+					/* line-height: 1.5em ;*/
+					text-align: center;
+					background: rgba(59,163,182,0.8);
+					color:white;
+					position: absolute;
+					left:0;
+					top:50%;
+					margin:-50px 0 0 0;
+					font-family: 'ProximaNovaLight';
+				}
+			}
 		}
 	}
-}
 #collections {
 	/* width:1300px; */
 	/* max-width:1280px; */

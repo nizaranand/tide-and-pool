@@ -19,20 +19,24 @@
 	 do_action( 'woocommerce_before_single_product' );
 ?>
 
-<div itemscope itemtype="http://schema.org/Product" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<?php
-		/**
-		 * woocommerce_show_product_images hook
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
-
-	<div class="summary">
-
+<section id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<!-- left -->
+	<div class="left">
+		<?php
+			/**
+			* woocommerce_show_product_images hook
+			*
+			* @hooked woocommerce_show_product_sale_flash - 10
+			* @hooked woocommerce_show_product_images - 20
+			*/
+			do_action( 'woocommerce_before_single_product_summary' );
+		?>
+	</div>
+	<!-- end left -->
+	
+	<!-- right -->
+	<div class="right">
+		<div class="summary">
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook
@@ -46,9 +50,10 @@
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-
-	</div><!-- .summary -->
-
+		</div>
+	</div>
+	<!-- end right -->
+	
 	<?php
 		/**
 		 * woocommerce_after_single_product_summary hook
@@ -59,6 +64,6 @@
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
-</div><!-- #product-<?php the_ID(); ?> -->
+</section>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
