@@ -8,6 +8,21 @@
 
 
 $(function() {
+	
+	// products carousel
+	$("#carousel").touchCarousel({
+         scrollbar: false,
+         loopItems: true,		
+    });
+    
+    // products carousel details hover
+    $(".touchcarousel-item").hover(function() { 
+    	$('.product-details',this).stop(true,true).fadeIn(800);
+    }, 
+    function() {
+		$('.product-details',this).stop(true,true).fadeOut(300); 
+    });
+	
 	// slideshow
     $('.slideshow').royalSlider({
     	autoPlay: { enabled: true, pauseOnHover: true },
@@ -25,6 +40,7 @@ $(function() {
     	slidesOrientation: 'horizontal',
     	slidesSpacing: 0,
     	sliderDrag: true,
+    	swipe: true,
     	keyboardNavEnabled: true,
     	autoScaleSlider: true
     });

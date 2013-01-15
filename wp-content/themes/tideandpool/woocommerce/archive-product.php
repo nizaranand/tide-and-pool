@@ -21,7 +21,8 @@ get_header('shop'); ?>
 		do_action('woocommerce_before_main_content');
 	?>
 
-		<h1 class="page-title">
+		<!--
+<h1 class="page-title">
 			<?php if ( is_search() ) : ?>
 				<?php
 					printf( __( 'Search Results: &ldquo;%s&rdquo;', 'woocommerce' ), get_search_query() );
@@ -38,6 +39,7 @@ get_header('shop'); ?>
 				?>
 			<?php endif; ?>
 		</h1>
+-->
 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
@@ -51,8 +53,8 @@ get_header('shop'); ?>
 
 			<?php do_action('woocommerce_before_shop_loop'); ?>
 
-			<ul class="products">
-
+			<section id="carousel" class="products touchcarousel black-and-white">
+				<ul class="touchcarousel-container">
 				<?php woocommerce_product_subcategories(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -60,8 +62,8 @@ get_header('shop'); ?>
 					<?php woocommerce_get_template_part( 'content', 'product' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
-
-			</ul>
+				</ul>
+			</section>
 
 			<?php do_action('woocommerce_after_shop_loop'); ?>
 
@@ -96,13 +98,10 @@ get_header('shop'); ?>
 		do_action('woocommerce_after_main_content');
 	?>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
+	<!--
+<?php
 		do_action('woocommerce_sidebar');
 	?>
+-->
 
 <?php get_footer('shop'); ?>

@@ -31,6 +31,9 @@ wp_title( '|', true, 'right' );
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!-- css plugin files -->
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/touchcarousel.css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/black-and-white-skin/black-and-white-skin.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/royalslider.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/default/rs-default.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.css" />
@@ -55,12 +58,10 @@ wp_head();
 <!-- plugin files for dev -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/jquery.royalslider.min.js"></script>
-<? /*
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/galleria-1.2.7.min.js"></script> 
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria-1.2.7/themes/classic/galleria.classic.min.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.isotope.min.js"></script>
-*/ ?>
-
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/jquery.touchcarousel-1.1.min.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/galleria-1.2.9.min.js"></script> 
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.min.js"></script>
+<!-- <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.isotope.min.js"></script> -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.masonry.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/respond.min.js"></script>
 

@@ -15,8 +15,54 @@
 get_header(); ?>
 
 <?php if (is_page('homepage')) { ?>
+
+<div id="galleria"></div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		var data = [
+			<?php $my_query = new WP_Query('page_id=21&showposts=1'); ?>
+			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			
+			<?php if(get_field('home_page_slideshow')): ?>
+			<?php while(the_repeater_field('home_page_slideshow')): ?>
+			<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
+			{ image :'<?php echo $image[0]; ?>', link: '<?php the_sub_field('home_slideshow_link'); ?>'},
+			<?php endwhile; ?>
+			<?php endif; ?>
+			<?php endwhile; ?>
+		];
+		
+		Galleria.run('#galleria', {
+			dataSource: data,
+			autoplay: 0 ,
+			initialTransition: 'fade',
+			touchTransition: 'fadeslide',
+			transitionSpeed: 600,
+			transition: 'fadeslide',
+			imageTimeout: 6000,
+			debug: false,
+			showInfo: false,
+			preload: 5,
+			showCounter: true,
+			showInfo: false,
+			imageCrop: 'landscape',
+			imagePosition: 'center',
+			showImagenav: true,
+			thumbnails: false,
+			swipe:true,
+			responsive: true,
+			extend: function() {
+				this.$('counter').appendTo('#counter');
+				var gallery = $(this);
+			}
+		});
+	});
+</script>
+
 <!-- home slideshow -->
-<div class="slideshow home rsDefault">
+<!--<div class="slideshow home rsDefault">
 	<?php $my_query = new WP_Query('page_id=21&showposts=1'); ?>
 	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 	<?php if(get_field('home_page_slideshow')): ?>
@@ -39,7 +85,7 @@ get_header(); ?>
 	<?php endwhile; ?>
 	<?php endif; ?>
 	<?php endwhile; ?>
-</div>
+</div>-->
 <!-- end home slideshow -->
 <?php } elseif (is_page('collections')) { ?>
 
