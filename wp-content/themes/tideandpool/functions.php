@@ -54,20 +54,28 @@ remove_action( 'woocommerce_pagination', 'woocommerce_catalog_ordering', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_product_reviews_panel', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_thumbnails', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price ', 10 );
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+
 
 /* re-add actions in the correct order */
+/*
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_thumbnails', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_show_product_images', 15);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20); 
 add_action( 'woocommerce_single_product_summary', 'woocommerce_output_related_products', 25);
-add_action( 'woocommerce_single_product_summary', 'woocommerce_product_reviews_panel', 30 );
+*/
 		
 /* image sizes */
 if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
  	add_theme_support( 'post-thumbnails' );
  	set_post_thumbnail_size( 600, 50, true ); // Normal post thumbnails
  	add_image_size( 'home-slideshow',1500, 9999 ); // Permalink thumbnail
+ 	add_image_size( 'zoom-thumb',1500, 9999 ); // Permalink thumbnail
+ 	add_image_size( 'zoom-large',1500, 9999 ); // Permalink thumbnail
 }
 /**
  * Set the content width based on the theme's design and stylesheet.

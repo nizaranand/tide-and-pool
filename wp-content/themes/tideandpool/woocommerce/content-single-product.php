@@ -36,20 +36,56 @@
 	
 	<!-- right -->
 	<div class="right">
-		<div class="summary">
-		<?php
-			/**
-			 * woocommerce_single_product_summary hook
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-		?>
+		<div class="inner">
+			<!-- header -->
+			<h1>
+				<?php the_title(); ?><br>
+				<!-- price -->
+				<?php global $post, $product;?>
+				<span class="price"><?php echo $product->get_price_html(); ?></span>
+				<!-- end price -->
+			</h1>
+			<!-- end header -->
+			
+			
+			
+			<!-- description -->
+			<?php the_content(); ?>
+			<!-- end description -->
+			
+			<!-- in stock -->
+			<?php if ( $product->is_in_stock() ) : ?>
+			<p class="in-stock">In Stock</p>
+			<?php endif; ?>
+			<!-- end in stock -->
+			
+			<!-- add to cart -->
+			<?php
+				/**
+				* woocommerce_single_product_summary hook
+				*
+				* @hooked woocommerce_template_single_title - 5
+				* @hooked woocommerce_template_single_price - 10
+				* @hooked woocommerce_template_single_excerpt - 20
+				* @hooked woocommerce_template_single_add_to_cart - 30
+				* @hooked woocommerce_template_single_meta - 40
+				* @hooked woocommerce_template_single_sharing - 50
+				*/
+				do_action( 'woocommerce_single_product_summary' );
+			?>
+			<!-- end add to cart -->
+			
+			<!-- addthis share -->
+			<div class="addthis_toolbox addthis_default_style ">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_pinterest_pinit"></a>
+				<a class="addthis_counter addthis_pill_style"></a>
+				<a class="addthis_button_email"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f5ed780ea45f81"></script>
+			<!-- end addthis share -->
 		</div>
 	</div>
 	<!-- end right -->

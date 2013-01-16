@@ -32,7 +32,6 @@
     line-height: 24px;
     margin: 0;
     min-height: 24px;
-    padding: 2px 2px 2px 20px !important;
     text-align: left;
     text-decoration: none;
 }
@@ -44,8 +43,10 @@
 
 /* Style of the zoomed image */
 .MagicZoomBigImageCont {
-    background: #ffffff;
+    /*
+background: #ffffff;
     border: 1px solid #999;
+*/
 }
 
 .MagicZoomBigImageCont img {
@@ -67,7 +68,7 @@
 /* Style of square magnify area under the cursor */
 .MagicZoomPup {
     background: #fff;
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
     cursor: move;
 }
 
@@ -127,7 +128,7 @@ div.MagicToolboxSelectorsContainer {
 /* Selectors styles */
 div.MagicToolboxSelectorsContainer a {
     display: inline-block;
-    margin: 4px 1px;
+    margin: 0;
 }
 
 div.MagicToolboxMessage {

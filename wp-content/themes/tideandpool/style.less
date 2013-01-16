@@ -112,6 +112,10 @@ body {
 .italic {
 	font-style: italic;
 }
+strong {
+	font-family: 'ProximaNovaSemiBold';
+	font-weight: normal;
+}
 *:focus {
     outline: none;
     border:0;
@@ -120,6 +124,10 @@ body {
 	top:-5px !important;
 	right:-5px !important;
 	
+}
+MagicZoomPup {
+	border:none !important;
+	padding:0 !important;
 }
 /*
 input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{   
@@ -302,6 +310,93 @@ section.products {
 			}
 		}
 	}
+section.product {
+	width:950px;
+	height: 566px;
+	/* border:1px solid red; */
+	position: relative;
+	margin:-5px auto 0 auto;
+	.left {
+		section.thumbnails {
+			float:left;
+			margin:0 2px 0 0;
+			article {
+				width:77px;
+				height: 93px;
+				display: block;
+				overflow: hidden;
+				border:2px solid white;
+				a:hover {
+					border:2px solid #d3e70f;
+				}
+				img {
+					height:100%;
+				}	
+			}
+		}
+		secton.main-img {
+			float:left;
+			height: 100%;
+			img {
+				height: 100% !important;
+			}
+		}
+	}
+	.right {
+		width:460px;
+		height: 100%;
+		position: absolute;
+		top:0;
+		right:0;
+		background: #9fc9d2;
+		.inner {
+			padding:50px;
+			color: white;
+			font-family: 'ProximaNovaLight';
+			h1 {
+				font-family: 'ProximaNovaLight';
+				font-size: 1.5em;
+				margin:0 0 30px 0;
+				text-transform: uppercase;
+				span.price {
+					ins {
+						color:#4d004e;
+						text-decoration: none;
+					}
+				}	
+			}
+			p {
+				margin:0 0 10px 0;
+				strong {
+					
+				}
+			}
+			p.in-stock {
+				font-family: 'ProximaNovaSemiBold';
+				margin:0 0 10px 0;
+				text-transform: uppercase;	
+			}
+			form.cart {
+				margin:0 0 50px 0;
+				button.single_add_to_cart_button {
+					position: relative;
+					margin: 20px 0 0 0;
+					width:127px;
+					height: 30px;
+					line-height: 30px;
+					font-family: 'futura_condensedbold';
+					text-transform: uppercase;
+					display: block;
+					text-align: center;
+					background: #1093ab;
+					color:white;
+					border:none;
+					
+				}
+			}
+		}
+	}
+}
 #collections {
 	/* width:1300px; */
 	/* max-width:1280px; */
@@ -347,6 +442,11 @@ padding:5px;
 	margin: 0 auto ;
 	/* overflow: auto;
 	/* padding-bottom: 60px; */
+	#container {
+		#content {
+			background: white;
+		}
+	}
 }
 body.home {
 	overflow: hidden;
@@ -359,7 +459,6 @@ body.home {
 .content .inner {
 	max-width: 970px;
 	margin: 0 auto;
-	border: solid 1px blue
 }
 .main-footer {
 	position: fixed;
