@@ -137,7 +137,15 @@ get_header(); ?>
 <!-- end collection container -->
 
 <?php } else { ?>
-				
+
+<!-- body content -->
+<article class="body-content">
+<?php while ( have_posts() ) : the_post(); ?>
+<?php the_content(); ?>
+<?php endwhile; // end of the loop. ?>
+</article>				
+<!-- end body content -->
+
 <?php } ?>
 
 <?php get_footer(); ?>
