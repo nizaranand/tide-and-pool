@@ -9,6 +9,16 @@
 
 $(function() {
 	
+	// shopping bag toggle
+	$(".shopping-bag").hover(function(){
+		$('.dropdown', this).stop(true, true).animate({
+			height:"toggle",
+		    opacity:"toggle"
+		 },500);				  					  
+	});
+	//append shop bag pointer
+	$('.dropdown').append('<div class="pointer"/></div>');
+	
 	// products carousel
 	$("#carousel").touchCarousel({
          scrollbar: false,

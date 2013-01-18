@@ -250,7 +250,7 @@ header .inner {
 	height: 30px;
 	background: @light-blue-opacity;
 	line-height: 30px;
-	overflow: hidden;
+	/* overflow: hidden; */
 	height: auto;
 	font-family: 'futura_condensedbold';
 	font-size: 11px;
@@ -295,6 +295,128 @@ header .inner {
 	li {
 		display: inline;
 	}
+}
+.shopping-bag {
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 311px;
+    z-index: 20000;
+    font-family: 'ProximaNovaRegular';
+    .my-shopping-bag {
+    	float:right;
+	    display: block;
+	    width: 175px;
+	    height: 30px;
+	    line-height: 30px;
+	    color:white;
+	    font-family: 'ProximaNovaBold';
+	    text-indent: 30px;
+	    background: #1093ab url('css/img/shop-bag-icon.png')no-repeat 10px 0;
+	    overflow: auto;
+	    text-transform: uppercase;
+    }
+    .dropdown {
+    	position: absolute;
+    	top:30px;
+    	right:0;
+	    background: rgba(255, 255, 255, 1.0);
+	    border:3px solid #1093ab;
+	    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	    display: none;
+	    padding:12px 12px 50px 12px;
+	    .pointer {
+		    width:20px;
+		    height: 9px;
+		    display: block;
+		    background: url('css/img/shop-bag-pointer.png')no-repeat;
+		    position: absolute;
+		    right:35px;
+		    top:-9px;
+	    }
+	    .items {
+	    	overflow: auto;
+	    	ul {
+		    	li {
+		    		width:311px;
+		    		height: 83px;
+		    		display: block;
+		    		span.shop-bag-thumb {
+			    		float:left;
+			    		margin:0 12px 0 0;
+			    		img {
+				    		display: block;
+				    	}
+				    }
+				    span {
+			    		line-height: normal;
+			    	}
+			    	span.details {
+			    		width:210px;
+			    		display: block;
+			    		float:left;
+			    		font-size: 1em;
+			    		span.title {
+			    			font-family: 'ProximaNovaBold';
+			    			float:left;
+			    		}
+			    		span.price {
+				    		float:right;
+				    		color:#333;
+				    	}
+				    }
+				    span.qty {
+					    float:left;
+					    margin:10px 0 0 0;
+					    color:#333;
+					}
+					a {
+						height: auto;
+						margin:0 0 12px 0;
+						padding:0px;
+						border:none;
+						color:black;
+						line-height: auto;
+					}
+					a:hover {
+						background: transparent;
+					}
+				}
+			}
+	    }
+	    .subtotal {
+		    	text-transform: uppercase;
+		    	font-size: 1.2em;
+		    	padding:0px 0;
+		    	margin:0 0 5px 0;
+		    	color:#333;
+		    	border-top:1px solid #9fc9d2;
+		    	border-bottom:1px solid #9fc9d2;
+			    .text {
+				    /* float:left; */
+				    font-family: 'ProximaNovaSemiBold';
+			    }
+			    .total {
+				    float:right;
+				    font-family: 'ProximaNovaLight';
+		   }
+		}
+	    a.go-to-checkout {
+		    position: absolute;
+		    bottom:12px;
+		    right:12px;
+		    width:127px;
+		    height: 30px;
+		    line-height: 30px;
+		    text-align: center;
+		    background: #1093ab;
+		    color:white;
+		    font-family: 'futura_condensedbold';
+		    font-size: 1em;
+		    text-transform: uppercase;
+		    
+	    }
+    }
 }
 .announcement {
 	height: 48px;
@@ -947,6 +1069,12 @@ body.home {
     	font: 99% sans-serif;
     	padding: 10px;
     }
+}
+@media only screen and (max-height:700px) {
+	section.products {
+		top:145px;
+		margin:0;
+	}
 }
 @media only screen and (device-height:480px) {
 }

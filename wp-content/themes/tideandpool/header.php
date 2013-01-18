@@ -110,6 +110,64 @@ wp_head();
 <?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 	<div class="clear"></div>
+	
+	<div class="shopping-bag">
+		<div class="my-shopping-bag">
+			<?php global $woocommerce; ?>
+			<a class="shopping-bag-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Shopping Bag (<span class="total"><?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</a>
+
+<!-- <a class="cart-contents my-shopping-bag" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>"><span class="total"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></span></a> -->
+		</div> <!-- // .my-shopping-bag -->
+		
+		<?php if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) : ?>
+		<div class="dropdown">
+			<div class="items">
+				<ul>
+					<?php foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) :
+						$_product = $values['data'];
+						if ( $_product->exists() && $values['quantity'] > 0 ) :
+							$product_quantity = esc_attr( $values['quantity'] );
+							$product_price = (( get_option('woocommerce_display_cart_prices_excluding_tax') == 'yes' ) ? $_product->get_price_excluding_tax() : $_product->get_price()) * $product_quantity;
+							//echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key ); 					
+					?>
+					<li>
+						<a href="<?php echo esc_url( get_permalink( apply_filters('woocommerce_in_cart_product_id', $values['product_id'] ) ) ); ?>" class="clearfix">
+							<!-- thumb -->
+							<span class="shop-bag-thumb"><?php echo $_product->get_image('zoom-thumb'); ?></span>
+							<!-- end thumb -->
+							
+							<!-- details -->
+							<span class="details">
+								<span class="title"><?php echo $_product->get_title(); ?></span>
+								<span class="price"><?php echo apply_filters('woocommerce_cart_item_price_html', woocommerce_price( $product_price ), $values, $cart_item_key ); ?></span>
+							</span>
+							<!-- end details -->
+							
+							<span class="qty">Qty:<?php echo $product_quantity; ?></span>
+						</a>
+						<!--
+<div class="remove">
+							<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" title="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __('Remove from cart', 'woocommerce') ), $cart_item_key ); 
+							?>
+						</div>
+-->			
+					</li>
+				<?php endif; endforeach; ?>
+				</ul>
+			</div>
+			<!-- end items -->
+			
+			<!-- sub total -->
+			<div class="subtotal">
+				<span class="text">Subtotal</span><span class="total"><?php echo $woocommerce->cart->get_cart_total(); ?></span>
+			</div>
+			<!-- end sub total -->
+			
+			<a href="<?php echo home_url( '/' ); ?>checkout/" class="go-to-checkout">Checkout</a>
+		</div>
+		<!-- end dropdown -->
+		<?php endif; ?>			
+	</div> <!-- // .shopping-bag -->
 </div>
 </nav><!-- #access -->
 	
