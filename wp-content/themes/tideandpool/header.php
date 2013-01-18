@@ -114,7 +114,7 @@ wp_head();
 	<div class="shopping-bag">
 		<div class="my-shopping-bag">
 			<?php global $woocommerce; ?>
-			<a class="shopping-bag-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Shopping Bag (<span class="total"><?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</a>
+			<a class="shopping-bag-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Shopping Bag <span class="total"><?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?></a>
 
 <!-- <a class="cart-contents my-shopping-bag" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>"><span class="total"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></span></a> -->
 		</div> <!-- // .my-shopping-bag -->
