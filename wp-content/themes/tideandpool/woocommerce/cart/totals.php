@@ -17,12 +17,12 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 	<?php if ( ! $woocommerce->shipping->enabled || $available_methods || ! $woocommerce->customer->get_shipping_country() || ! $woocommerce->customer->has_calculated_shipping() ) : ?>
 
-		<h2><?php _e('Cart Totals', 'woocommerce'); ?></h2>
+		<!-- <h2><?php _e('Cart Totals', 'woocommerce'); ?></h2> -->
 		<table cellspacing="0" cellpadding="0">
 			<tbody>
 
 				<tr class="cart-subtotal">
-					<th><strong><?php _e('Cart Subtotal', 'woocommerce'); ?></strong></th>
+					<th><h2><?php _e('Sub-total', 'woocommerce'); ?></h2></th>
 					<td><strong><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong></td>
 				</tr>
 
@@ -37,7 +37,8 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 				<?php if ( $woocommerce->cart->needs_shipping() && $woocommerce->cart->show_shipping() && ( $available_methods || get_option( 'woocommerce_enable_shipping_calc' ) == 'yes' ) ) { ?>
 
-				<tr class="shipping">
+				<!--
+<tr class="shipping">
 					<th><?php _e('Shipping', 'woocommerce'); ?></th>
 					<td>
 					<?php
@@ -110,6 +111,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 					?></td>
 
 				</tr>
+-->
 
 				<?php } ?>
 

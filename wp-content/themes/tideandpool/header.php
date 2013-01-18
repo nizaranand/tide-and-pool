@@ -122,6 +122,7 @@ wp_head();
 
 <section class="content" role="main">
 
+<?php if (is_front_page())  { ?>
 <div class="announcement">
 	<p>
 		<span class="font-18pt">Free shipping</span>
@@ -133,3 +134,4 @@ wp_head();
 		</span>
 	</p>
 </div><!-- END announcement -->
+<?php  } ?>

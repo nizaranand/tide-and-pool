@@ -19,6 +19,22 @@
 	 do_action( 'woocommerce_before_single_product' );
 ?>
 
+<!-- product nav -->
+	<article class="product-nav">
+		<!-- left -->
+		<div class="left">
+			<a class="product-back" href="<?php echo home_url( '/' ); ?>our-towels/">Back to our Towels</a>
+		</div>
+		<!-- end left -->
+		
+		<!-- right -->
+		<div class="right">
+			<span class="back"><?php previous_post_link('%link', 'Previous'); ?></span><span class="next"><?php next_post_link('%link', 'Next'); ?></span>
+		</div>
+		<!-- end right -->
+	</article>
+	<!-- end product nav -->
+<div class="clear"></div>
 <section id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- left -->
 	<div class="left">
@@ -80,8 +96,9 @@
 				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 				<a class="addthis_button_tweet"></a>
 				<a class="addthis_button_pinterest_pinit"></a>
-				<a class="addthis_counter addthis_pill_style"></a>
-				<a class="addthis_button_email"></a>
+				<a class="addthis_button_email">
+					<img src="<?php bloginfo( 'template_url' ); ?>/css/img/addthis-email-btn.png">
+				</a>
 			</div>
 			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50f5ed780ea45f81"></script>

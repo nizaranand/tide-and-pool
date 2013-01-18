@@ -12,19 +12,26 @@ global $woocommerce;
 
 <?php $woocommerce->show_messages(); ?>
 
+<!-- header -->
+<h1>Shopping Bag</h1>
+<!-- end header -->
+
 <form action="<?php echo esc_url( $woocommerce->cart->get_cart_url() ); ?>" method="post">
 <?php do_action( 'woocommerce_before_cart_table' ); ?>
 <table class="shop_table cart" cellspacing="0">
 	<thead>
 		<tr>
-			<th class="product-remove">&nbsp;</th>
-			<th class="product-thumbnail">&nbsp;</th>
-			<th class="product-name"><?php _e('Product', 'woocommerce'); ?></th>
+			<!-- <th class="product-remove">&nbsp;</th> -->
+			<th class="product-thumbnail"><?php _e('Items', 'woocommerce'); ?></th>
+			<th class="product-name"></th>
 			<th class="product-price"><?php _e('Price', 'woocommerce'); ?></th>
 			<th class="product-quantity"><?php _e('Quantity', 'woocommerce'); ?></th>
 			<th class="product-subtotal"><?php _e('Total', 'woocommerce'); ?></th>
 		</tr>
 	</thead>
+	<tr>
+		<td>&nbsp;</td>
+	</tr>
 	<tbody>
 		<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
@@ -36,11 +43,13 @@ global $woocommerce;
 					?>
 					<tr class = "<?php echo esc_attr( apply_filters('woocommerce_cart_table_item_class', 'cart_table_item', $values, $cart_item_key ) ); ?>">
 						<!-- Remove from cart link -->
-						<td class="product-remove">
+						<!--
+<td class="product-remove">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s">&times;</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __('Remove this item', 'woocommerce') ), $cart_item_key );
 							?>
 						</td>
+-->
 
 						<!-- The thumbnail -->
 						<td class="product-thumbnail">
@@ -100,6 +109,9 @@ global $woocommerce;
 							?>
 						</td>
 					</tr>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
 					<?php
 				}
 			}
@@ -108,9 +120,13 @@ global $woocommerce;
 		do_action( 'woocommerce_cart_contents' );
 		?>
 		<tr>
+			<td class="border" colspan="5">&nbsp;</td>
+		</tr>
+		<tr>
 			<td colspan="6" class="actions">
 
-				<?php if ( get_option( 'woocommerce_enable_coupons' ) == 'yes' && get_option( 'woocommerce_enable_coupon_form_on_cart' ) == 'yes') { ?>
+				<!--
+<?php if ( get_option( 'woocommerce_enable_coupons' ) == 'yes' && get_option( 'woocommerce_enable_coupon_form_on_cart' ) == 'yes') { ?>
 					<div class="coupon">
 
 						<label for="coupon_code"><?php _e('Coupon', 'woocommerce'); ?>:</label> <input name="coupon_code" class="input-text" id="coupon_code" value="" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e('Apply Coupon', 'woocommerce'); ?>" />
@@ -119,8 +135,7 @@ global $woocommerce;
 
 					</div>
 				<?php } ?>
-
-				<input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Proceed to Checkout &rarr;', 'woocommerce'); ?>" />
+ <input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> --> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Proceed to Checkout &rarr;', 'woocommerce'); ?>" />
 
 				<?php do_action('woocommerce_proceed_to_checkout'); ?>
 
@@ -139,6 +154,6 @@ global $woocommerce;
 
 	<?php woocommerce_cart_totals(); ?>
 
-	<?php woocommerce_shipping_calculator(); ?>
+	<!-- <?php woocommerce_shipping_calculator(); ?> -->
 
 </div>

@@ -96,8 +96,9 @@ $container.imagesLoaded(function() {
 	$container.masonry({
 		itemSelector: '.thumb',
 		isAnimated: true,
-		isFitWidth: false,
-		columnWidth:  1
+		isFitWidth: true,
+		columnWidth:  166
+		/* gutterWidth: 2 */
 	});
 	 
 	$(window).resize(function() {
@@ -119,14 +120,12 @@ $container.imagesLoaded(function() {
       
 	  var $this = $(this);
     $this.stop(true,true).animate({
-        //'height': $this.height() * 1.2,
-        'width' : $this.width() * 1.5
+        'width' : $this.width() * 1.6
     });
     },function() {
        var $this = $(this);
        $this.stop(true,true).animate({
-        //'height': $this.height() / 1.2,
-        'width' : $this.width() / 1.5
+        'width' : $this.width() / 1.6
     });
 });
 
