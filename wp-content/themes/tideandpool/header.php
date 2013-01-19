@@ -113,6 +113,7 @@ wp_head();
 <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 	<div class="clear"></div>
 	
+	<?php if ( ! is_page('shopping-bag')) { ?>
 	<div class="shopping-bag">
 		<div class="my-shopping-bag">
 			<?php global $woocommerce; ?>
@@ -170,6 +171,7 @@ wp_head();
 		<!-- end dropdown -->
 		<?php endif; ?>			
 	</div> <!-- // .shopping-bag -->
+	<?php } ?>
 </div>
 </nav><!-- #access -->
 	

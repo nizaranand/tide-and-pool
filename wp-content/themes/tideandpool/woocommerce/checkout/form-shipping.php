@@ -30,7 +30,7 @@ global $woocommerce;
 		<label for="shiptobilling-checkbox" class="checkbox"><?php _e('Ship to billing address?', 'woocommerce'); ?></label>
 	</p>
 
-	<h3><?php _e('Shipping Address', 'woocommerce'); ?></h3>
+	<h3>Enter a Shipping Address<p>All fields except those indicated are required.</p></h3>
 
 	<div class="shipping_address">
 

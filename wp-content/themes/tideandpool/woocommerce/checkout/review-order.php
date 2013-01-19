@@ -11,8 +11,14 @@ global $woocommerce;
 
 $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 ?>
-<div id="order_review">
+<!-- order review -->
+<article id="order-review" class="checkout-panel">
+	<!-- header -->
+	<h2 class="checkout">5. Order Review</h2>
+	<!-- end header -->
 
+	<!-- content -->
+	<div class="content">
 	<table class="shop_table">
 		<thead>
 			<tr>
@@ -229,8 +235,19 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			?>
 		</tbody>
 	</table>
+	</div>
+	<!-- end content -->
+</article>
+<!-- end order review -->
 
-	<div id="payment">
+<!-- payment method -->
+<article id="payment-method" class="checkout-panel">
+	<!-- header -->
+	<h2 class="checkout">6. Payment Method</h2>
+	<!-- end header -->
+	
+	<!-- content -->
+	<div class="content">
 		<?php if ($woocommerce->cart->needs_payment()) : ?>
 		<ul class="payment_methods methods">
 			<?php
@@ -274,8 +291,13 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			?>
 		</ul>
 		<?php endif; ?>
+	</div>
+	<!-- end content -->
+</article>
+<!-- end payment method -->
 
-		<div class="form-row place-order">
+<!-- place order -->
+<div class="form-row place-order">
 
 			<noscript><?php _e('Since your browser does not support JavaScript, or it is disabled, please ensure you click the <em>Update Totals</em> button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce'); ?><br/><input type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php _e('Update totals', 'woocommerce'); ?>" /></noscript>
 
@@ -301,3 +323,4 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 	</div>
 
 </div>
+<!-- end place order -->

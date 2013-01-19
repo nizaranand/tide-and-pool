@@ -103,6 +103,14 @@ body {
 	font-size: 13px;
 	font-family: arial, sans-serif;
 }
+h1,h2,h3,h4,h5,h6 {
+	color: #1093AB;
+    font-family: 'ProximaNovaLight';
+    font-size: 1.5em;
+    margin: 55px 0 33px;
+    text-transform: uppercase;
+    margin:0 0 10px 0;
+}
 .font-18pt {
 	font-size: @font-18pt;
 }
@@ -219,7 +227,7 @@ input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
 header .inner {
 	/* border: solid 1px @dark-blue; */
 	margin: 0 auto;
-	max-width: 970px;
+	max-width: 950px;
 	margin: 0 auto;
 	position: relative
 }
@@ -486,11 +494,29 @@ body.fixed {
 	}
 	
 }
+.woocommerce_info {
+	height: 48px;
+	line-height: 40px;
+	position: relative;
+	color:#4d004e;
+	text-align: center;
+	background: url('css/img/global/anouncement-bg.png') no-repeat center top;
+	/* z-index: 200; */
+	font-family: 'ProximaNovaRegular';
+	a {
+		font-family: 'ProximaNovaBold';
+		text-transform: uppercase;
+		margin:0 5px 0 0;
+	}
+	
+}
 article.body-content {
 	width:980px;
 	position: relative;
 	margin:0 auto;
 	font-family: 'ProximaNovaLight';
+	padding:0 0 0 0;
+	overflow: auto;
 }
 article.product-nav {
 	width:950px;
@@ -563,6 +589,10 @@ width:auto !important;
 					top:50%;
 					margin:-50px 0 0 0;
 					font-family: 'ProximaNovaLight';
+					h3 {
+						color:white;
+						font-size: 1.2em;
+					}
 				}
 			}
 		}
@@ -923,6 +953,85 @@ article.body-content {
 				letter-spacing: 1px;
 			}
 			
+		}
+	}
+}
+form.checkout {
+	width:80%;
+	float:left;
+	margin:20px 0 0 0;
+	h1 {
+		margin:0 0 12px 0;
+	}
+	article.checkout-panel {
+		margin:0 0 20px 0;
+		h2.checkout {
+			width:100%;
+			height: 40px;
+			line-height: 40px;
+			text-indent: 20px;
+			font-family: 'ProximaNovaBold';
+			font-size: 1em;
+			display: block;
+			color:#999;
+			background: #EEE;
+			border-top:2px solid #AAA;
+			span.edit {
+				float:right;
+				color: #1093AB;
+				padding:0 10px 0 0;
+			}
+		}
+		h3 {
+			font-size: 0.8em;
+			text-transform: none;
+			color:#999;
+		}
+		.content {
+			margin:0;
+			padding: 0 20px;
+			table {
+				width:97%;
+			}
+		}	
+	}
+}
+.checkout-progress {
+	width:175px;
+	float:right;
+	margin:20px 0 0 0;
+	h2 {
+		background: #1093AB;
+		color:white;
+		width:100%;
+		height: 30px;
+		margin:0 0 5px 0;
+		display: block;
+		line-height: 30px;
+		font-family: 'futura_condensedbold';
+		text-transform: uppercase;
+		font-size: 1em;
+		text-align: center;
+	}
+	.progress-panels {
+		border:3px solid #1093AB;
+		article {
+			height: 40px;
+			line-height: 40px;
+			background: #fff;
+			color:#666;
+			text-transform: uppercase;
+			font-family: 'ProximaNovaBold';
+			font-size: 1em;
+			text-align: center;
+			border-bottom: 1px solid #EEE;
+			cursor: pointer
+		}
+		article:last-child {
+			border-bottom: none;
+		}
+		article:hover {
+			background: #dbe921;
 		}
 	}
 }
