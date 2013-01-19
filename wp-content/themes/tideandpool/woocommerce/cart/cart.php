@@ -173,9 +173,10 @@ global $woocommerce;
 	<div class="cart-btns">
 		<a class="continue-shopping" href="#">Continue Shopping</a>
 		<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout', 'woocommerce'); ?>" />
+		<?php $woocommerce->nonce_field('cart') ?>
 	</div>
 	<!-- end cart btns -->
-	<?php $woocommerce->nonce_field('cart') ?>
+	
 </div>
 <!-- end cart collaterals -->							
 				<!--
@@ -189,7 +190,7 @@ global $woocommerce;
 					</div>
 				<?php } ?>
  <input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> --> 
-
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
 <?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
