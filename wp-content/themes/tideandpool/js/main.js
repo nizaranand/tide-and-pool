@@ -8,6 +8,17 @@
 
 
 $(function() {
+
+	// fixed nav on scroll
+	$(window).scroll(function (e) { 
+					
+		if ( $(this).scrollTop() > 117 && !$('body').hasClass('fixed')) { 
+			$('body').addClass('fixed');
+		} else if ( $(this).scrollTop() <= 117 && $('body').hasClass('fixed')) {
+			$('body').removeClass('fixed');
+		}
+		
+	});
 	
 	// shopping bag toggle
 	$(".shopping-bag").hover(function(){

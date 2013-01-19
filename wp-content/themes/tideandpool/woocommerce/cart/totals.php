@@ -22,8 +22,12 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<tbody>
 
 				<tr class="cart-subtotal">
-					<th><h2><?php _e('Sub-total', 'woocommerce'); ?></h2></th>
-					<td><strong><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong></td>
+					<th width="178" align="right"><h2><?php _e('Sub-total', 'woocommerce'); ?></h2></th>
+					<td align="right"><strong><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong></td>
+				</tr>
+				
+				<tr>
+					<td>&nbsp;</td>
 				</tr>
 
 				<?php if ($woocommerce->cart->get_discounts_before_tax()) : ?>
@@ -128,7 +132,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 								if ($woocommerce->cart->tax->is_compound( $key )) : $has_compound_tax = true; continue; endif;
 								?>
 								<tr class="tax-rate tax-rate-<?php echo $key; ?>">
-									<th>
+									<th width="178" align="right">
 										<?php
 										if ( get_option( 'woocommerce_display_totals_excluding_tax' ) == 'no' && get_option( 'woocommerce_prices_include_tax' ) == 'yes' ) {
 											_e( 'incl.&nbsp;', 'woocommerce' );
@@ -136,7 +140,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 										echo $woocommerce->cart->tax->get_rate_label( $key );
 										?>
 									</th>
-									<td><?php echo $tax; ?></td>
+									<td align="right"><?php echo $tax; ?></td>
 								</tr>
 								<?php
 
@@ -201,8 +205,8 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				<?php endif; ?>
 
 				<tr class="total">
-					<th><strong><?php _e('Order Total', 'woocommerce'); ?></strong></th>
-					<td><strong><?php
+					<th width="178" align="right"><strong>Total</strong><br>Before shipping, discounts and tax.</th>
+					<td align="right" class="price"><?php
 
 						if (get_option('woocommerce_display_cart_taxes')=='no' && !$woocommerce->cart->prices_include_tax) :
 							echo $woocommerce->cart->get_total_ex_tax();
@@ -210,7 +214,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 							echo $woocommerce->cart->get_total();
 						endif;
 
-					?></strong></td>
+					?></td>
 				</tr>
 
 			</tbody>

@@ -8,8 +8,9 @@
  * @package 	WooCommerce/Templates
  * @version     1.6.4
  */
-
+ 
 get_header('shop'); ?>
+
 
 	<?php
 		/**

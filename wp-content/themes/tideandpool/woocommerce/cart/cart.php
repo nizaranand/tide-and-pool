@@ -54,7 +54,7 @@ global $woocommerce;
 						<!-- The thumbnail -->
 						<td class="product-thumbnail">
 							<?php
-								$thumbnail = apply_filters( 'woocommerce_in_cart_product_thumbnail', $_product->get_image(), $values, $cart_item_key );
+								$thumbnail = apply_filters( 'woocommerce_in_cart_product_thumbnail', $_product->get_image('zoom-thumb'), $values, $cart_item_key );
 								printf('<a href="%s">%s</a>', esc_url( get_permalink( apply_filters('woocommerce_in_cart_product_id', $values['product_id'] ) ) ), $thumbnail );
 							?>
 						</td>
@@ -78,11 +78,21 @@ global $woocommerce;
 
 						<!-- Product price -->
 						<td class="product-price">
+							
+							<div class="sale-price">
+							<?php $product_price = get_option('woocommerce_display_cart_prices_excluding_tax') == 'yes' || $woocommerce->customer->is_vat_exempt() ? $_product->get_price_excluding_tax() : $_product->get_price();
+
+								echo woocommerce_price( $_product->sale_price );
+							?>
+							</div>
+							<div class="regular-price">
 							<?php
 								$product_price = get_option('woocommerce_display_cart_prices_excluding_tax') == 'yes' || $woocommerce->customer->is_vat_exempt() ? $_product->get_price_excluding_tax() : $_product->get_price();
 
-								echo apply_filters('woocommerce_cart_item_price_html', woocommerce_price( $product_price ), $values, $cart_item_key );
-							?>
+								echo woocommerce_price( $_product->regular_price );
+								
+							?>	
+							</div>
 						</td>
 
 						<!-- Quantity inputs -->
@@ -95,12 +105,19 @@ global $woocommerce;
 									$data_max = ( $_product->backorders_allowed() ) ? '' : $_product->get_stock_quantity();
 									$data_max = apply_filters( 'woocommerce_cart_item_data_max', $data_max, $_product );
 
-									$product_quantity = sprintf( '<div class="quantity"><input name="cart[%s][qty]" data-min="%s" data-max="%s" value="%s" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $data_min, $data_max, esc_attr( $values['quantity'] ) );
+									$product_quantity = sprintf( '<div class="amount"><input name="cart[%s][qty]" data-min="%s" data-max="%s" value="%s" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>', $cart_item_key, $data_min, $data_max, esc_attr( $values['quantity'] ) );
 								}
 
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
 							?>
+							<div class="update-remove">
+								<input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" />
+								<div class="remove">
+									<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s">Remove</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __('Remove this item', 'woocommerce') ), $cart_item_key ); ?>
+								</div>
+							</div>
 						</td>
+					
 
 						<!-- Product subtotal -->
 						<td class="product-subtotal">
@@ -122,9 +139,45 @@ global $woocommerce;
 		<tr>
 			<td class="border" colspan="5">&nbsp;</td>
 		</tr>
-		<tr>
-			<td colspan="6" class="actions">
+	</tbody>
+</table>
+</form>
 
+<!-- cross sells -->
+<div class="cross-sells">
+	<div class="left">
+		<h2>Dont Love It?</h2>
+		<p>No problem. Returns are easy and FREE for 30 days!</p>
+		<a class="cross-sell-btn" href="<?php echo home_url( '/' ); ?>returns-information/">Returns Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
+	</div>
+	
+	<div class="right">
+		<h2>Express Shipping</h2>
+		<p>Need it fast? Select our 2-day Shipping.  Find out more about shipping rates and times.</p>
+		<a class="cross-sell-btn" href="<?php echo home_url( '/' ); ?>express-shipping/">Shipping Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
+	</div>
+</div>
+<!-- end cross sells -->
+
+<!-- cart collaterals -->
+<div class="cart-collaterals">
+	<!-- totals -->
+	<div class="totals">
+		<?php do_action('woocommerce_cart_collaterals'); ?>
+		<?php woocommerce_cart_totals(); ?>
+		<!-- <?php woocommerce_shipping_calculator(); ?> -->
+	</div>
+	<!-- end totals -->
+	
+	<!-- cart btns -->
+	<div class="cart-btns">
+		<a class="continue-shopping" href="#">Continue Shopping</a>
+		<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout', 'woocommerce'); ?>" />
+	</div>
+	<!-- end cart btns -->
+	<?php $woocommerce->nonce_field('cart') ?>
+</div>
+<!-- end cart collaterals -->							
 				<!--
 <?php if ( get_option( 'woocommerce_enable_coupons' ) == 'yes' && get_option( 'woocommerce_enable_coupon_form_on_cart' ) == 'yes') { ?>
 					<div class="coupon">
@@ -135,25 +188,8 @@ global $woocommerce;
 
 					</div>
 				<?php } ?>
- <input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> --> <input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Proceed to Checkout &rarr;', 'woocommerce'); ?>" />
+ <input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> --> 
 
-				<?php do_action('woocommerce_proceed_to_checkout'); ?>
-
-				<?php $woocommerce->nonce_field('cart') ?>
-			</td>
-		</tr>
-
-		<?php do_action( 'woocommerce_after_cart_contents' ); ?>
-	</tbody>
-</table>
+<?php do_action( 'woocommerce_after_cart_contents' ); ?>
+	
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
-</form>
-<div class="cart-collaterals">
-
-	<?php do_action('woocommerce_cart_collaterals'); ?>
-
-	<?php woocommerce_cart_totals(); ?>
-
-	<!-- <?php woocommerce_shipping_calculator(); ?> -->
-
-</div>
