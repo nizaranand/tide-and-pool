@@ -34,7 +34,7 @@
 
 .rsDefault .rsArrow {
 	height: 100%;
-	width: 44px;
+	width: 57px;
 	position: absolute;
 	display: block;
 	cursor: pointer;
@@ -49,14 +49,14 @@
 .rsDefault.rsVer .rsArrowRight { bottom: 0;  left: 0; }
 
 .rsDefault.rsHor .rsArrowLeft { left: 0; top: 0; }
-.rsDefault.rsHor .rsArrowRight { right: 60px; top:0; }
+.rsDefault.rsHor .rsArrowRight { right: 0px; top:0; }
 
 .rsDefault .rsArrowIcn {		
-	width: 50px;
-	height: 85px;
+	width: 57px;
+	height: 101px;
 	top: 50%;
-	left: 50%;
-	margin-top:-41.5px;	
+	left: 0;
+	margin-top:-50.5px;	
 	margin-left: 0px;
 	/* border:1px dotted red; */
 	position: absolute;	
@@ -73,8 +73,8 @@ background-color: rgba(0,0,0,0.75);
 	/* background-color: rgba(0,0,0,0.9); */
 }
 
-.rsDefault.rsHor .rsArrowLeft .rsArrowIcn { background-position: -40px -37px; }
-.rsDefault.rsHor .rsArrowRight .rsArrowIcn { background-position: -44px -124px; }
+.rsDefault.rsHor .rsArrowLeft .rsArrowIcn { background-position: 0px 0px; }
+.rsDefault.rsHor .rsArrowRight .rsArrowIcn { background-position: 0px -101px; }
 
 .rsDefault.rsVer .rsArrowLeft .rsArrowIcn { background-position: -96px -32px; }
 .rsDefault.rsVer .rsArrowRight .rsArrowIcn { background-position: -96px -64px; }

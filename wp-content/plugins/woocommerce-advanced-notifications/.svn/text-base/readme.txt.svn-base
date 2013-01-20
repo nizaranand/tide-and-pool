@@ -1,0 +1,63 @@
+*** This readme must accompany the Plugin at all times and not to be altered or changed in any way. ***
+
+=== Store Credit for WooCommerce ===
+
+Contributors: Luke Carbis, Michael Visser
+Tags: woocommerce, woo commerce, e-commerce, shop, cart, ecommerce, store credit
+Requires at least: 2.9.2
+Tested up to: 3.2.1
+Stable tag: 1.1.1
+
+== Description ==
+
+Create store credit style coupons in your WooCommerce store.
+
+See http://www.visser.com.au/wp-ecommerce/plugins/store-credit/
+
+== Installation ==
+
+1. Upload the folder 'woocommerce-store-credit' to the '/wp-content/plugins/' directory
+
+2. Activate 'WooCommerce - Store Credit' through the 'Plugins' menu in WordPress
+
+== Usage ==
+
+==== In WooCommerce ====
+
+1. Open WooCommerce > Coupons.
+
+2. Press the 'Add Coupon' button.
+
+3. Type a name for the coupon, and choose 'Store Credit' from the Discount Type drop down menu.
+
+4. Publish the coupon.
+
+5. Add an item to your cart, and use the coupon code to test it out.
+
+That's it!
+
+== Support ==
+
+If you have any problems, questions or suggestions please join the members discussion on my WooCommerce dedicated forum.
+
+http://www.visser.com.au/woocommerce/forums/
+
+== Changelog ==
+
+= 1.2.1 =
+* Added 'No credit remaining' error message
+
+= 1.2 =
+* Code rewrite to support new hooks in WooCommerce 1.0.3
+* Added check for supported version of WooCommerce
+
+= 1.1 =
+* Added Plugin news Dashboard widget
+* Refactored code to match common Plugin framework
+
+= 1.0 =
+* First working release of the Plugin
+
+== Disclaimer ==
+
+It is not responsible for any harm or wrong doing this Plugin may cause. Users are fully responsible for their own use. This Plugin is to be used WITHOUT warranty.

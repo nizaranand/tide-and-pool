@@ -34,14 +34,18 @@ global $woocommerce;
 
 	<?php else : ?>
 
-		<p><?php _e('Thank you. Your order has been received.', 'woocommerce'); ?></p>
+		<h1><?php _e('Your order has been received.', 'woocommerce'); ?></h1>
 
 		<ul class="order_details">
+			<li><strong>Thank you for your purchase!</strong></li>
 			<li class="order">
 				<?php _e('Order:', 'woocommerce'); ?>
 				<strong><?php echo $order->get_order_number(); ?></strong>
 			</li>
-			<li class="date">
+			<li>You will receive a confirmation email with details of your order shortly.</li>
+			<li><a class="continue-shopping" href="<?php echo home_url( '/' ); ?>our-towels/">Continue Shopping</a></li>
+			<!--
+<li class="date">
 				<?php _e('Date:', 'woocommerce'); ?>
 				<strong><?php echo date_i18n(get_option('date_format'), strtotime($order->order_date)); ?></strong>
 			</li>
@@ -56,14 +60,20 @@ global $woocommerce;
 					echo $order->payment_method_title;
 				?></strong>
 			</li>
+-->
 			<?php endif; ?>
 		</ul>
 		<div class="clear"></div>
+		
+		<!-- order confirm img -->
+		<a class="order-confirm-img" href="http://pinterest.com/TideandPool" target="_blank">
+			<img src="<?php bloginfo( 'template_url' ); ?>/css/img/order-confirmation.jpg">
+		</a>
+		<!-- end order confirm img -->
 
 	<?php endif; ?>
 
-	<?php do_action( 'woocommerce_thankyou_' . $order->payment_method, $order->id ); ?>
-	<?php do_action( 'woocommerce_thankyou', $order->id ); ?>
+	
 
 <?php else : ?>
 

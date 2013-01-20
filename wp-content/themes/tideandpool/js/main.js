@@ -21,11 +21,21 @@ $(function() {
 	});
 	
 	// shopping bag toggle
+	/*
+$('.shopping-bag').mouseenter(function() {
+		$('.dropdown').stop(true,true).slideDown(800);
+	});
+	
+	$('.shopping-bag').mouseleave(function() {
+		$('.dropdown').stop(true,true).slideUp(800);
+	});
+*/
+	
 	$(".shopping-bag").hover(function(){
-		$('.dropdown', this).stop(true, true).animate({
+		$('.dropdown').stop(true,true).animate({
 			height:"toggle",
 		    opacity:"toggle"
-		 },500);				  					  
+		 },300);
 	});
 	//append shop bag pointer
 	$('.dropdown').append('<div class="pointer"/></div>');
@@ -57,7 +67,30 @@ $(function() {
  	});
 	
 	// slideshow
-    $('.slideshow').royalSlider({
+    /*
+$('.slideshow').royalSlider({
+    	autoPlay: { enabled: true, pauseOnHover: true },
+    	arrowsNav: true,
+    	transitionSpeed: 500,
+    	delay:3000,
+    	controlNavigation: 'none',
+    	arrowsNavAutoHide: true,
+    	fadeinLoadedSlide: true,
+    	imageScaleMode: 'fill',
+    	imageAlignCenter:true,
+    	imageScalePadding: 0,
+    	loop: false,
+    	loopRewind: false,
+    	slidesOrientation: 'horizontal',
+    	slidesSpacing: 0,
+    	sliderDrag: true,
+    	swipe: true,
+    	keyboardNavEnabled: true,
+    	autoScaleSlider: true
+    });
+    
+*/
+	$('#boutiques-gallery').royalSlider({
     	autoPlay: { enabled: true, pauseOnHover: true },
     	arrowsNav: true,
     	transitionSpeed: 500,
@@ -83,6 +116,18 @@ $(function() {
 		padding:0,
 		type:'image',
 		autoScale:true
+	});
+	
+	//swimclub fancybox
+	$("a.fancybox-inline").fancybox({
+		'width':'779px',
+		'height': '448px',
+		'overlayShow': true,
+		'overlayOpacity': 1,
+		'autoDimensions' : 'false',
+		'autoScale': 'false',
+		'padding': 0,
+		'scrolling': 'no'
 	});
 	
 	// collections isotope

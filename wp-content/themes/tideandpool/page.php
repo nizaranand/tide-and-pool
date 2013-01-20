@@ -136,6 +136,69 @@ get_header(); ?>
 </div>
 <!-- end collection container -->
 
+<?php } elseif (is_page('about')) { ?>
+
+<!-- about -->
+<article id="about" class="body-content">
+	<?php $my_query = new WP_Query('page_id=397&showposts=1'); ?>
+	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<!-- header -->
+	<h1>About</h1>
+	<!-- end header -->
+	
+	<!-- body content -->
+	<div class="body-content" style="background:url('<?php $image = wp_get_attachment_image_src(get_field('about_bg_image'), 'about-img'); ?><?php echo $image[0]; ?>');no-repeat;">
+		<!-- text -->
+		<?php the_field('about_text'); ?>
+		<!-- end text -->
+	</div>
+	<!-- end body content -->
+	
+	<!-- instagram link -->
+	<a class="instagram" href="http://pinterest.com/TideandPool">Follow us @tideandpool Instagram</a>
+	<!-- end instagram link -->
+	
+	<!-- instagram img -->
+	<a class="instagram-img" href="http://pinterest.com/TideandPool">
+		<?php $image = wp_get_attachment_image_src(get_field('instagram_image'), 'imstagram-img'); ?>
+		<img src="<?php echo $image[0]; ?>" alt="" />
+	</a>
+	<!-- end instagram img -->
+	<?php endwhile; ?>
+</article>
+<!-- end about -->
+
+<?php } elseif (is_page('boutiques')) { ?>
+
+<!-- boutiques -->
+<article id="boutiques" class="body-content">
+	<?php $my_query = new WP_Query('page_id=397&showposts=1'); ?>
+	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<!-- header -->
+	<h1>Boutiques</h1>
+	<!-- end header -->
+	
+	<!-- left -->
+	<div class="left">
+		<!-- boutiques scroll -->
+		<div class="boutiques-scroll">
+		
+		</div>
+		<!-- end boutiques scroll -->	
+	</div>
+	<!-- end left -->
+	
+	<!-- right -->
+	<div class="right">
+		<!-- boutique view -->
+		<div class="boutique-view">
+			<!-- content loaded via AJAX -->
+		</div>
+		<!-- end boutique view -->	
+	</div>
+	<!-- end right -->
+</article>
+<!-- end boutiques -->
 <?php } else { ?>
 
 <!-- body content -->

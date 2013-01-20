@@ -31,12 +31,16 @@ wp_title( '|', true, 'right' );
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!-- css plugin files -->
+<?php if ( ! in_category('boutiques')) { ?>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/touchcarousel.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/black-and-white-skin/black-and-white-skin.css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.css" />
+<?php } ?>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/royalslider.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/default/rs-default.css" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.css" />
+
+<?php if ( ! in_category('boutiques')) { ?>
 <?php
 /* We add some JavaScript to pages with the comment form
 * to support sites with threaded comments (when in use).
@@ -51,20 +55,21 @@ wp_enqueue_script( 'comment-reply' );
 */
 wp_head();
 ?>
-
+<?php } ?>
 
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.min-1.8.3.js"></script>
 
 <!-- plugin files for dev -->
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/jquery.royalslider.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/jquery.touchcarousel-1.1.min.js"></script>
+<?php if ( ! in_category('boutiques')) { ?>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/galleria-1.2.9.min.js"></script> 
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.min.js"></script>
 <!-- <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.isotope.min.js"></script> -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.masonry.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/respond.min.js"></script>
-
+<?php } ?>
 <!-- main site files for production -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
@@ -83,6 +88,7 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
+<?php if ( ! in_category('boutiques')) { ?>
 <header role="banner" class="main-header">
 
 <div class="inner">
@@ -101,6 +107,9 @@ wp_head();
 	
 	<h2 class="tag-line"><?php bloginfo( 'description' ); ?></h2>
 	
+	<!-- swim club signup link -->
+	<a class="fancybox-inline swimclub-signup" href="#swimclub-popup">Swim Club</a>
+	
 	<div class="clear"></div>
 	
 </div><!-- .inner -->
@@ -114,6 +123,7 @@ wp_head();
 	<div class="clear"></div>
 	
 	<?php if ( ! is_page('shopping-bag')) { ?>
+	<!-- shopping bag widget/dropdown -->
 	<div class="shopping-bag">
 		<div class="my-shopping-bag">
 			<?php global $woocommerce; ?>
@@ -195,5 +205,8 @@ wp_head();
 			</span>
 		</span>
 	</p>
+	
 </div><!-- END announcement -->
 <?php  } ?>
+
+<?php } ?>

@@ -10,7 +10,8 @@
 global $woocommerce;
 ?>
 
-<?php $woocommerce->show_messages(); ?>
+
+<div class="site-messages"><?php $woocommerce->show_messages(); ?></div>
 
 <!-- header -->
 <h1>Shopping Bag</h1>
@@ -141,7 +142,8 @@ global $woocommerce;
 		</tr>
 	</tbody>
 </table>
-</form>
+<?php do_action( 'woocommerce_after_cart_table' ); ?>
+
 
 <!-- cross sells -->
 <div class="cross-sells">
@@ -190,7 +192,7 @@ global $woocommerce;
 					</div>
 				<?php } ?>
  <input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" /> --> 
-<?php do_action( 'woocommerce_after_cart_table' ); ?>
+</form>
 <?php do_action( 'woocommerce_after_cart_contents' ); ?>
 	
 

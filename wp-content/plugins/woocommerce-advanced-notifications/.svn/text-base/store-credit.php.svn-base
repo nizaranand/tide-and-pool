@@ -1,0 +1,118 @@
+<?php
+/*
+Plugin Name: WooCommerce - Store Credit
+Plugin URI: http://www.visser.com.au/woocommerce/plugins/store-credit/
+Description: Create store credit style coupons in your WooCommerce store.
+Version: 1.2
+Author: Visser Labs
+Author URI: http://visser.com.au
+Contributor: Luke Carbis
+Contributor URI: http://lukecarbis.com.au
+License: GPL2
+*/
+
+load_plugin_textdomain( 'woo_sc', null, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+
+$woo_sc = array(
+	'filename' => basename( __FILE__ ),
+	'dirname' => basename( dirname( __FILE__ ) ),
+	'abspath' => dirname( __FILE__ ),
+	'relpath' => basename( dirname( __FILE__ ) ) . '/' . basename( __FILE__ )
+);
+
+$woo_sc['prefix'] = 'woo_sc';
+$woo_sc['name'] = __( 'Store Credit for WooCommerce', 'woo_sc' );
+$woo_sc['menu'] = __( 'Store Credit', 'woo_sc' );
+
+function init_store_credit() {
+
+	include_once( 'includes/common.php' );
+
+	/*** Add Store Credit discount type to the New Coupon page ***/
+	function store_credit_add_discount_type() {
+
+		$discount_types = array(
+			'fixed_cart'   => __('Cart Discount', 'woothemes'),
+			'percent'     => __('Cart % Discount', 'woothemes'),
+			'fixed_product'  => __('Product Discount', 'woothemes'),
+			'store_credit'  => __('Store Credit', 'woo_sc')
+		);
+		return $discount_types;
+
+	}
+	add_filter( 'woocommerce_coupon_discount_types', 'store_credit_add_discount_type' );
+
+
+	/*** Check for nothing left on store credit coupon ***/
+	function store_credit_is_valid($valid, $coupon) {
+	
+		global $woocommerce;
+		
+		if ( $coupon->type == 'store_credit' && $coupon->amount <= 0 ) :
+			$woocommerce->add_error( __('There is no credit remaining on this coupon.', 'woo_sc') );
+			return false;
+		endif;
+		
+		return true;
+
+	}
+	add_filter( 'woocommerce_coupon_is_valid', 'store_credit_is_valid', 10, 2 );
+
+	/*** Check for supported version of WooCommerce ***/
+	function store_credit_old_version_notice(){
+		if(preg_match('/post_type=shop_coupon/',$_SERVER['REQUEST_URI']) && !has_filter('woocommerce_coupon_discount_types')) :
+			echo '<div class="error"><p>'
+				.__( 'WooCommerce - Store Credit is installed, but your version of WooCommerce is out of date!', 'woo_sc' )
+				.' <a href="'.admin_url( 'plugins.php').'">'
+				.__( 'Update Now', 'woo_sc' )
+				.'</a></p></div>';
+		endif;
+	}
+	add_action('admin_notices', 'store_credit_old_version_notice');
+
+
+	/*** Adjust coupon amount remaining when it's used once ***/
+	function store_credit_update_remaining() {
+
+		global $woocommerce;
+
+		if( $woocommerce->cart->applied_coupons )
+			foreach( $woocommerce->cart->applied_coupons as $code ) :
+				$coupon = &new woocommerce_coupon( $code );
+				if($coupon->type == 'store_credit' ):
+					$credit_remaining =  max(0, ($coupon->amount - $woocommerce->cart->credit_used) );
+					echo $credit_remaining;
+					update_post_meta( $coupon->id, 'coupon_amount',$credit_remaining );
+				endif;
+			endforeach;
+
+	}
+	add_action( 'woocommerce_new_order', 'store_credit_update_remaining', 9 );
+
+
+	/*** Add store credit to total calculation at checkout ***/
+	function store_credit_calculate_total() {
+		global $woocommerce;
+
+		$woocommerce->cart->credit_used = 0;
+
+		if ($woocommerce->cart->applied_coupons) foreach ($woocommerce->cart->applied_coupons as $code) :
+			$coupon = &new woocommerce_coupon( $code );
+			if ($coupon->is_valid()) :
+
+				if ($coupon->type=='store_credit') : 
+					if( $coupon->amount > $woocommerce->cart->subtotal ) $coupon->amount = $woocommerce->cart->subtotal;
+					$woocommerce->cart->discount_total = $woocommerce->cart->discount_total + $coupon->amount;
+					$woocommerce->cart->credit_used = $woocommerce->cart->credit_used + $coupon->amount;
+				endif;
+
+			endif;
+		endforeach;
+
+	}
+	add_action( 'woocommerce_calculate_totals', 'store_credit_calculate_total' );
+
+}
+add_action( 'plugins_loaded', 'init_store_credit', 0 );
+
+?>
