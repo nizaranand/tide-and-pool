@@ -197,6 +197,7 @@ get_header(); ?>
 		<!-- end boutique view -->	
 	</div>
 	<!-- end right -->
+	<?php endwhile; ?>
 </article>
 <!-- end boutiques -->
 <?php } else { ?>
