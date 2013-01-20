@@ -407,7 +407,7 @@ border:none !important;
   /* position: fixed !important; */
 
   top: 162px !important;
-  width: 421px !important;
+  width: 418px !important;
   height: 566px !important;
   overflow: hidden !important;
   display: block !important;
@@ -1080,6 +1080,7 @@ section.product a.view-larger {
 }
 section.product .left {
   position: relative;
+  width: 552px;
   z-index: 200;
 }
 section.product .left section.thumbnails {
@@ -1113,7 +1114,7 @@ section.product .left section.thumbnails article a:hover {
 }
 section.product .left section.zoom .main-img a {
   float: left;
-  width: 467px;
+  width: 465px;
   height: 566px;
   /* border:1px solid red; */
 
