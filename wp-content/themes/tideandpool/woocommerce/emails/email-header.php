@@ -98,8 +98,6 @@
 			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
 
 			#templateHeader{
-				background-color: <?php echo get_option('woocommerce_email_base_color'); ?>;
-				background: -webkit-linear-gradient(<?php echo woocommerce_hex_lighter(get_option('woocommerce_email_base_color'), 20); ?>, <?php echo get_option('woocommerce_email_base_color'); ?>);
 				border-bottom:0;
 				-webkit-border-top-left-radius:6px;
 				-webkit-border-top-right-radius:6px;
@@ -119,7 +117,6 @@
 			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY /\/\/\/\/\/\/\/\/\/\ */
 
 			#templateContainer, .bodyContent{
-				background-color:<?php echo get_option('woocommerce_email_body_background_color'); ?>;
 				-webkit-border-radius:6px;
 			}
 
@@ -194,11 +191,11 @@
                 		?>
 
                         <!-- // End Template Preheader \\ -->
-                    	<table border="0" cellpadding="0" cellspacing="0" width="653" id="templateContainer" style="-webkit-box-shadow:0 0 0 3px rgba(0,0,0,0.025); -webkit-border-radius:6px;background-color:<?php echo get_option('woocommerce_email_body_background_color'); ?>;">
+                    	<table border="0" cellpadding="0" cellspacing="0" width="653" id="templateContainer">
                         	<tr>
                             	<td align="center" valign="top">
                                     <!-- // Begin Template Header \\ -->
-                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="background-color:<?php echo get_option('woocommerce_email_base_color'); ?>; -webkit-border-top-left-radius:6px; -webkit-border-top-right-radius:6px; color:<?php echo woocommerce_light_or_dark(get_option('woocommerce_email_base_color'), '#202020', '#ffffff'); ?>; font-family:Arial; font-weight:bold; line-height:100%; vertical-align:middle;">
+                                	<table border="0" cellpadding="0" cellspacing="0" width="653" id="templateHeader">
 
                                         <tr>
                                             <td class="headerContent" style="padding:24px; ">
@@ -255,15 +252,18 @@
                                     <!-- // End Template Header \\ -->
                                 </td>
                             </tr>
+                            <tr>
+                            	<td style="height:50px;">&nbsp;</td>
+                            </tr>
                         	<tr>
                             	<td align="center" valign="top">
                                     <!-- // Begin Template Body \\ -->
-                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                                	<table border="0" cellpadding="0" cellspacing="0" width="653" id="templateBody">
                                     	<tr>
-                                            <td valign="top" class="bodyContent" style="background-color:<?php echo get_option('woocommerce_email_body_background_color'); ?>;">
+                                            <td valign="top" class="bodyContent" >
 
                                                 <!-- // Begin Module: Standard Content \\ -->
-                                                <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                                     <tr>
                                                         <td valign="top">
                                                             <div>

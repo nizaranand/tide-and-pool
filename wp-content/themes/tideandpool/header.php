@@ -28,6 +28,7 @@ wp_title( '|', true, 'right' );
 ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/responsive.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!-- css plugin files -->
@@ -75,6 +76,7 @@ wp_head();
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 
 <!-- bug herd -->
+<!--
 <script type='text/javascript'>
 (function (d, t) {
   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -83,7 +85,14 @@ wp_head();
   s.parentNode.insertBefore(bh, s);
   })(document, 'script');
 </script>
+-->
 <!-- end bug herd -->
+
+<style type="text/css">
+	html {
+		margin-top:0 !important;
+	}
+</style>
 
 </head>
 <body <?php body_class(); ?>>
@@ -127,9 +136,8 @@ wp_head();
 	<div class="shopping-bag">
 		<div class="my-shopping-bag">
 			<?php global $woocommerce; ?>
-			<a class="shopping-bag-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Shopping Bag <span class="total">(<?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</a>
+			<a class="shopping-bag-link" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Shopping Bag <span class="total">(<?php echo sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>)</span></a>
 
-<!-- <a class="cart-contents my-shopping-bag" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>"><span class="total"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></span></a> -->
 		</div> <!-- // .my-shopping-bag -->
 		
 		<?php if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) : ?>

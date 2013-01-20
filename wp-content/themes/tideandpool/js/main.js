@@ -20,6 +20,15 @@ $(function() {
 		
 	});
 	
+	// magic zoom active thumb class
+	$("a.selector:first").addClass("active");
+	
+	/*
+$('.thumnails article').click(function() {
+		$('.dropdown').stop(true,true).slideDown(800);
+	});
+*/
+	
 	// shopping bag toggle
 	/*
 $('.shopping-bag').mouseenter(function() {

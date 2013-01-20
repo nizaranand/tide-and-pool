@@ -403,9 +403,21 @@ border:none !important;
 	margin:-50px 0 0 -50px !important;*/
 
 }
-.MagicZoom img {
-  height: 582px !important;
+.MagicZoomBigImageCont {
+  /* position: fixed !important; */
+
+  top: 162px !important;
+  width: 421px !important;
+  height: 566px !important;
+  overflow: hidden !important;
+  display: block !important;
+  right: 0 !important;
 }
+/*
+.MagicZoom img {
+	height: 582px !important;
+}
+*/
 /*
 input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{   
 	border : 0px;
@@ -1052,9 +1064,10 @@ section.products ul li.slide .product-details h3 {
 }
 section.product {
   width: 970px;
-  height: 582px;
+  height: 566px;
   /* overflow: hidden; */
 
+  display: block;
   /* border:1px solid red; */
 
   position: relative;
@@ -1065,41 +1078,59 @@ section.product a.view-larger {
   top: 10px;
   margin: 0 0 0 80px;
 }
+section.product .left {
+  position: relative;
+  z-index: 200;
+}
 section.product .left section.thumbnails {
   float: left;
-  margin: 0 2px 0 0;
+  margin: 0px 2px 0 0;
 }
 section.product .left section.thumbnails article {
+  height: 94px;
+}
+section.product .left section.thumbnails article a {
   width: 77px;
-  height: 93px;
+  height: 90px;
   display: block;
   overflow: hidden;
-  border: 2px solid white;
+  position: relative;
+  z-index: 100;
+  border: 3px solid white;
 }
-section.product .left section.thumbnails article a:hover {
-  border: none;
-}
-section.product .left section.thumbnails article img {
-  height: 93px;
+section.product .left section.thumbnails article a img {
+  height: 91px;
   margin-left: -7px;
-}
-section.product .left secton.main-img {
-  float: left;
-  width: 465px;
-  height: 565px;
-  border: 1px solid red;
   display: block;
 }
-section.product .left secton.main-img img {
-  /* height: 582px !important; */
+section.product .left section.thumbnails article a.active {
+  border: 3px solid #d3e70f;
+  z-index: 200;
+}
+section.product .left section.thumbnails article a:hover {
+  /* border:2px solid #d3e70f; */
 
 }
+section.product .left section.zoom .main-img a {
+  float: left;
+  width: 467px;
+  height: 566px;
+  /* border:1px solid red; */
+
+  display: block;
+  position: relative;
+}
+section.product .left section.zoom .main-img img {
+  height: :100%;
+}
 section.product .right {
-  width: 400px;
-  height: 100%;
+  width: 425px;
+  height: 566px;
+  overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 100;
   background: #9fc9d2;
 }
 section.product .right .inner {
@@ -1511,7 +1542,7 @@ body.home .content {
   font-family: 'futura_condensedbold' !important;
   background: rgba(159, 201, 210, 0.9);
   color: white;
-  z-index: 200;
+  z-index: 20000;
 }
 .main-footer .inner {
   max-width: 970px;
@@ -1672,131 +1703,6 @@ body.home .content {
   line-height: 40px;
   font-size: 2em;
   text-align: center;
-}
-/* media queries */
-/* ------------------------------------------------------------------------- */
-/* @group Media Quesries */
-@media only screen and (max-width: 1024px) {
-  
-}
-@media only screen and (max-width: 800px) {
-  .inner {
-    padding: 0 20px ;
-  }
-}
-@media only screen and (max-width: 600px) {
-  /* @group Global Reset Elements */
-  input[type=submit] {
-    border: solid 1px #1093ab;
-    padding: 10px;
-  }
-  /* @end reset */
-  .logo {
-    float: none;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .logo a {
-    background-size: 60%;
-    background-position: 0 center ;
-  }
-  .main-header,
-  .main-footer,
-  .main-nav,
-  .main-nav .inner {
-    height: auto;
-    line-height: normal;
-    line-height: normal;
-  }
-  .main-nav {
-    display: none;
-    padding: 20px 0;
-  }
-  #toggle-nav {
-    display: block;
-  }
-  .main-nav ul li a {
-    border-bottom: #1093ab 1px solid;
-    padding: 10px;
-    display: block;
-    float: none;
-  }
-  .main-footer {
-    position: relative;
-    padding-bottom: 40px;
-  }
-  .main-footer ul {
-    display: block;
-    margin: 20px 0;
-  }
-  .main-footer ul li {
-    display: block;
-    line-height: 30px;
-  }
-  .main-footer ul li a {
-    float: none;
-    font-family: 'futura_condensedbold';
-    border-bottom: #1093ab 1px solid;
-    padding: 0 20px;
-  }
-  .main-footer .social {
-    display: block;
-    clear: both;
-    width: auto;
-    border: solid 2px red;
-    height: 30px;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .main-footer .social li {
-    display: inline-block;
-  }
-  .main-footer .social li a {
-    width: 30px;
-    height: 30px;
-    border: #1093ab 1px solid;
-    overflow: hidden;
-    margin: 0 5px;
-    padding: 0;
-    float: none;
-    display: inline-block;
-  }
-  .main-footer address {
-    float: right;
-    display: block;
-    border-right: 1px solid white;
-    text-align: center;
-    font-size: 0.8em;
-  }
-  .main-footer .signup {
-    border: solid 2px red;
-    display: block;
-    float: none;
-  }
-  select,
-  input,
-  textarea,
-  button {
-    font: 99% sans-serif;
-    padding: 10px;
-  }
-}
-@media only screen and (max-height: 700px) {
-  section.products {
-    top: 145px;
-    margin: 0;
-  }
-}
-@media only screen and (device-height: 480px) {
-  
-}
-@media only screen and (max-width: 320px) {
-  
-}
-@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    min-height: 568px;
-  }
 }
 
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

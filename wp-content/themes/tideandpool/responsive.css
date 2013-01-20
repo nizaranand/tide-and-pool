@@ -1,0 +1,117 @@
+/* @group Media Quesries */
+@media only screen and (max-width:1024px) {
+}
+@media only screen and (max-width:800px) {
+	.inner {
+		padding: 0 20px ;
+	}
+}
+@media only screen and (max-width:600px) {
+
+	/* @group Global Reset Elements */
+	input[type=submit]{
+		border: solid 1px @dark-blue;
+		padding: 10px;
+	}
+	/* @end reset */
+
+	.logo {
+		float: none;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.logo a {
+		background-size:60%;
+		background-position: 0 center ;
+	}
+	.main-header,
+	.main-footer,
+	.main-nav,
+	.main-nav .inner {
+		height: auto;
+		line-height: normal;
+		line-height: normal;
+	}
+	.main-nav {
+		display: none;
+		padding: 20px 0;
+	}
+	#toggle-nav {
+		display: block;
+	}
+	.main-nav ul li a {
+		border-bottom: @dark-blue 1px solid;
+		padding: 10px;
+		display: block;
+		float: none;
+	}
+	.main-footer {
+		position: relative;
+		padding-bottom: 40px;
+	}
+	.main-footer ul {
+		display: block;
+		margin: 20px 0;
+		li {
+			display: block;
+			line-height: 30px;
+			a	{
+				float: none;
+				font-family: 'futura_condensedbold';
+				border-bottom: @dark-blue 1px solid;
+				padding: 0 20px;
+				}
+			}
+	}
+	.main-footer .social {
+		display: block;
+		clear: both;
+		width: auto;
+		border: solid 2px red;
+		height: 30px;
+		padding: 10px 0;
+		text-align: center;
+		li {
+			display: inline-block;
+			a {
+				width: 30px;
+				height: 30px;
+				border: @dark-blue 1px solid;
+				overflow: hidden;
+				margin: 0 5px;
+				padding: 0;
+				float: none;
+				display: inline-block;
+				}
+			}
+	}
+	.main-footer address {
+		float: right;
+		display: block;
+		border-right:1px solid white;
+		text-align: center;
+		font-size: 0.8em
+	}
+	.main-footer .signup {
+		border: solid 2px red;
+		display: block;
+		float: none;
+	}
+	select, input, textarea, button {
+    	font: 99% sans-serif;
+    	padding: 10px;
+    }
+}
+@media only screen and (max-height:700px) {
+	section.products {
+		top:145px;
+		margin:0;
+	}
+}
+@media only screen and (device-height:480px) {
+}
+@media only screen and (max-width:320px) {
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) { 
+	body { min-height:568px;}
+}

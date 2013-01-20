@@ -11,14 +11,99 @@ if (!defined('ABSPATH')) exit; ?>
 
 <?php do_action('woocommerce_email_header', $email_heading); ?>
 
-<p><?php _e("Thank you for your order!", 'woocommerce'); ?></p>
+<div style="margin:0 30px;color#666;">
+	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/email-thank-you.png">
+	<!-- <?php do_action('woocommerce_email_before_order_table', $order, false); ?> -->
+</div>
 
-<?php do_action('woocommerce_email_before_order_table', $order, false); ?>
 
-<h2><?php echo __('Order:', 'woocommerce') . ' ' . $order->get_order_number(); ?></h2>
 
-<table cellspacing="0" cellpadding="6" style="width: 100%; border: 1px solid #eee;" border="1" bordercolor="#eee">
-	<thead>
+<table cellspacing="0" cellpadding="0" border="0" width="653" style="color:#666;padding:30px;">
+	<tbody>
+		<tr>
+			<td><strong>ORDER DATE:</strong></td>
+			<td align="right"><?php echo __('<strong>ORDER #:</strong>', 'woocommerce') . ' ' . $order->get_order_number(); ?></td>
+		</tr>
+		<tr>
+			<td colspan="2">Date</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td><strong>BILL TO:</strong></td>
+			<td align="right"><strong>SHIP TO:</strong></td>
+		</tr>
+		<tr>
+			<td valign="top" width="50%"><?php echo $order->get_formatted_billing_address(); ?></td>
+			<td align="right" valign="top" width="50%"><?php echo $order->get_formatted_shipping_address(); ?></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right"><strong>UPS SHIPPING METHOD</strong><br>[Shipping method here]</td>
+		</tr>
+		<tr>
+        	<td style="height:50px;">&nbsp;</td>
+        </tr>
+		<tr>
+			<td colspan="2">
+				<table width="653" border="0" cellpadding="5" cellspacing="0" style="color:#666;">
+					<tr>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('ITEM #', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('ITEM NAME', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('QUANTITY', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('PRICE', 'woocommerce'); ?></th>
+						<th scope="col" align="right" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('TOTAL', 'woocommerce'); ?></th>
+					</tr>
+					
+					<?php echo $order->email_order_items_table( (get_option('woocommerce_downloads_grant_access_after_payment')=='yes' && $order->status=='processing') ? true : false, true, ($order->status=='processing') ? true : false ); ?>
+					<!--
+<tr>
+						<td>ITEM #</td>
+						<td>ITEM NAME</td>
+						<td>QUANITY</td>
+						<td>PRICE</td>
+						<td>TOTAL</td>
+					</tr>
+					<tr>
+						<td>[item no]</td>
+						<td>[item name]</td>
+						<td>[quanity]</td>
+						<td>[price]</td>
+						<td>[total]</td>
+					</tr>
+					<tr>
+						<td colspan="3">&nbsp;</td>
+						<td colspan="1">SUB-TOTAL:</td>
+						<td colspan="1">[price here]</td>
+					</tr>
+-->	
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+					<tfoot>
+						<?php
+			if ( $totals = $order->get_order_item_totals() ) {
+				$i = 0;
+				foreach ( $totals as $total ) {
+					$i++;
+					?>
+					<tr>
+						<th scope="row" colspan="4" align="right"><?php echo $total['label']; ?></th>
+						<td  align="right"><?php echo $total['value']; ?></td>
+					</tr><?php
+				}
+			}
+		?>
+					</tfoot>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	<!--
+<thead>
 		<tr>
 			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e('Product', 'woocommerce'); ?></th>
 			<th scope="col" style="text-align:left; border: 1px solid #eee;"><?php _e('Quantity', 'woocommerce'); ?></th>
@@ -42,10 +127,12 @@ if (!defined('ABSPATH')) exit; ?>
 			}
 		?>
 	</tfoot>
+-->
 </table>
 
 <?php do_action('woocommerce_email_after_order_table', $order, false); ?>
 
+<!--
 <h2><?php _e('Customer details', 'woocommerce'); ?></h2>
 
 <?php if ($order->billing_email) : ?>
@@ -56,5 +143,6 @@ if (!defined('ABSPATH')) exit; ?>
 <?php endif; ?>
 
 <?php woocommerce_get_template('emails/email-addresses.php', array( 'order' => $order )); ?>
+-->
 
 <?php do_action('woocommerce_email_footer'); ?>

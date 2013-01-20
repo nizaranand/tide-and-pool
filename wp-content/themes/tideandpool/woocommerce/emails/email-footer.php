@@ -15,15 +15,23 @@
                                                 <!-- // End Module: Standard Content \\ -->
                                             </td>
                                         </tr>
+                                        <tr>
+                            	<td>&nbsp;</td>
+                            </tr>
+                                        <tr class="footer">
+                            	<td class="footerContent" style="padding:0 30px;color:#666;">
+                            		<span><img src="<?php bloginfo( 'template_url' ); ?>/css/img/email-questions.png"></span><p>If you have any questions regarding your order, please contact us at <a href="mailto:customerservice@tideandpool.com">customerservice@tideandpool.com</a> or 562.277.1382, Monday - Friday, 9:30 AM PST - 5:30 PM PST. We're here to help!</p>
+                            	</td>
+                            </tr>
                                     </table>
                                     <!-- // End Template Body \\ -->
                                 </td>
                             </tr>
-                            <tr class="footer">
-                            	<td class="footerContent">
-                            		<h2 class="footer">Questions?</h2><p>If you have any questions regarding your order, please contact us at <a href="mailto:customerservice@tideandpool.com">customerservice@tideandpool.com</a> or 562.277.1382, Monday - Friday, 9:30 AM PST - 5:30 PM PST. We're here to help!</p>
-                            	</td>
+                            <tr>
+                            	<td style="height:50px;">&nbsp;</td>
                             </tr>
+                            
+                         
                             <tr>
                             	<td style="text-align:center;">
                             		<a href="<?php echo home_url( '/' ); ?>" target="_blank">
@@ -31,13 +39,15 @@
                             		</a>
                             	</td>
                             </tr>
+                            <tr>
+                            	<td>&nbsp;</td>
+                            </tr>
                         	<tr>
-                            	<td align="center" valign="top">
+                            	<td align="center" valign="top" colspan="5">
                                     <!-- // Begin Template Footer \\ -->
-                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                                	<table border="0" cellpadding="10" cellspacing="0" width="653" id="templateFooter">
                                     	<tr>
-                                        	<td valign="top" class="footerContent">
-                                                <td height="20">
+                                            <td height="20">
 		                                    	<table>
 			                                    	<tr>
 				                                    	<td width="286"></td>

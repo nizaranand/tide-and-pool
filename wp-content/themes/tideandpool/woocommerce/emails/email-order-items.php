@@ -20,16 +20,17 @@ foreach ($items as $item) :
 
 	?>
 	<tr>
-		<td style="text-align:left; vertical-align:middle; border: 1px solid #eee;"><?php
+		<td style="text-align:left; vertical-align:middle;">
+			<?php
 
+			// SKU
+			echo 	($show_sku && $_product->get_sku()) ? ' (' . $_product->get_sku() . ')' : '';
+			
 			// Show title/image etc
 			echo 	apply_filters( 'woocommerce_order_product_image', $image, $_product, $show_image);
 
 			// Product name
-			echo 	apply_filters( 'woocommerce_order_product_title', $item['name'], $_product );
-
-			// SKU
-			echo 	($show_sku && $_product->get_sku()) ? ' (#' . $_product->get_sku() . ')' : '';
+			//echo 	apply_filters( 'woocommerce_order_product_title', $item['name'], $_product );
 
 			// File URL
 			echo 	( $show_download_links && $_product->exists() && $_product->is_downloadable() && $_product->has_file() ) ? '<br/><small>' . __( 'Download:', 'woocommerce' ) . ' <a href="' . $order->get_downloadable_file_url( $item['id'], $item['variation_id'] ) . '" target="_blank">' . $order->get_downloadable_file_url( $item['id'], $item['variation_id'] ) . '</a></small>' : '';
@@ -37,14 +38,17 @@ foreach ($items as $item) :
 			// Variation
 			echo 	($item_meta->meta) ? '<br/><small>' . nl2br( $item_meta->display( true, true ) ) . '</small>' : '';
 
-		?></td>
-		<td style="text-align:left; vertical-align:middle; border: 1px solid #eee;"><?php echo $item['qty'] ;?></td>
-		<td style="text-align:left; vertical-align:middle; border: 1px solid #eee;"><?php echo $order->get_formatted_line_subtotal( $item ); ?></td>
+		?>
+		</td>
+		<td style="text-align:left; vertical-align:middle;">[product name here]</td>
+		<td style="text-align:left; vertical-align:middle;"><?php echo $item['qty'] ;?></td>
+		<td style="text-align:left; vertical-align:middle;">[price]</td>
+		<td style="text-align:left; vertical-align:middle;" align="right"><?php echo $order->get_formatted_line_subtotal( $item ); ?></td>
 	</tr>
 
 	<?php if ($show_purchase_note && $purchase_note = get_post_meta( $_product->id, '_purchase_note', true)) : ?>
 		<tr>
-			<td colspan="3" style="text-align:left; vertical-align:middle; border: 1px solid #eee;"><?php echo apply_filters('the_content', $purchase_note); ?></td>
+			<td colspan="3" style="text-align:left; vertical-align:middle;"><?php echo apply_filters('the_content', $purchase_note); ?></td>
 		</tr>
 	<?php endif; ?>
 
