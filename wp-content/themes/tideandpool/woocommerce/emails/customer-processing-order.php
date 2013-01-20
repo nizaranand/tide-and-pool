@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) exit; ?>
 
 <?php do_action('woocommerce_email_header', $email_heading); ?>
 
-<p><?php _e("Thank you, we are now processing your order. Your order's details are below.", 'woocommerce'); ?></p>
+<p><?php _e("Thank you for your order!", 'woocommerce'); ?></p>
 
 <?php do_action('woocommerce_email_before_order_table', $order, false); ?>
 

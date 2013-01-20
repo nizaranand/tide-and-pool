@@ -14,6 +14,26 @@
 
         <title><?php echo get_bloginfo('name'); ?></title>
 		<style type="text/css">
+			@font-face {
+				font-family: 'futura_condensedbold';
+				src: url('<?php bloginfo( 'template_url' ); ?>/css/fonts/futura_condensed_bold-webfont.eot');
+				src: url('<?php bloginfo( 'template_url' ); ?>/css/fonts/futura_condensed_bold-webfont.eot?#iefix') format('embedded-opentype'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/futura_condensed_bold-webfont.woff') format('woff'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/futura_condensed_bold-webfont.ttf') format('truetype'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/futura_condensed_bold-webfont.svg#futura_condensedbold') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'ProximaNovaRegular';
+				src: url('<?php bloginfo( 'template_url' ); ?>/css/fonts/proximanova-regular-webfont.eot');
+				src: url('<?php bloginfo( 'template_url' ); ?>/css/fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/proximanova-regular-webfont.woff') format('woff'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/proximanova-regular-webfont.ttf') format('truetype'),
+				url('<?php bloginfo( 'template_url' ); ?>/css/fonts/proximanova-regular-webfont.svg#ProximaNovaRegular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
 			/* Client-specific/Reset Styles */
 			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
 			body{
@@ -28,11 +48,11 @@
 			/* Template Styles */
 
 			body {
-				background: <?php echo get_option('woocommerce_email_background_color'); ?> url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOklEQVQYGWP8//8/AyHAREgBIyOjMQPIJFwYaIAxSI6RbOvAViC7A90qmBXI4qRZh2EFunXYrEC2DgDc+VH0jS2AGAAAAABJRU5ErkJggg==);
+				/* background: <?php echo get_option('woocommerce_email_background_color'); ?> url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOklEQVQYGWP8//8/AyHAREgBIyOjMQPIJFwYaIAxSI6RbOvAViC7A90qmBXI4qRZh2EFunXYrEC2DgDc+VH0jS2AGAAAAABJRU5ErkJggg==); */
 			}
 
 			#templateContainer{
-				border: 1px solid <?php echo woocommerce_hex_darker(get_option('woocommerce_email_background_color'), 20); ?>;
+				/* border: 1px solid <?php echo woocommerce_hex_darker(get_option('woocommerce_email_background_color'), 20); ?>; */
 				-webkit-box-shadow:0 0 0 3px rgba(0,0,0,0.1);
 				-webkit-border-radius:6px;
 			}
@@ -43,9 +63,10 @@
 			h4, .h4 {
 				color:<?php echo woocommerce_hex_darker(get_option('woocommerce_email_text_color'), 50); ?>;
 				display:block;
-				font-family:Arial;
+				font-family: 'futura_condensedbold';
+				text-transform: uppercase;
 				font-size:34px;
-				font-weight:bold;
+				font-weight:normal;
 				line-height:150%;
 				margin-top:0;
 				margin-right:0;
@@ -58,6 +79,10 @@
 			h2, .h2{
 				font-size:30px;
 			}
+			h2.footer {
+				margin:0;
+				line-height: auto;
+			}
 
 			h3, .h3{
 				font-size:26px;
@@ -65,6 +90,9 @@
 
 			h4, .h4{
 				font-size:22px;
+			}
+			p {
+				font-family: 'ProximaNovaRegular';
 			}
 
 			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
@@ -128,6 +156,9 @@
 				line-height:125%;
 				text-align:left;
 			}
+			.footerContent p {
+				margin:0 0 10px 0;
+			}
 
 			.footerContent div a:link, .footerContent div a:visited{
 				color:<?php echo woocommerce_hex_lighter(get_option('woocommerce_email_text_color'), 40); ?>;
@@ -150,7 +181,7 @@
 
 		</style>
 	</head>
-    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="background: <?php echo get_option('woocommerce_email_background_color'); ?> url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAOklEQVQYGWP8//8/AyHAREgBIyOjMQPIJFwYaIAxSI6RbOvAViC7A90qmBXI4qRZh2EFunXYrEC2DgDc+VH0jS2AGAAAAABJRU5ErkJggg==);">
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
     	<center style="padding: 70px 0 0 0;">
         	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
             	<tr>
@@ -163,7 +194,7 @@
                 		?>
 
                         <!-- // End Template Preheader \\ -->
-                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="-webkit-box-shadow:0 0 0 3px rgba(0,0,0,0.025); -webkit-border-radius:6px;background-color:<?php echo get_option('woocommerce_email_body_background_color'); ?>;">
+                    	<table border="0" cellpadding="0" cellspacing="0" width="653" id="templateContainer" style="-webkit-box-shadow:0 0 0 3px rgba(0,0,0,0.025); -webkit-border-radius:6px;background-color:<?php echo get_option('woocommerce_email_body_background_color'); ?>;">
                         	<tr>
                             	<td align="center" valign="top">
                                     <!-- // Begin Template Header \\ -->
@@ -173,12 +204,52 @@
                                             <td class="headerContent" style="padding:24px; ">
 
                                             	<!-- // Begin Module: Standard Header Image \\ -->
-                                            	<h1 class="h1" style="color:<?php echo woocommerce_light_or_dark(get_option('woocommerce_email_base_color'), '#202020', '#ffffff'); ?> !important; margin:0; text-shadow:0 1px 0 <?php echo woocommerce_hex_lighter(get_option('woocommerce_email_base_color'), 20); ?>;"><?php
+                                            	<!-- logo -->
+                                            	<a class="logo-email" href="<?php echo home_url( '/' ); ?>">
+	                                            	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/logo-email.png">
+                                            	</a>
+                                            	<!-- end logo -->
+                                            	<!--
+<h1 class="h1" style="color:<?php echo woocommerce_light_or_dark(get_option('woocommerce_email_base_color'), '#202020', '#ffffff'); ?> !important; margin:0; text-shadow:0 1px 0 <?php echo woocommerce_hex_lighter(get_option('woocommerce_email_base_color'), 20); ?>;"><?php
                                             		echo $email_heading;
                                             	?></h1>
+-->
                                             	<!-- // End Module: Standard Header Image \\ -->
 
                                             </td>
+                                            <td>
+                                            	<a href="#">
+	                                            	<img src="<?php bloginfo( 'template_url' ); ?>/css/img/view-browser.png">
+                                            	</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        	<td colspan="2">
+                            		<table bgcolor="#add3da">
+                            			<tr>
+                            				<td width="150"></td>
+                            				<td>
+                            					<a href="<?php echo home_url( '/' ); ?>our-towels/"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/our-towels-menu.gif"></a>
+                            				</td>
+                            				<td>
+                            					<a href="<?php echo home_url( '/' ); ?>collection/"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/the-collection-menu.gif"></a>
+                            				</td>
+                            				<td>
+                            					<a href="<?php echo home_url( '/' ); ?>about/"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/about-menu.gif"></a>
+                            				</td>
+                            				<td>
+                            					<a href="<?php echo home_url( '/' ); ?>boutiques/"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/boutiques-menu.gif"></a>
+                            				</td>
+                            				<!--
+<td>
+                            					<a href="#"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sale-menu.gif"></a>
+                            				</td>
+-->
+                            				<td width="150"></td>
+                            				
+                            			</tr>
+                            		</table>
+                            	</td>
                                         </tr>
                                     </table>
                                     <!-- // End Template Header \\ -->

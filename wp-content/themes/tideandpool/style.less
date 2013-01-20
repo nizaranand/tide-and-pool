@@ -22,6 +22,9 @@ Comment blocks indicate where each begins and ends, like this, for example...
 
 */
 
+/* reset */
+/* ------------------------------------------------------------------------- */
+
 @import "css/reset.less";
 
 /* set up Tide & Pool color scheme */
@@ -217,6 +220,11 @@ input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
 * html .clear             { zoom: 1; } /* IE6 */
 *:first-child+html .clear { zoom: 1; } /* IE7 */
 
+body.woocommerce-cart {
+	a.continue-shopping {
+		margin:0;
+	}
+}
 a.continue-shopping {
 	width:175px;
 	height: 34px;
@@ -234,6 +242,10 @@ a.continue-shopping:hover {
 	color:white;
 	border-color: #a8ced6;
 }
+
+/* header */
+/* ------------------------------------------------------------------------- */
+
 header.main-header {
 	/* border: solid 1px blue; */
 	background: url(css/img/header-bkg.png) center top no-repeat;
@@ -409,6 +421,10 @@ header.main-header {
 .tag-line {
 	display: none;
 }
+
+/* nav */
+/* ------------------------------------------------------------------------- */
+
 body.fixed {
 	.main-nav {
 		position: fixed;
@@ -590,6 +606,10 @@ body.fixed {
 	    }
     }
 }
+
+/* body content */
+/* ------------------------------------------------------------------------- */
+
 .announcement {
 	height: 48px;
 	line-height: 40px;
@@ -713,6 +733,9 @@ article#about {
 		background: url('css/img/instagram-btn.png')no-repeat;
 		float:right;
 		margin:20px 0 10px 0;
+	}
+	.instagram-img {
+		clear: both;
 	}
 }
 article#boutiques {
@@ -1275,7 +1298,8 @@ form.checkout {
 .content {
 	width:100%;
 	margin: 0 auto ;
-	margin:0 0 100px 0;
+	padding:0 0 80px 0;
+	/* margin:0 0 100px 0; */
 	/* overflow: auto;
 	/* padding-bottom: 60px; */
 	#container {
@@ -1296,6 +1320,10 @@ body.home {
 	max-width: 970px;
 	margin: 0 auto;
 }
+
+/* footer */
+/* ------------------------------------------------------------------------- */
+
 .main-footer {
 	position: fixed;
 	bottom: 0;
@@ -1466,6 +1494,10 @@ body.home {
 	font-size: 2em;
 	text-align: center;
 }
+
+/* media queries */
+/* ------------------------------------------------------------------------- */
+
 /* @group Media Quesries */
 @media only screen and (max-width:1024px) {
 }

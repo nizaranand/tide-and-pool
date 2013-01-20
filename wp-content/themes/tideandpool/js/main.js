@@ -57,7 +57,8 @@ $('.shopping-bag').mouseenter(function() {
     
     // couresel arrover mouse follow
 
-    $(".arrow-holder").mousemove(function(e){
+    /*
+$(".arrow-holder").mousemove(function(e){
   		$(this).find('.arrow-icon').stop().css({top:(e.pageY - $(this).offset().top)});
  	});
  	$(".arrow-holder").mouseleave(function(){
@@ -65,6 +66,7 @@ $('.shopping-bag').mouseenter(function() {
  		var newPosition = containerHeight / 2;
   		$(this).find('.arrow-icon').animate({top:newPosition+'px'}, 300);
  	});
+*/
 	
 	// slideshow
     /*
