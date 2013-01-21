@@ -1112,6 +1112,12 @@ section.product .left section.thumbnails article a:hover {
   /* border:2px solid #d3e70f; */
 
 }
+section.product .left section.zoom {
+  height: 566px;
+}
+section.product .left section.zoom .main-img {
+  height: 566px;
+}
 section.product .left section.zoom .main-img a {
   float: left;
   width: 465px;
