@@ -1219,7 +1219,7 @@ section.product .right .inner .addthis_toolbox {
   width: auto;
   height: auto;
   position: relative;
-  margin: -9px auto 0 auto;
+  margin: 0px auto 0 auto;
   /* border:1px solid red; */
 
 }
