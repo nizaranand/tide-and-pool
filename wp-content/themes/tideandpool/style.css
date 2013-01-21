@@ -817,12 +817,13 @@ body.fixed .main-nav {
 .announcement {
   height: 48px;
   line-height: 40px;
-  position: relative;
+  position: absolute;
   color: #4d004e;
   text-transform: uppercase;
   text-align: center;
   background: url('css/img/global/anouncement-bg.png') no-repeat center top;
   z-index: 200;
+  width: 100%;
   /*
 -webkit-mask: -webkit-linear-gradient(
           left,
@@ -857,12 +858,14 @@ body.fixed .main-nav {
 }
 .woocommerce_message,
 .site-messages {
+  width: 100%;
   height: 48px;
   line-height: 40px;
-  position: relative;
+  position: absolute;
   color: #4d004e;
   text-align: center;
-  background: url('css/img/global/anouncement-bg.png') no-repeat center top;
+  /* background: url('css/img/global/anouncement-bg.png') no-repeat center top; */
+
   /* z-index: 200; */
 
   font-family: 'ProximaNovaRegular';
@@ -1311,6 +1314,14 @@ article.body-content table tbody td.product-price .regular-price {
 article.body-content table tbody td.product-quantity .amount {
   float: left;
 }
+article.body-content table tbody td.product-quantity .amount input {
+  /* padding:5px; */
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border: 1px solid #999;
+  margin: 0 5px 0 0;
+}
 article.body-content table tbody td.product-quantity .update-remove {
   width: 70px;
   float: left;
@@ -1330,6 +1341,10 @@ article.body-content table tbody td.product-quantity .update-remove input {
 }
 article.body-content table tbody td.product-quantity .update-remove .remove {
   text-indent: 5px;
+}
+article.body-content table tbody td.product-subtotal {
+  text-align: right;
+  padding: 0 30px 0 0;
 }
 article.body-content table tbody td.border {
   border-top: 1px solid #9fc9d2;
@@ -1390,6 +1405,7 @@ article.body-content .cart-collaterals .totals td.price {
   line-height: 30px;
   color: #333;
   font-family: 'ProximaNovaBold';
+  padding: 0 30px 0 0;
 }
 article.body-content .cart-collaterals .totals tr.cart-subtotal th {
   height: 30px;
@@ -1404,6 +1420,7 @@ article.body-content .cart-collaterals .totals tr.cart-subtotal td {
   line-height: 15px;
   font-size: 1em;
   border-bottom: 3px solid #1093ab;
+  padding: 0 30px 0 0;
 }
 article.body-content .cart-collaterals .cart-btns {
   margin: 20px 0 0 0;
@@ -1419,19 +1436,45 @@ article.body-content .cart-collaterals .cart-btns a.continue-shopping {
   border: 3px solid #1093ab;
   float: left;
 }
-article.body-content .cart-collaterals .cart-btns input.checkout-button {
-  width: 48.5%;
+article.body-content input.checkout-button {
+  width: 172px;
   height: 40px;
   line-height: 38px;
   display: block;
   background: #1093ab;
   color: white;
   border: none;
-  float: right;
+  /* float:right; */
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
   font-family: 'futura_condensedbold';
   text-transform: uppercase;
   font-size: 1.2em;
   letter-spacing: 1px;
+}
+article.body-content a.continue,
+article.body-content input#place_order {
+  width: 127px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: #1093ab;
+  color: white;
+  border: none;
+  text-align: center;
+  /* float:right; */
+
+  font-family: 'futura_condensedbold';
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 1px;
+  margin: 20px 0 0 0;
+}
+article.body-content input.checkout-button:hover {
+  background: #a8ced6;
+  color: #1093ab;
 }
 form.checkout {
   width: 80%;
@@ -1443,6 +1486,11 @@ form.checkout h1 {
 }
 form.checkout article.checkout-panel {
   margin: 0 0 20px 0;
+  /*
+.form-row {
+			width:150px;
+		}
+*/
 }
 form.checkout article.checkout-panel h2.checkout {
   width: 100%;
@@ -1468,10 +1516,141 @@ form.checkout article.checkout-panel h3 {
 }
 form.checkout article.checkout-panel .content {
   margin: 0;
-  padding: 0 20px;
+  padding: 10px 20px;
+  height: auto;
+}
+form.checkout article.checkout-panel .content h3 {
+  font-size: 1.6em;
+  color: #333;
+  margin: 0 0 10px 0;
+  line-height: 25px;
+}
+form.checkout article.checkout-panel .content h3 span.blue-green {
+  color: #1093ab;
+  font-size: 0.6em;
+  font-style: italic;
+  font-family: 'Georgia', serif;
+}
+form.checkout article.checkout-panel .content .left {
+  width: 50%;
+  float: left;
+  border-right: 1px solid #666;
+}
+form.checkout article.checkout-panel .content .left p {
+  /* margin:20px 0; */
+
+  width: 90%;
+}
+form.checkout article.checkout-panel .content .left input {
+  width: auto;
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+form.checkout article.checkout-panel .content #gift-message {
+  width: 45%;
+  border: none;
+}
+form.checkout article.checkout-panel .content .right {
+  width: 43%;
+  float: right;
+  position: relative;
+}
+form.checkout article.checkout-panel .content .right h3 {
+  margin: 0 0 20px 0;
+}
+form.checkout article.checkout-panel .content .right a.forgot-password {
+  float: right;
+  padding: 0 40px 0 0;
+  text-decoration: underline;
+  font-style: italic;
+  font-size: 0.8em;
+  color: #666;
+  font-family: 'Georgia', serif;
+}
+form.checkout article.checkout-panel .content .right a.continue {
+  margin: 42px 0 0 0;
+  /*
+position: absolute;
+					left:0;
+					bottom:0;
+*/
+
 }
 form.checkout article.checkout-panel .content table {
   width: 97%;
+}
+form.checkout article.checkout-panel .content label {
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  float: left;
+}
+form.checkout article.checkout-panel .content label.checkbox {
+  width: 150px;
+}
+form.checkout article.checkout-panel .content input {
+  width: 190px;
+  height: 20px;
+  line-height: 20px;
+  float: left;
+  margin: 0 0 10px 0;
+  border: 1px solid #999;
+  text-indent: 5px;
+  color: #666;
+  font-family: 'ProximaNovaRegular';
+}
+form.checkout article.checkout-panel .content textarea {
+  width: 280px;
+  height: 100px;
+  margin: 0 0 10px 0;
+}
+form.checkout article.checkout-panel .content input[type="radio"],
+form.checkout article.checkout-panel .content input[type="checkbox"] {
+  width: 25px;
+  float: none;
+  height: auto;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+form.checkout article.checkout-panel p#shiptobilling {
+  margin: 0 0 20px 0;
+}
+form.checkout article.checkout-panel p#shiptobilling label {
+  width: 140px;
+}
+form.checkout article.checkout-panel p {
+  margin: 0 0 10px 0;
+}
+form.checkout article.checkout-panel .shipping_address,
+form.checkout article.checkout-panel .address-form {
+  width: 350px;
+  margin: 0 0 40px 0;
+}
+form.checkout article.checkout-panel #gift-wrap-img {
+  width: 377px;
+  height: 281px;
+  display: block;
+  margin: 0 20px 0 0;
+  background: url('css/img/gift-wrap.png') no-repeat;
+}
+form.checkout article.checkout-panel #gift-wrap-img textarea {
+  border: none;
+  width: 275px;
+  height: 130px;
+  position: absolute;
+  top: 120px;
+  right: 30px;
+  color: #666;
+  font-family: 'ProximaNovaRegular';
+}
+form.checkout article#payment-method .content label {
+  float: none !important;
+  width: auto;
+  height: auto;
+  display: inline !important;
 }
 .checkout-progress {
   width: 175px;
@@ -1614,6 +1793,12 @@ body.home .content {
 
   /* firefox 19+ */
 
+  /*
+input:focus {
+					outline:none;
+				}
+*/
+
 }
 .main-footer .signup .email-signup form input {
   border: none;
@@ -1636,9 +1821,6 @@ body.home .content {
 }
 .main-footer .signup .email-signup form input:-moz-placeholder {
   color: #1093AB;
-}
-.main-footer .signup .email-signup form input:focus {
-  outline: none;
 }
 .main-footer .signup .email-signup:hover {
   background: #1093ab url('css/img/global/email-signup-btn.png') no-repeat;

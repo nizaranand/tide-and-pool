@@ -11,7 +11,7 @@ global $woocommerce;
 ?>
 
 
-<div class="site-messages"><?php $woocommerce->show_messages(); ?></div>
+<?php $woocommerce->show_messages(); ?>
 
 <!-- header -->
 <h1>Shopping Bag</h1>
@@ -24,10 +24,11 @@ global $woocommerce;
 		<tr>
 			<!-- <th class="product-remove">&nbsp;</th> -->
 			<th class="product-thumbnail"><?php _e('Items', 'woocommerce'); ?></th>
-			<th class="product-name"></th>
-			<th class="product-price"><?php _e('Price', 'woocommerce'); ?></th>
-			<th class="product-quantity"><?php _e('Quantity', 'woocommerce'); ?></th>
-			<th class="product-subtotal"><?php _e('Total', 'woocommerce'); ?></th>
+			<th class="product-name" width="500"></th>
+			<th class="product-name" width="250"><?php _e('Availability', 'woocommerce'); ?></th>
+			<th class="product-price" width="250"><?php _e('Price', 'woocommerce'); ?></th>
+			<th class="product-quantity" width="250"><?php _e('Quantity', 'woocommerce'); ?></th>
+			<th class="product-subtotal" style="text-align:right;padding-right:30px;" width="100"><?php _e('Total', 'woocommerce'); ?></th>
 		</tr>
 	</thead>
 	<tr>
@@ -75,6 +76,11 @@ global $woocommerce;
                    				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) )
                    					echo '<p class="backorder_notification">' . __('Available on backorder', 'woocommerce') . '</p>';
 							?>
+						
+						</td>
+						
+						<td>
+						[stock data here...]
 						</td>
 
 						<!-- Product price -->
@@ -138,8 +144,10 @@ global $woocommerce;
 		do_action( 'woocommerce_cart_contents' );
 		?>
 		<tr>
-			<td class="border" colspan="5">&nbsp;</td>
+			<td class="border" colspan="6">&nbsp;</td>
 		</tr>
+		<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout', 'woocommerce'); ?>" />
+		<?php $woocommerce->nonce_field('cart') ?>
 	</tbody>
 </table>
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
@@ -173,9 +181,11 @@ global $woocommerce;
 	
 	<!-- cart btns -->
 	<div class="cart-btns">
-		<a class="continue-shopping" href="#">Continue Shopping</a>
-		<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout', 'woocommerce'); ?>" />
+		<a class="continue-shopping" href="<?php echo home_url( '/' ); ?>our-towels/">Continue Shopping</a>
+		<!--
+<input type="submit" class="checkout-button button alt" name="proceed" value="<?php _e('Checkout', 'woocommerce'); ?>" />
 		<?php $woocommerce->nonce_field('cart') ?>
+-->
 	</div>
 	<!-- end cart btns -->
 	

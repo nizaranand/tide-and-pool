@@ -12,11 +12,11 @@ global $woocommerce;
 
 <?php if ( $woocommerce->cart->ship_to_billing_address_only() && $woocommerce->cart->needs_shipping() ) : ?>
 
-	<h3><?php _e('Billing &amp; Shipping', 'woocommerce'); ?></h3>
+	<!-- <h3><?php _e('Billing &amp; Shipping', 'woocommerce'); ?></h3> -->
 
 <?php else : ?>
 
-	<h3><?php _e('Billing Address', 'woocommerce'); ?></h3>
+	<!-- <h3><?php _e('Billing Address', 'woocommerce'); ?></h3> -->
 
 <?php endif; ?>
 
@@ -34,9 +34,11 @@ global $woocommerce;
 
 	<?php if (get_option('woocommerce_enable_guest_checkout')=='yes') : ?>
 
-		<p class="form-row">
+		<!--
+<p class="form-row">
 			<input class="input-checkbox" id="createaccount" <?php checked($checkout->get_value('createaccount'), true) ?> type="checkbox" name="createaccount" value="1" /> <label for="createaccount" class="checkbox"><?php _e('Create an account?', 'woocommerce'); ?></label>
 		</p>
+-->
 
 	<?php endif; ?>
 

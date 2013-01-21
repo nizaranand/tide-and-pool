@@ -24,13 +24,14 @@ global $woocommerce;
 
 		endif;
 	?>
-
+	<!-- <h3>Enter a Shipping Address<br><span class="blue-green">All fields except those indicated are required.</span></h3> -->
+	
 	<p class="form-row" id="shiptobilling">
 		<input id="shiptobilling-checkbox" class="input-checkbox" <?php checked($shiptobilling, 1); ?> type="checkbox" name="shiptobilling" value="1" />
 		<label for="shiptobilling-checkbox" class="checkbox"><?php _e('Ship to billing address?', 'woocommerce'); ?></label>
 	</p>
 
-	<h3>Enter a Shipping Address<p>All fields except those indicated are required.</p></h3>
+	
 
 	<div class="shipping_address">
 
@@ -48,6 +49,7 @@ global $woocommerce;
 
 <?php endif; ?>
 
+<!--
 <?php do_action('woocommerce_before_order_notes', $checkout); ?>
 
 <?php if (get_option('woocommerce_enable_order_comments')!='no') : ?>
@@ -67,3 +69,4 @@ global $woocommerce;
 <?php endif; ?>
 
 <?php do_action('woocommerce_after_order_notes', $checkout); ?>
+-->

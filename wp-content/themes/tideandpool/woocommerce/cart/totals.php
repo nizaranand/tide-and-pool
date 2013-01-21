@@ -22,7 +22,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<tbody>
 
 				<tr class="cart-subtotal">
-					<th width="178" align="right"><h2><?php _e('Sub-total', 'woocommerce'); ?></h2></th>
+					<th width="178" align="right"><h2><?php _e('Subtotal', 'woocommerce'); ?></h2></th>
 					<td align="right"><strong><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong></td>
 				</tr>
 				
@@ -119,7 +119,8 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 				<?php } ?>
 
-				<?php
+				<!--
+<?php
 					if ( get_option('woocommerce_display_cart_taxes') == 'yes' && $woocommerce->cart->get_cart_tax() ) :
 
 						$taxes = $woocommerce->cart->get_formatted_taxes();
@@ -194,6 +195,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 					endif;
 				?>
+-->
 
 				<?php if ($woocommerce->cart->get_discounts_after_tax()) : ?>
 
@@ -221,13 +223,15 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 		</table>
 
 		<?php if ( get_option('woocommerce_display_cart_taxes') == 'yes' && $woocommerce->cart->get_cart_tax() ) : ?>
-			<p><small><?php
+			<p style="padding-top:20px;text-align:right;">
+			<small><?php
 
 				$estimated_text = ( $woocommerce->customer->is_customer_outside_base() && ! $woocommerce->customer->has_calculated_shipping() ) ? sprintf( ' ' . __('(taxes estimated for %s)', 'woocommerce'), $woocommerce->countries->estimated_for_prefix() . __($woocommerce->countries->countries[ $woocommerce->countries->get_base_country() ], 'woocommerce') ) : '';
 
-				printf(__('Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'woocommerce'), $estimated_text );
+				printf(__('<strong>Note:</strong> Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'woocommerce'), $estimated_text );
 
-			?></small></p>
+			?></small>
+			</p>
 		<?php endif; ?>
 
 	<?php elseif( $woocommerce->cart->needs_shipping() ) : ?>

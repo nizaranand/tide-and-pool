@@ -34,24 +34,51 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 		<!-- customer details -->
 		<article id="customer_details" class="checkout-panel">
 			<!-- header -->
-			<h2 class="checkout">1. Checkout Method<span class="edit">Edit</span></h2>
+			<h2 class="checkout">1. Checkout Method (STATIC CONTENT)<span class="edit">Edit</span></h2>
 			<!-- end header -->
 			
 			<!-- content -->
 			<div class="content">
 				<!-- left -->
 				<div class="left">
-					Register/Guest Form
-					<?php add_action( 'init', 'woocommerce_process_registration' ); ?>
+					<!-- header -->
+					<h3>New to TIDE & POOL?<br><span class="blue-green">Account Sign Up or Checkout as a Guest</span></h3>
+					<!-- end header -->
+					
+					<!-- text -->				
+					<p>Register to save time on future visits and enjoy exclusive previews of new designs. Or checkout as a guest without creating an account.</p>
+					<!-- end text -->
+					
+					<!-- form -->
+					<input type="radio" name="register" value="register">Resgister<br>
+					<input type="radio" name="register" value="register">Checkout as Guest<br>
+						
+					<a class="continue" href="#">Continue</a>
+					<!-- end form -->
 				</div>
 				<!-- end left -->
 			
 				<!-- right -->
 				<div class="right">
-					Sign in form
+					<!-- header -->
+					<h3 class="checkout">TIDE & POOL Account Holders<br><span class="blue-green">Sign in below to access your account</span></h3>
+					<!-- end header -->
+					
+					<!-- form -->
+					<label>Email Address</label><input type="text" name="email" placeholder="email address">
+					<label>Password</label><input type="password" name="email">
+					<div class="clear"></div>
+					<a class="forgot-password" href="#">Forgot Password</a>
+						
+					<a class="continue" href="#">Sign In</a>
+					<!-- end form -->
+					<!-- <?php wp_login_form(); ?> -->
+					
 					<!-- <?php do_action('woocommerce_before_customer_login_form'); ?> -->
 				</div>
 				<!-- end right -->
+				
+				<div class="clear"></div>
 			</div>
 			<!-- end content -->
 		</article>
@@ -65,15 +92,24 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 			
 			<!-- content -->
 			<div class="content">
+				<!-- header -->
+				<h3>Enter a Shipping Address<br><span class="blue-green">All fields except those indicated are required.</span></h3>
+				<!-- end header -->
+				
 				<!-- shipping address form -->
-				<div class="shipping-address-form">
+				<div class="address-form">
 					<?php do_action('woocommerce_checkout_shipping'); ?>
-					</div>
+				</div>
 				<!-- end shipping address form -->
 			
+				<div class="clear"></div>
 				<!-- shipping method -->
 				<div class="shipping-method">
-					Shipping Method
+					<!-- header -->
+					<h3 class="checkout">Select Shipping Method</h3>
+					<!-- end header -->
+					
+					<a class="continue" href="#">Continue</a>
 				</div>
 				<!-- end shipping method -->
 			</div>
@@ -84,23 +120,36 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 		<!-- gift options -->
 		<article id="gift-options" class="checkout-panel">
 			<!-- header -->
-			<h2 class="checkout">3. Gift Options<span class="edit">Edit</span></h2>
+			<h2 class="checkout">3. Gift Options (STATIC CONTENT)<span class="edit">Edit</span></h2>
 			<!-- end header -->
 			
 			<!-- content -->
 			<div class="content">
+				<!-- header -->
+				<h3>Gift Options<br><span class="blue-green">All fields except those indicated are required.</span></h3>
+				<!-- end header -->
+				
+				
 				<!-- gift message form -->
 				<div class="left" id="gift-message">
-					Gift Message Form
-					<!-- <?php do_action('woocommerce_checkout_billing'); ?> -->
+					<!-- text -->
+				<p><strong>Is this a gift?</strong> By selecting YES, you will receive a complimentary gift receipt and card.<br><br><input type="radio" name="register" value="register">YES <input type="radio" name="register" value="register">NO</p><br>
+				<!-- end text -->
+					<textarea></textarea>
+					
+					<p>You have 175 out of 175 characters remaining.</p>
+					
+					<a class="continue" href="#">Continue</a>
 				</div>
 				<!-- end gift message form -->
 			
 				<!-- shipping method -->
 				<div class="right" id="gift-wrap-img">
-					Gift Wrap Image
+					<textarea>[dynamic gift wrap message here...]</textarea>
 				</div>
 				<!-- end shipping method -->
+				
+				<div class="clear"></div>
 			</div>
 			<!-- end content -->
 		</article>
@@ -114,7 +163,11 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 			
 			<!-- content -->
 			<div class="content">
-				<?php do_action('woocommerce_checkout_billing'); ?>
+				<!-- billing address form -->
+				<div class="address-form">
+					<?php do_action('woocommerce_checkout_billing'); ?>
+				</div>
+				<!-- end billing address form -->
 			</div>
 			<!-- end content -->
 		</article>
