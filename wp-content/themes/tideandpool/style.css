@@ -1570,7 +1570,7 @@ form.checkout article.checkout-panel .content .right a.forgot-password {
   font-family: 'Georgia', serif;
 }
 form.checkout article.checkout-panel .content .right a.continue {
-  margin: 42px 0 0 0;
+  margin: 30px 0 0 0;
   /*
 position: absolute;
 					left:0;
@@ -1645,6 +1645,42 @@ form.checkout article.checkout-panel #gift-wrap-img textarea {
   right: 30px;
   color: #666;
   font-family: 'ProximaNovaRegular';
+}
+form.checkout input#place_order {
+  float: right;
+}
+form.checkout td {
+  line-height: 30px;
+}
+form.checkout tr.total th,
+form.checkout tr.total td {
+  font-size: 1.5em;
+  line-height: 50px;
+  color: #333;
+  font-family: 'ProximaNovaBold';
+  font-weight: normal;
+}
+form.checkout tr.cart-subtotal th,
+form.checkout tr.shipping th,
+form.checkout tr.tax-rate th,
+form.checkout tr.cart-subtotal td,
+form.checkout tr.shipping td,
+form.checkout tr.tax-rate td {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'ProximaNovaBold';
+  line-height: 30px;
+}
+form.checkout tr.cart-subtotal td,
+form.checkout tr.shipping td,
+form.checkout tr.tax-rate td {
+  font-family: 'ProximaNovaRegular';
+}
+form.checkout tr.checkout_table_item td {
+  line-height: 50px;
+}
+form.checkout tbody {
+  border-bottom: 1px solid #a8ced6;
 }
 form.checkout article#payment-method .content label {
   float: none !important;

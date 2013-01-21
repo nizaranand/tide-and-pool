@@ -17,10 +17,10 @@
 <footer role="contentinfo" class="main-footer clear">
 <div class="inner">
 	<ul class="social">
-		<li class="facebook"><a href="">FACEBOOK</a></li>
-		<li class="twitter"><a href="">TWITTER</a></li>
-		<li class="pinterest"><a href="">PNTEREST</a></li>
-		<li class="tumblr"><a href="">TUMBLR</a></li>
+		<li class="facebook"><a href="http://www.facebook.com/TideandPool" target="_blank">FACEBOOK</a></li>
+		<li class="twitter"><a href="http://http://twitter.com/tideandpool">TWITTER</a></li>
+		<li class="pinterest"><a href="http://http://pinterest.com/TideandPool">PNTEREST</a></li>
+		<li class="tumblr"><a href="#" target="blank">TUMBLR</a></li>
 	</ul>
 	
 	<?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?>

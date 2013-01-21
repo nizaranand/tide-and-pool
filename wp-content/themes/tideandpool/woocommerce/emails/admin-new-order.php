@@ -11,44 +11,53 @@ if (!defined('ABSPATH')) exit; ?>
 
 <?php do_action('woocommerce_email_header', $email_heading); ?>
 
-<p><?php echo __('You have received an order from', 'woocommerce') . ' ' . $order->billing_first_name . ' ' . $order->billing_last_name . __(". Their order is as follows:", 'woocommerce'); ?></p>
+<div style="margin:0 30px;color#666;">
+	<?php echo __('You have received an order from', 'woocommerce') . ' ' . $order->billing_first_name . ' ' . $order->billing_last_name . __(". Their order is as follows:", 'woocommerce'); ?></p>
+</div>
 
 <?php do_action('woocommerce_email_before_order_table', $order, true); ?>
 
 
-<table cellspacing="0" cellpadding="0" border="0">
+<table cellspacing="0" cellpadding="0" border="0" width="653" style="color:#666;padding:30px;">
 	<tbody>
 		<tr>
-			<td>ORDER DATE:</td>
-			<td align="right"><?php echo __('ORDER #:', 'woocommerce') . ' ' . $order->get_order_number(); ?></td>
+			<td><strong>ORDER DATE:</strong></td>
+			<td align="right"><?php echo __('<strong>ORDER #:</strong>', 'woocommerce') . ' ' . $order->get_order_number(); ?></td>
 		</tr>
 		<tr>
 			<td colspan="2">Date</td>
 		</tr>
 		<tr>
-			<td>BILL TO:</td>
-			<td align="right">SHIP TO:</td>
+			<td colspan="2">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><?php echo $order->get_formatted_billing_address(); ?></td>
-			<td align="right"><?php echo $order->get_formatted_shipping_address(); ?></td>
+			<td><strong>BILL TO:</strong></td>
+			<td align="right"><strong>SHIP TO:</strong></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="right">UPS SHIPPING METHOD<br>[Shipping method]</td>
+			<td valign="top" width="50%"><?php echo $order->get_formatted_billing_address(); ?></td>
+			<td align="right" valign="top" width="50%"><?php echo $order->get_formatted_shipping_address(); ?></td>
 		</tr>
 		<tr>
-			 <td style="height:50px;">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="right"><strong>UPS SHIPPING METHOD</strong><br>[Shipping method here]</td>
+		</tr>
+		<tr>
+        	<td style="height:50px;">&nbsp;</td>
         </tr>
 		<tr>
-			<td>
-				<table>
+			<td colspan="2">
+				<table width="653" border="0" cellpadding="5" cellspacing="0" style="color:#666;">
 					<tr>
-						<th scope="col"><?php _e('ITEM #', 'woocommerce'); ?></th>
-						<th scope="col"><?php _e('ITEM NAME', 'woocommerce'); ?></th>
-						<th scope="col"><?php _e('QUANITY', 'woocommerce'); ?></th>
-						<th scope="col"><?php _e('PRICE', 'woocommerce'); ?></th>
-						<th scope="col"><?php _e('TOTAL', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('ITEM #', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('ITEM NAME', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('QUANTITY', 'woocommerce'); ?></th>
+						<th scope="col" align="left" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('PRICE', 'woocommerce'); ?></th>
+						<th scope="col" align="right" style="height:36px;line-height:36px;border-top:1px solid #eee;border-bottom:1px solid #eee;"><?php _e('TOTAL', 'woocommerce'); ?></th>
 					</tr>
+					
 					<?php echo $order->email_order_items_table( (get_option('woocommerce_downloads_grant_access_after_payment')=='yes' && $order->status=='processing') ? true : false, true, ($order->status=='processing') ? true : false ); ?>
 					<!--
 <tr>
@@ -71,15 +80,19 @@ if (!defined('ABSPATH')) exit; ?>
 						<td colspan="1">[price here]</td>
 					</tr>
 -->	
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
 					<tfoot>
 						<?php
 			if ( $totals = $order->get_order_item_totals() ) {
 				$i = 0;
 				foreach ( $totals as $total ) {
 					$i++;
-					?><tr>
-						<th scope="row" colspan="2" style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo $total['label']; ?></th>
-						<td style="text-align:left; border: 1px solid #eee; <?php if ( $i == 1 ) echo 'border-top-width: 4px;'; ?>"><?php echo $total['value']; ?></td>
+					?>
+					<tr>
+						<th scope="row" colspan="4" align="right"><?php echo $total['label']; ?></th>
+						<td  align="right"><?php echo $total['value']; ?></td>
 					</tr><?php
 				}
 			}
@@ -127,8 +140,8 @@ if (!defined('ABSPATH')) exit; ?>
 <?php endif; ?>
 <?php if ($order->billing_phone) : ?>
 	<p><strong><?php _e('Tel:', 'woocommerce'); ?></strong> <?php echo $order->billing_phone; ?></p>
--->
-<?php endif; ?>
+
+<?php endif; ?>-->
 
 <?php woocommerce_get_template('emails/email-addresses.php', array( 'order' => $order )); ?>
 

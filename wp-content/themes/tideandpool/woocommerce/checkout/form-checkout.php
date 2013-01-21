@@ -109,6 +109,8 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', $woocommerce-
 					<h3 class="checkout">Select Shipping Method</h3>
 					<!-- end header -->
 					
+					[shipping methods from UPS API here...]
+					
 					<a class="continue" href="#">Continue</a>
 				</div>
 				<!-- end shipping method -->
