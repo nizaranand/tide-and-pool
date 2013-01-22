@@ -37,8 +37,7 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
- 
- 
+     
 /* remove wooCommerce block */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);	
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
@@ -126,6 +125,7 @@ if ( ! function_exists( 'boilerplate_setup' ) ):
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Navigation', 'boilerplate' ),
+			'user_utility' => 'User Utility'
 		) );
 
 		// This theme allows users to set a custom background
@@ -594,5 +594,29 @@ endif;
 	endif;
 
 /*	End Boilerplate */
+
+// Ensure cart contents update when products are added to the cart via AJAX (place the following in functions.php)
+add_filter('add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment');
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+global $woocommerce;
+
+ob_start();
+
+?>
+
+<!-- <a class="cart-contents my-shopping-bag" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping bag', 'woothemes'); ?>"><span class="total"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></span></a> -->
+
+
+
+<?php
+
+$fragments['.cart-contents'] = ob_get_clean();
+
+return $fragments;
+
+}
+
+
 
 ?>

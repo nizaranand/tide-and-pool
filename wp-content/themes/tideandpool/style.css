@@ -1205,6 +1205,7 @@ section.product .right .inner h1 {
   font-size: 1.5em;
   margin: 0 0 30px 0;
   text-transform: uppercase;
+  color: white !important;
 }
 section.product .right .inner h1 span.price ins {
   color: #4d004e;
@@ -1252,16 +1253,22 @@ section.product .right .inner form.cart button.single_add_to_cart_button {
   width: 127px;
   height: 30px;
   line-height: 30px;
-  font-family: 'futura_condensedbold';
-  text-transform: uppercase;
+  background: url('css/img/add-to-bag-btn.png') no-repeat;
+  text-indent: -10000px;
   display: block;
-  text-align: center;
-  background: #1093ab;
-  color: white;
   border: none;
 }
 section.product .right .inner .addthis_toolbox {
   width: 500px;
+}
+section.product .right .inner .addthis_toolbox a.addthis_button_tweet {
+  margin: 0 0 0 -5px;
+}
+section.product .right .inner .addthis_toolbox a.addthis_button_pinterest_pinit {
+  margin: 0 0 0 -20px;
+}
+section.product .right .inner .addthis_toolbox a.addthis_button_email {
+  margin: 0 0 0 15px;
 }
 #collections {
   /* width:1300px; */
