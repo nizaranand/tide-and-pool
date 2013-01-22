@@ -76,7 +76,6 @@ wp_head();
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 
 <!-- bug herd -->
-<!--
 <script type='text/javascript'>
 (function (d, t) {
   var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
@@ -85,7 +84,6 @@ wp_head();
   s.parentNode.insertBefore(bh, s);
   })(document, 'script');
 </script>
--->
 <!-- end bug herd -->
 
 <style type="text/css">
