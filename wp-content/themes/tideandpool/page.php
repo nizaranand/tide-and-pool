@@ -36,12 +36,12 @@ get_header(); ?>
 		
 		Galleria.run('#galleria', {
 			dataSource: data,
-			autoplay: 0 ,
+			autoplay: 4000 ,
 			initialTransition: 'fade',
-			touchTransition: 'fadeslide',
-			transitionSpeed: 600,
-			transition: 'fadeslide',
-			imageTimeout: 6000,
+			touchTransition: 'fade',
+			transitionSpeed: 700,
+			transition: 'fade',
+			imageTimeout: 700,
 			debug: false,
 			showInfo: false,
 			preload: 5,
@@ -200,6 +200,7 @@ get_header(); ?>
 	<?php endwhile; ?>
 </article>
 <!-- end boutiques -->
+
 <?php } else { ?>
 
 <!-- body content -->
