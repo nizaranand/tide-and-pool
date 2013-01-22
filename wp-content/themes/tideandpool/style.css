@@ -128,10 +128,13 @@ a {
   text-decoration: none;
   margin: 0;
   padding: 0;
-  -webkit-transition: all ease-in-out 0.3s;
-  -moz-transition: all ease-in-out 0.3s;
-  -o-transition: all ease-in-out 0.3s;
-  transition: all ease-in-out 0.3s;
+  /*
+-webkit-transition:all ease-in-out 0.3s;
+	-moz-transition:all ease-in-out 0.3s;
+	-o-transition:all ease-in-out 0.3s;
+	transition:all ease-in-out 0.3s;
+*/
+
 }
 a:active,
 a:visited,
@@ -509,6 +512,9 @@ header.main-header .inner a.swimclub-signup {
   right: 0;
   margin: -6px 0 0 0;
 }
+header.main-header .inner a.swimclub-signup:hover {
+  background-position: 0 -12px;
+}
 #swimclub-popup {
   width: 779px;
   height: 498px;
@@ -740,9 +746,12 @@ body.fixed .main-nav {
   color: white;
   font-family: 'ProximaNovaBold';
   text-indent: 30px;
-  background: #1093ab url('css/img/shop-bag-icon.png') no-repeat 10px 0;
+  background: url('css/img/shop-bag-icon.png') no-repeat 10px 0;
   overflow: auto;
   text-transform: uppercase;
+}
+.shopping-bag .my-shopping-bag:hover {
+  background: #1093ab url('css/img/shop-bag-icon.png') no-repeat 10px -30px;
 }
 .shopping-bag .dropdown {
   position: absolute;
@@ -801,6 +810,7 @@ body.fixed .main-nav {
   color: #333;
 }
 .shopping-bag .dropdown .items ul li a {
+  width: 100%;
   height: auto;
   margin: 0 0 12px 0;
   padding: 0px;
@@ -1819,7 +1829,7 @@ body.home .content {
 
 }
 .main-footer ul li a:hover {
-  background: #1093ab;
+  color: #1093ab;
 }
 .main-footer address {
   display: inline;
@@ -1931,9 +1941,19 @@ input:focus {
 }
 #galleria {
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: 90%;
+  position: absolute;
   margin: 0 0 0 0;
+  left: 0;
+  right: 0;
+  top: 103px;
+  bottom: 0;
+}
+#galleria .galleria-image-nav div {
+  opacity: 0.0 !important;
+}
+#galleria .galleria-image-nav div:hover {
+  opacity: 1.0 !important;
 }
 .galleria-container {
   background: white !important;
