@@ -6,6 +6,4 @@
 
 */
 
-`git pull`;
-
-
+`git pull`; ?>
