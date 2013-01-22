@@ -415,6 +415,7 @@ border:none !important;
   overflow: hidden !important;
   display: block !important;
   right: 0 !important;
+  z-index: 6000 !important;
 }
 /*
 .MagicZoom img {
@@ -467,6 +468,13 @@ a.continue-shopping:hover {
 }
 /* header */
 /* ------------------------------------------------------------------------- */
+body.home header.main-header {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 200;
+}
 header.main-header {
   /* border: solid 1px blue; */
 
@@ -863,8 +871,11 @@ body.fixed .main-nav {
   text-transform: uppercase;
   text-align: center;
   background: url('css/img/global/anouncement-bg.png') no-repeat center top;
-  z-index: 200;
+  z-index: 150;
   width: 100%;
+  position: absolute;
+  top: 117px;
+  left: 0;
   /*
 -webkit-mask: -webkit-linear-gradient(
           left,
@@ -1805,7 +1816,7 @@ body.home .content {
   font-family: 'futura_condensedbold' !important;
   background: rgba(159, 201, 210, 0.9);
   color: white;
-  z-index: 20000;
+  z-index: 7000;
 }
 .main-footer .inner {
   max-width: 970px;
@@ -1941,13 +1952,14 @@ input:focus {
 }
 #galleria {
   width: 100%;
-  height: 90%;
+  height: 100%;
   position: absolute;
   margin: 0 0 0 0;
   left: 0;
   right: 0;
-  top: 103px;
+  top: 0;
   bottom: 0;
+  z-index: 100;
 }
 #galleria .galleria-image-nav div {
   opacity: 0.0 !important;

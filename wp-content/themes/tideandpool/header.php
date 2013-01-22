@@ -97,8 +97,6 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
-github comit/deploy test
-
 <?php if ( ! in_category('boutiques')) { ?>
 <header role="banner" class="main-header">
 
