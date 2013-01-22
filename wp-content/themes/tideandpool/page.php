@@ -204,9 +204,15 @@ get_header(); ?>
 
 <!-- body content -->
 <article class="body-content">
-<?php while ( have_posts() ) : the_post(); ?>
-<?php the_content(); ?>
-<?php endwhile; // end of the loop. ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+
+	<!-- header -->
+	<h1>Boutiques</h1>
+	<!-- end header -->
+	
+	<?php the_content(); ?>
+	
+	<?php endwhile; ?>
 </article>				
 <!-- end body content -->
 
