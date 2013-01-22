@@ -499,7 +499,7 @@ body.fixed {
 	font-size: 11px;
 	letter-spacing: 2px;
 	position: relative;
-	z-index: 300;
+	z-index: 7000;
 	.inner {
 		min-height: 30px;
 		ul {
@@ -866,11 +866,11 @@ article.product-nav {
 	.right {
 		position: absolute;
 		right:0;
-		span.next {
-			margin:0 0 0 10px;
-			padding: 0 0 0 10px;
+		span.back {
+			margin:0 10px 0 0;
+			padding: 0 10px 0 0;
 			height: 30px;
-			border-left:1px solid #1093ab;
+			border-right:1px solid #1093ab;
 		}
 	}
 }
@@ -1586,6 +1586,9 @@ form.checkout article#payment-method .content label {
 			background: #dbe921;
 		}
 	}
+}
+body.single-product .content {
+	padding:0 0 120px 0;
 }
 .content {
 	width:100%;
