@@ -201,14 +201,26 @@ get_header(); ?>
 </article>
 <!-- end boutiques -->
 
+<?php } elseif (is_page('shopping-bag')) { ?>
+
+<!-- body content -->
+<article class="body-content">
+	<?php while ( have_posts() ) : the_post(); ?>
+	
+	<?php the_content(); ?>
+	
+	<?php endwhile; ?>
+</article>				
+<!-- end body content -->
+
 <?php } else { ?>
 
 <!-- body content -->
 <article class="body-content">
 	<?php while ( have_posts() ) : the_post(); ?>
-
+	
 	<!-- header -->
-	<h1>Boutiques</h1>
+	<h1><?php the_title(); ?></h1>
 	<!-- end header -->
 	
 	<?php the_content(); ?>
