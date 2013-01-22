@@ -37,6 +37,24 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
+
+add_action( 'admin_init', 'my_remove_menu_pages' );
+
+	function my_remove_menu_pages() {
+		remove_menu_page('edit-comments.php');
+		remove_menu_page('link-manager.php');
+}
+function remove_admin_bar_links() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('wp-logo');
+	}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
+function remove_footer_admin () {
+    echo 'Developed by <a href="http://blackandblackcreative.com">Black & Black Creative</a></p>';
+    }
+
+    add_filter('admin_footer_text', 'remove_footer_admin');
  
 // clean up the <head>
 function removeHeadLinks() {
