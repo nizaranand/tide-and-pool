@@ -37,14 +37,6 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
- 
-// clean up the <head>
-function removeHeadLinks() {
-	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wlwmanifest_link');
-}
-add_action('init', 'removeHeadLinks');
-remove_action('wp_head', 'wp_generator');
      
 /* remove wooCommerce block */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);	
