@@ -20,7 +20,7 @@
 		<li class="facebook"><a href="http://www.facebook.com/TideandPool" target="_blank">FACEBOOK</a></li>
 		<li class="twitter"><a href="http://http://twitter.com/tideandpool">TWITTER</a></li>
 		<li class="pinterest"><a href="http://http://pinterest.com/TideandPool">PNTEREST</a></li>
-		<li class="tumblr"><a href="#" target="blank">TUMBLR</a></li>
+		<li class="instagram"><a href="http://instagram.com/tideandpool" target="blank">TUMBLR</a></li>
 	</ul>
 	
 	<?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?>
