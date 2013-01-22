@@ -21,7 +21,10 @@ $(function() {
 	});
 	
 	// magic zoom active thumb class
-	$("a.selector:first").addClass("active");
+	$(".thumbnails article a:first").addClass("first-active");
+	$('.thumbnails article a').click(function() {
+		$('.thumbnails article a:first').removeClass("first-active");
+	});
 	
 	/*
 $('.thumnails article').click(function() {

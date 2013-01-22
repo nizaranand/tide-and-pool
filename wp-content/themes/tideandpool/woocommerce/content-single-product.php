@@ -95,7 +95,7 @@
 			<div class="addthis_toolbox addthis_default_style ">
 				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 				<a class="addthis_button_tweet"></a>
-				<a class="addthis_button_pinterest_pinit"></a>
+				<a class="addthis_button_pinterest_pinit" pi:pinit:url="<?php the_permalink(); ?>" pi:pinit:media="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" pi:pinit:layout="horizontal"></a>
 				<a class="addthis_button_email">
 					<img src="<?php bloginfo( 'template_url' ); ?>/css/img/addthis-email-btn.png">
 				</a>

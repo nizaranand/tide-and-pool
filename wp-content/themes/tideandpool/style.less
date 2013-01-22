@@ -254,6 +254,12 @@ a.continue-shopping:hover {
 	color:white;
 	border-color: #a8ced6;
 }
+a.arrow-holder {
+	opacity: 0.0
+}
+a.arrow-holder:hover  {
+	opacity: 1.0
+}
 
 /* header */
 /* ------------------------------------------------------------------------- */
@@ -905,6 +911,7 @@ width:auto !important;
 					padding:30px 0 0 0;
 					text-transform: uppercase;
 					font-size: 1.2em;
+					font-weight: normal;
 					/* line-height: 1.5em ;*/
 					text-align: center;
 					background: rgba(59,163,182,0.8);
@@ -916,7 +923,18 @@ width:auto !important;
 					font-family: 'ProximaNovaLight';
 					h3 {
 						color:white;
-						font-size: 1.2em;
+						font-size: 1.0em;
+					}
+					span.price {
+						font-family: 'ProximaNovaLight';
+						font-size: 1.0em;
+						ins {
+							text-decoration: none !important;
+							span.amount {
+								text-decoration: none !important;
+								color:#38193a;
+							}
+						}
 					}
 				}
 			}
@@ -958,7 +976,7 @@ section.product {
 						display: block;
 					}
 				}
-				a.active {
+				a.active, a.first-active {
 					border:3px solid #d3e70f;
 					z-index: 200;
 				}
@@ -1073,7 +1091,7 @@ section.product {
 					margin:0 0 0 -20px;
 				}
 				a.addthis_button_email {
-					margin:0 0 0 15px;
+					margin:0 0 0 -45px;
 				}
 			}
 		}

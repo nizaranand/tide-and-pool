@@ -466,6 +466,12 @@ a.continue-shopping:hover {
   color: white;
   border-color: #a8ced6;
 }
+a.arrow-holder {
+  opacity: 0;
+}
+a.arrow-holder:hover {
+  opacity: 1;
+}
 /* header */
 /* ------------------------------------------------------------------------- */
 body.home header.main-header {
@@ -1102,6 +1108,7 @@ section.products ul li.slide .product-details {
   padding: 30px 0 0 0;
   text-transform: uppercase;
   font-size: 1.2em;
+  font-weight: normal;
   /* line-height: 1.5em ;*/
 
   text-align: center;
@@ -1115,7 +1122,18 @@ section.products ul li.slide .product-details {
 }
 section.products ul li.slide .product-details h3 {
   color: white;
-  font-size: 1.2em;
+  font-size: 1.0em;
+}
+section.products ul li.slide .product-details span.price {
+  font-family: 'ProximaNovaLight';
+  font-size: 1.0em;
+}
+section.products ul li.slide .product-details span.price ins {
+  text-decoration: none !important;
+}
+section.products ul li.slide .product-details span.price ins span.amount {
+  text-decoration: none !important;
+  color: #38193a;
 }
 section.product {
   width: 970px;
@@ -1159,7 +1177,8 @@ section.product .left section.thumbnails article a img {
   margin-left: -7px;
   display: block;
 }
-section.product .left section.thumbnails article a.active {
+section.product .left section.thumbnails article a.active,
+section.product .left section.thumbnails article a.first-active {
   border: 3px solid #d3e70f;
   z-index: 200;
 }
@@ -1268,7 +1287,7 @@ section.product .right .inner .addthis_toolbox a.addthis_button_pinterest_pinit 
   margin: 0 0 0 -20px;
 }
 section.product .right .inner .addthis_toolbox a.addthis_button_email {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 -45px;
 }
 #collections {
   /* width:1300px; */
