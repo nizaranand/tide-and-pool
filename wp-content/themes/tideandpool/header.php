@@ -18,6 +18,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no, maximum-scale=1.0">
+<meta name="author" content="info@blackandblackcreative.com">
+<meta name="distribution" content="Global">
+<meta name="revisit-after" content="never">
+<meta name="copyright" content="Copyright TIDE & POOL 2013">
+<meta name="robots" content="nofollow,noindex">
 <title><?php
 /*
 * Print the <title> tag based on what is being viewed.
