@@ -166,7 +166,7 @@ global $woocommerce, $post, $product;
 	
 	<div class="right">
 		<h2>Express Shipping</h2>
-		<p>Need it fast? Select our 2-day Shipping.  Find out more about shipping rates and times.</p>
+		<p>Need it fast? Select our 2-day Shipping.<br>  Find out more about shipping rates and times.</p>
 		<a class="cross-sell-btn" href="<?php echo home_url( '/' ); ?>express-shipping/">Shipping Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
 	</div>
 </div>

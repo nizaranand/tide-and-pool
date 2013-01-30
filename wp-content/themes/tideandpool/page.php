@@ -101,7 +101,7 @@ get_header(); ?>
 	<?php $my_query = new WP_Query('page_id=397&showposts=1'); ?>
 	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 	<!-- header -->
-	<h1>About</h1>
+	<h1>About Tide & Pool</h1>
 	<!-- end header -->
 	
 	<!-- body content -->
@@ -113,7 +113,7 @@ get_header(); ?>
 	<!-- end body content -->
 	
 	<!-- instagram link -->
-	<a class="instagram" href="http://pinterest.com/TideandPool">Follow us @tideandpool Instagram</a>
+	<a class="instagram" href="http://instagram.com/tideandpool" target="_blank">Follow us @tideandpool Instagram</a>
 	<!-- end instagram link -->
 	
 	<!-- instagram img -->

@@ -1938,6 +1938,7 @@ body.home .content {
   right: 0;
   height: 30px;
   font-family: 'futura_condensedbold' !important;
+  letter-spacing: 2px;
   background: rgba(159, 201, 210, 0.9);
   color: white;
   z-index: 7000;
@@ -1953,7 +1954,7 @@ body.home .content {
 }
 .main-footer ul li {
   display: inline;
-  line-height: 30px;
+  line-height: 32px;
   text-transform: uppercase;
 }
 .main-footer ul li a {
@@ -1968,7 +1969,7 @@ body.home .content {
 }
 .main-footer address {
   display: inline;
-  line-height: 30px;
+  line-height: 32px;
   font-style: normal;
 }
 .main-footer address {
