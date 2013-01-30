@@ -224,13 +224,15 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 
 		<?php if ( get_option('woocommerce_display_cart_taxes') == 'yes' && $woocommerce->cart->get_cart_tax() ) : ?>
 			<p style="padding-top:20px;text-align:right;">
-			<small><?php
+			<!--
+<small><?php
 
 				$estimated_text = ( $woocommerce->customer->is_customer_outside_base() && ! $woocommerce->customer->has_calculated_shipping() ) ? sprintf( ' ' . __('(taxes estimated for %s)', 'woocommerce'), $woocommerce->countries->estimated_for_prefix() . __($woocommerce->countries->countries[ $woocommerce->countries->get_base_country() ], 'woocommerce') ) : '';
 
 				printf(__('<strong>Note:</strong> Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'woocommerce'), $estimated_text );
 
 			?></small>
+-->
 			</p>
 		<?php endif; ?>
 
