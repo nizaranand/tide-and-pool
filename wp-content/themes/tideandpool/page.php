@@ -41,7 +41,7 @@ get_header(); ?>
 			touchTransition: 'fade',
 			transitionSpeed: 700,
 			transition: 'fade',
-			imageTimeout: 700,
+			imageTimeout: 1700,
 			debug: false,
 			showInfo: false,
 			preload: 5,
