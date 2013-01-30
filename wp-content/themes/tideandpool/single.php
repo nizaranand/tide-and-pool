@@ -11,7 +11,7 @@ get_header(); ?>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-<div class="boutique-content">			
+<div id="<?php the_ID(); ?>" class="boutique-content">			
 <!-- gallery -->
 <div id="boutiques-gallery" class="royalSlider rsDefault">
 	<?php $images = get_field('boutique_gallery');
@@ -35,15 +35,17 @@ get_header(); ?>
 		<div class="address">
 			<?php if(get_field('boutique_location')): ?>
 			<?php while(the_repeater_field('boutique_location')): ?>
-			<?php the_sub_field('street_address'); ?>, <?php the_sub_field('state'); ?>, <?php the_sub_field('zip_code'); ?> 
+			<?php the_sub_field('street_address'); ?>, <?php the_sub_field('city'); ?>, <?php the_sub_field('state'); ?>, <?php the_sub_field('zip_code'); ?> 
 			<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
 		<!-- end address -->
 		
+		<?php if(get_field('google_map')): ?>
 		<!-- get directions -->
-		<a class="google" href="#">Get Directions</a>
+		<a class="google" href="http://maps.google.com?q=<?php the_field('google_map'); ?>" target="_blank">Get Directions</a>
 		<!-- end get directions -->
+		<?php endif; ?>
 	</div>
 	<!-- end locaiton -->
 	

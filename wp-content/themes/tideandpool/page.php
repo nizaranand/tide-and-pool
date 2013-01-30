@@ -61,32 +61,7 @@ get_header(); ?>
 	});
 </script>
 
-<!-- home slideshow -->
-<!--<div class="slideshow home rsDefault">
-	<?php $my_query = new WP_Query('page_id=21&showposts=1'); ?>
-	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-	<?php if(get_field('home_page_slideshow')): ?>
-	<?php while(the_repeater_field('home_page_slideshow')): ?>
-	<div class="rsImg">
-		<a href="
-			<?php if(get_sub_field('home_slideshow_link'))
-				{
-				the_sub_field('home_slideshow_link');
-				}
-				else {
-					echo('#');
-				}
-			?>
-			">
-			<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
-			<img src="<?php echo $image[0]; ?>" />
-		</a>
-	</div>
-	<?php endwhile; ?>
-	<?php endif; ?>
-	<?php endwhile; ?>
-</div>-->
-<!-- end home slideshow -->
+
 <?php } elseif (is_page('collections')) { ?>
 
 <!-- collections container -->
@@ -117,23 +92,6 @@ get_header(); ?>
 	<?php endif; ?>
 	<?php endwhile; ?>
 </section>
-<!-- end collection container -->
-
-<?php } elseif (is_page('collections-test-2')) { ?>
-
-<!-- collections container -->
-<div id="collections" class="thumb-container">
-	<?php $my_query = new WP_Query('page_id=103&showposts=1'); ?>
-	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-	<?php $images = get_field('collection_test_gallery'); if( $images ): ?>
-	<?php foreach( $images as $image ): ?>
-	<div class="thumb">
-		<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
-	</div>
-	<?php endforeach; ?>
-	<?php endif; ?>
-	<?php endwhile; ?>
-</div>
 <!-- end collection container -->
 
 <?php } elseif (is_page('about')) { ?>
@@ -172,8 +130,6 @@ get_header(); ?>
 
 <!-- boutiques -->
 <article id="boutiques" class="body-content">
-	<?php $my_query = new WP_Query('page_id=397&showposts=1'); ?>
-	<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 	<!-- header -->
 	<h1>Boutiques</h1>
 	<!-- end header -->
@@ -181,8 +137,32 @@ get_header(); ?>
 	<!-- left -->
 	<div class="left">
 		<!-- boutiques scroll -->
-		<div class="boutiques-scroll">
-		
+		<div id="boutiques-scroll" class="scroll-pane">
+			<ol id="boutiques">
+			<?php $my_query = new WP_Query('cat=1&order=aesc&showposts=-1'); ?>
+			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+
+			<!-- panel -->
+			<li id="boutique-<?php the_ID(); ?>" class="boutique">
+				<!-- city & state -->
+				<div class="city-and-state">
+					<span class="number"></span>
+					<?php if(get_field('boutique_location')): ?>
+					<?php while(the_repeater_field('boutique_location')): ?>
+					<?php the_sub_field('city'); ?>, <?php the_sub_field('state'); ?>
+					<?php endwhile; ?>
+					<?php endif; ?>
+				</div>
+				<!-- end city & state -->
+				
+				<!-- boutique name -->
+				<p><?php the_title() ?></p>
+				<!-- end boutique name -->
+			</li>
+			<!-- end panel -->
+
+			<?php endwhile; ?>
+			</ol>
 		</div>
 		<!-- end boutiques scroll -->	
 	</div>
@@ -197,9 +177,48 @@ get_header(); ?>
 		<!-- end boutique view -->	
 	</div>
 	<!-- end right -->
-	<?php endwhile; ?>
 </article>
 <!-- end boutiques -->
+
+<!-- AJAX load script -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		//stylised scroll pane
+		$('#boutiques-scroll').jScrollPane();
+		
+		// add sequential numbers to each list item
+		$("ol#boutiques li .city-and-state").each(function (i) {
+			i = i+1;
+			$(this).prepend('<span class="number">' +i+ '.</span>');
+		});
+		
+		// add/remove active class on list item click
+		$("ol#boutiques li:first-child").addClass('active');
+		$('ol#boutiques li').click(function() {
+			$("li.active").removeClass('active');
+			$(this).addClass('active');
+		});
+   
+		// AJAX load event
+		<?php $my_query = new WP_Query('cat=1&showposts=1&order=desc'); ?>
+		<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+		$('.boutique-view').delay(500).fadeIn(1000);
+		$('.boutique-view').load('<?php the_permalink(); ?>');
+		<?php endwhile; ?>
+		
+		<?php $my_query = new WP_Query('cat=1&showposts=-1'); ?>
+		<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+		$('ol#boutiques li#boutique-<?php the_ID(); ?>').click(function() {
+			//alert("AJAX click test");
+			$('.boutique-view').fadeOut(500);
+			$('.boutique-view').load('<?php the_permalink(); ?>');
+			$('.boutique-view').delay(500).fadeIn(1000);
+		});
+		<?php endwhile; ?>
+	});
+</script>
+<!-- end AJAX load script -->
 
 <?php } elseif (is_page('shopping-bag')) { ?>
 

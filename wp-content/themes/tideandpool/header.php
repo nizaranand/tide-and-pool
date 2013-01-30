@@ -46,6 +46,7 @@ wp_title( '|', true, 'right' );
 <?php } ?>
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/royalslider.css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/default/rs-default.css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/jquery.jscrollpane.css" />
 
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.min-1.8.3.js"></script>
 
@@ -53,6 +54,8 @@ wp_title( '|', true, 'right' );
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/royalslider/jquery.royalslider.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/jquery.touchcarousel-1.1.min.js"></script>
 <?php if ( ! in_category('boutiques')) { ?>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.mousewheel.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.jscrollpane.min.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/galleria-1.2.9.min.js"></script> 
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.min.js"></script>
@@ -63,12 +66,6 @@ wp_title( '|', true, 'right' );
 <!-- main site files for production -->
 <script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
-
-<style type="text/css">
-	html {
-		margin-top:0 !important;
-	}
-</style>
 
 <?php if ( ! in_category('boutiques')) { ?>
 <?php
@@ -124,7 +121,6 @@ wp_head();
 <?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 	<div class="clear"></div>
 	
-	<?php if ( ! is_page('shopping-bag')) { ?>
 	<!-- shopping bag widget/dropdown -->
 	<div class="shopping-bag">
 		<div class="my-shopping-bag">
@@ -182,7 +178,6 @@ wp_head();
 		<!-- end dropdown -->
 		<?php endif; ?>			
 	</div> <!-- // .shopping-bag -->
-	<?php } ?>
 </div>
 </nav><!-- #access -->
 	

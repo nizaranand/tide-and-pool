@@ -34,7 +34,11 @@ $woocommerce_loop['loop']++;
 	<a href="<?php the_permalink(); ?>">
 
 		<!-- thumbnail -->
-		<?php do_action( 'woocommerce_before_shop_loop_item_title' );?>
+		<?php if(get_field('product_carousel')): ?>
+		<?php while(the_repeater_field('product_carousel')): ?>
+		<img src="<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_main_image'), 'product-carousel'); ?><?php echo $image[0]; ?>" data-rollover="<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_hover_image'), 'product-carousel'); ?><?php echo $image[0]; ?>"/>
+		<?php endwhile; ?>
+		<?php endif; ?>
 		<!-- end thumbnail -->
 
 		<!-- product details -->

@@ -20,28 +20,13 @@ $(function() {
 		
 	});
 	
+        
 	// magic zoom active thumb class
 	$(".thumbnails article a:first").addClass("first-active");
 	$('.thumbnails article a').click(function() {
 		$('.thumbnails article a:first').removeClass("first-active");
 	});
 	
-	/*
-$('.thumnails article').click(function() {
-		$('.dropdown').stop(true,true).slideDown(800);
-	});
-*/
-	
-	// shopping bag toggle
-	/*
-$('.shopping-bag').mouseenter(function() {
-		$('.dropdown').stop(true,true).slideDown(800);
-	});
-	
-	$('.shopping-bag').mouseleave(function() {
-		$('.dropdown').stop(true,true).slideUp(800);
-	});
-*/
 	
 	$(".shopping-bag").hover(function(){
 		$('.dropdown').stop(true,true).animate({
@@ -66,6 +51,21 @@ $('.shopping-bag').mouseenter(function() {
     function() {
 		$('.product-details',this).stop(true,true).fadeOut(300); 
     });
+    
+    // product carousel hover image swap
+    $("ul.touchcarousel-container li.slide img").hover(function() {
+    	var initialImage = $(this).attr('src');
+    	var swapImageUrl = $(this).attr('data-rollover');
+    	$(this).attr('src',swapImageUrl);
+    	$(this).attr('data-rollover',initialImage);
+ 		$(this).delay(500).fadeIn(1000);
+
+ 	}, function() {
+    	var initialImage = $(this).attr('data-rollover');
+    	var swapImageUrl = $(this).attr('src');
+    	$(this).attr('src',initialImage);
+    	$(this).attr('data-rollover',swapImageUrl);
+ 	});
     
     // couresel arrover mouse follow
 

@@ -11,7 +11,6 @@
 * @since Boilerplate 1.0
 */
 ?>
-<?php if ( ! in_category('boutiques')) { ?>
 </section>
 <!-- .content -->
 <footer role="contentinfo" class="main-footer clear">
@@ -101,7 +100,6 @@
 		<!-- end content -->
 	</div>
 	<!-- end swim club popup -->
-<?php }?>
 <?php
 /* Always have wp_footer() just before the closing </body>
 * tag of your theme, or you will break many plugins, which
@@ -109,6 +107,12 @@
 */
 wp_footer();
 ?>
+
+<style type="text/css">
+	html {
+		margin-top:0 !important;
+	}
+</style>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

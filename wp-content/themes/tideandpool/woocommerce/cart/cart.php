@@ -7,7 +7,7 @@
  * @version     1.6.4
  */
 
-global $woocommerce;
+global $woocommerce, $post, $product;
 ?>
 
 
@@ -28,7 +28,7 @@ global $woocommerce;
 			<th class="product-name" width="250"><?php _e('Availability', 'woocommerce'); ?></th>
 			<th class="product-price" width="250"><?php _e('Price', 'woocommerce'); ?></th>
 			<th class="product-quantity" width="250"><?php _e('Quantity', 'woocommerce'); ?></th>
-			<th class="product-subtotal" style="text-align:right;padding-right:30px;" width="100"><?php _e('Total', 'woocommerce'); ?></th>
+			<th class="product-subtotal" style="text-align:right;padding-right:30px;" width="100"><?php _e('SubTotal', 'woocommerce'); ?></th>
 		</tr>
 	</thead>
 	<tr>
@@ -76,11 +76,14 @@ global $woocommerce;
                    				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $values['quantity'] ) )
                    					echo '<p class="backorder_notification">' . __('Available on backorder', 'woocommerce') . '</p>';
 							?>
+							<p class="sku">Item # [SKU NO HERE...] </p>
 						
 						</td>
 						
 						<td>
-						[stock data here...]
+						
+						[IN STOCK DATA HERE...]
+
 						</td>
 
 						<!-- Product price -->
@@ -118,7 +121,7 @@ global $woocommerce;
 								echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key );
 							?>
 							<div class="update-remove">
-								<input type="submit" class="button" name="update_cart" value="<?php _e('Update Cart', 'woocommerce'); ?>" />
+								<input type="submit" class="button" name="update_cart" value="<?php _e('Update', 'woocommerce'); ?>" />
 								<div class="remove">
 									<?php echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf('<a href="%s" class="remove" title="%s">Remove</a>', esc_url( $woocommerce->cart->get_remove_url( $cart_item_key ) ), __('Remove this item', 'woocommerce') ), $cart_item_key ); ?>
 								</div>

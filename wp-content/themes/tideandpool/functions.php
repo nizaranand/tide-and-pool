@@ -38,7 +38,6 @@
  * @since Boilerplate 1.0
  */
  
- 
 /* remove wooCommerce block */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);	
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
@@ -71,6 +70,7 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
  	add_image_size( 'zoom-large',1500, 9999 ); // Permalink thumbnail
  	add_image_size( 'swimclub-text',269, 9999 ); // Permalink thumbnail
  	add_image_size( 'swimclub-body',387, 498, true ); // Permalink thumbnail
+ 	add_image_size( 'product-carousel',410, 500, true ); // Permalink thumbnail
 }
 /**
  * Set the content width based on the theme's design and stylesheet.

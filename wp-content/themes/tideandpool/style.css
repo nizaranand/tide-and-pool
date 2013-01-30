@@ -472,6 +472,20 @@ a.arrow-holder {
 a.arrow-holder:hover {
   opacity: 1;
 }
+.jspContainer {
+  /* overflow: auto !important; */
+
+}
+.jspVerticalBar {
+  width: 13px !important;
+}
+.jspTrack {
+  background: #fffffe !important;
+  border: 1px solid #999;
+}
+.jspDrag {
+  background: #a8ced6 url('css/img/scroll-arrow-down.png') bottom left no-repeat !important;
+}
 /* header */
 /* ------------------------------------------------------------------------- */
 body.home header.main-header {
@@ -700,8 +714,8 @@ body.fixed .main-nav {
 
   height: auto;
   font-family: 'futura_condensedbold';
-  font-size: 11px;
-  letter-spacing: 2px;
+  font-size: 12px;
+  letter-spacing: 3px;
   position: relative;
   z-index: 7000;
 }
@@ -756,12 +770,14 @@ body.fixed .main-nav {
   display: block;
   width: 175px;
   height: 30px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   line-height: 30px;
   color: white;
-  font-family: 'ProximaNovaBold';
+  font-family: 'futura_condensedbold';
   text-indent: 30px;
   background: url('css/img/shop-bag-icon.png') no-repeat 10px 0;
-  overflow: auto;
+  overflow: hidden;
   text-transform: uppercase;
 }
 .shopping-bag .my-shopping-bag:hover {
@@ -956,7 +972,8 @@ article.body-content {
   margin: 0 auto;
   font-family: 'ProximaNovaLight';
   padding: 0 0 0 0;
-  overflow: auto;
+  /* overflow: auto; */
+
 }
 article.body-content ul.order_details {
   font-size: 1.2em;
@@ -1001,18 +1018,64 @@ article#about a.instagram {
 article#about .instagram-img {
   clear: both;
 }
+article#boutiques {
+  /* overflow-x: hidden; */
+
+}
+article#boutiques h1 {
+  width: 100%;
+  padding: 0 0 24px 0;
+  border-bottom: 2px solid #cbcbcb;
+}
+article#boutiques .left {
+  width: 230px;
+  float: left;
+}
+article#boutiques .left #boutiques-scroll {
+  width: 230px;
+  height: 614px;
+  overflow: auto;
+}
+article#boutiques .left #boutiques-scroll ol li.boutique {
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+article#boutiques .left #boutiques-scroll ol li.boutique.active {
+  color: #1093AB;
+}
+article#boutiques .left li.boutique:hover {
+  color: #1093AB;
+}
+article#boutiques .left p {
+  font-size: 0.813em;
+  text-transform: none;
+}
+article#boutiques .left h2:hover {
+  color: #1093AB;
+}
+article#boutiques .right {
+  width: 700px;
+  float: right;
+}
+article#boutiques .right .boutique-view {
+  display: none;
+}
 .boutique-content {
-  width: 713px;
+  width: 700px;
   font-family: 'ProximaNovaLight';
+  /* overflow: hidden; */
+
 }
 .boutique-content #boutiques-gallery {
   width: 700px;
   height: 344px;
   display: block;
   margin: 0 0 30px 0;
+  overflow: hidden;
 }
 .boutique-content .left {
-  width: 435px;
+  width: 435px !important;
   float: left;
 }
 .boutique-content .left .location {
@@ -1026,18 +1089,24 @@ article#about .instagram-img {
   text-transform: uppercase;
 }
 .boutique-content .right {
-  width: 215px;
+  width: 205px !important;
+  /* overflow: hidden; */
+
   float: right;
 }
 .boutique-content .right .opening-hours {
   padding: 0 0 40px 0;
   margin: 0 0 10px 0;
   border-bottom: 2px solid #EEE;
+  width: 205px;
 }
 .boutique-content .right .website {
   color: #1093ab;
   /* font-family: 'ProximaNovaSemiBold'; */
 
+}
+.boutique-content .right table {
+  width: 215px;
 }
 article.product-nav {
   width: 970px;
@@ -1202,7 +1271,8 @@ section.product .left section.zoom .main-img a {
   position: relative;
 }
 section.product .left section.zoom .main-img img {
-  height: :100%;
+  /* height: :100%; */
+
 }
 section.product .right {
   width: 425px;
@@ -1379,6 +1449,12 @@ article.body-content table tbody td.product-name a {
   color: #333;
   font-size: 0.9em;
 }
+article.body-content table tbody td.product-name a:hover {
+  text-decoration: underline;
+}
+article.body-content table tbody td.product-name p.sku {
+  margin: 10px 0 0 0;
+}
 article.body-content table tbody td.product-price {
   font-family: 'ProximaNovaBold';
 }
@@ -1393,18 +1469,23 @@ article.body-content table tbody td.product-quantity .amount {
   float: left;
 }
 article.body-content table tbody td.product-quantity .amount input {
+  width: 25px;
   /* padding:5px; */
   height: 25px;
   line-height: 25px;
   text-align: center;
-  border: 1px solid #999;
-  margin: 0 5px 0 0;
+  border: 1px solid #cbcbcb;
+  margin: 0 10px 0 0;
 }
 article.body-content table tbody td.product-quantity .update-remove {
   width: 70px;
   float: left;
-  font-size: 0.8em;
-  color: #666;
+  /* font-size: 0.85em; */
+
+  color: #333;
+  font-family: 'ProximaNovaRegular';
+  font-weight: normal;
+  margin: -3px 0 0 0;
   /* text-indent: 10px; */
 
 }
@@ -1414,11 +1495,21 @@ article.body-content table tbody td.product-quantity .update-remove input {
   background: transparent;
   text-align: left;
   padding: 0px;
-  color: #666;
-  font-size: 0.9em;
+  color: #333;
+  font-size: 0.85em;
+  margin: 0 0 3px 0;
+}
+article.body-content table tbody td.product-quantity .update-remove input:hover {
+  text-decoration: underline;
 }
 article.body-content table tbody td.product-quantity .update-remove .remove {
-  text-indent: 5px;
+  text-indent: 0px;
+}
+article.body-content table tbody td.product-quantity .update-remove .remove a {
+  font-size: 0.85em;
+}
+article.body-content table tbody td.product-quantity .update-remove .remove a:hover {
+  text-decoration: underline;
 }
 article.body-content table tbody td.product-subtotal {
   text-align: right;
@@ -1447,6 +1538,9 @@ article.body-content .cross-sells a {
 }
 article.body-content .cross-sells a span.sm-arrow-right {
   padding: 0 0 0 10px;
+}
+article.body-content .cross-sells a:hover {
+  color: #1093ab;
 }
 article.body-content .cross-sells .left {
   width: 163px;
@@ -1485,6 +1579,11 @@ article.body-content .cart-collaterals .totals td.price {
   font-family: 'ProximaNovaBold';
   padding: 0 30px 0 0;
 }
+article.body-content .cart-collaterals .totals tr.cart-subtotal h2 {
+  font-family: 'ProximaNovaRegular';
+  font-size: 1em;
+  color: black;
+}
 article.body-content .cart-collaterals .totals tr.cart-subtotal th {
   height: 30px;
   line-height: 15px;
@@ -1504,33 +1603,27 @@ article.body-content .cart-collaterals .cart-btns {
   margin: 20px 0 0 0;
 }
 article.body-content .cart-collaterals .cart-btns a.continue-shopping {
-  width: 48.5%;
-  height: 34px;
-  line-height: 34px;
-  color: #1093ab;
-  text-transform: uppercase;
-  text-align: center;
+  width: 175px;
+  height: 38px;
+  text-indent: -10000px;
   display: block;
-  border: 3px solid #1093ab;
+  background: url('css/img/continue-shopping-btn.gif') no-repeat 0px 0px;
   float: left;
+  border: none;
+}
+article.body-content .cart-collaterals .cart-btns a.continue-shopping:hover {
+  background-position: 0px -38px;
 }
 article.body-content input.checkout-button {
-  width: 172px;
-  height: 40px;
-  line-height: 38px;
+  width: 175px;
+  height: 38px;
+  text-indent: -10000px;
   display: block;
-  background: #1093ab;
-  color: white;
+  background: url('css/img/checkout-btn.gif') no-repeat 0px 0px;
   border: none;
-  /* float:right; */
-
   position: absolute;
   right: 0;
   bottom: 0;
-  font-family: 'futura_condensedbold';
-  text-transform: uppercase;
-  font-size: 1.2em;
-  letter-spacing: 1px;
 }
 article.body-content a.continue,
 article.body-content input#place_order {
@@ -1551,8 +1644,7 @@ article.body-content input#place_order {
   margin: 20px 0 0 0;
 }
 article.body-content input.checkout-button:hover {
-  background: #a8ced6;
-  color: #1093ab;
+  background-position: 0px -38px;
 }
 form.checkout {
   width: 80%;
