@@ -467,7 +467,7 @@ a.continue-shopping:hover {
   border-color: #a8ced6;
 }
 a.arrow-holder {
-  opacity: 0;
+  opacity: 1;
 }
 a.arrow-holder:hover {
   opacity: 1;
@@ -1344,10 +1344,13 @@ section.product .right .inner form.cart button.single_add_to_cart_button {
   width: 127px;
   height: 30px;
   line-height: 30px;
-  background: url('css/img/add-to-bag-btn.png') no-repeat;
+  background: url('css/img/add-to-bag-btn.gif') no-repeat;
   text-indent: -10000px;
   display: block;
   border: none;
+}
+section.product .right .inner form.cart button.single_add_to_cart_button:hover {
+  background-position: 0px -30px;
 }
 section.product .right .inner .addthis_toolbox {
   width: 500px;

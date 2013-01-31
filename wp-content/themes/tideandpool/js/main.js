@@ -28,12 +28,34 @@ $(function() {
 	});
 	
 	
-	$(".shopping-bag").hover(function(){
+	/*
+$(".shopping-bag").hover(function(){
 		$('.dropdown').stop(true,true).animate({
 			height:"toggle",
 		    opacity:"toggle"
 		 },300);
 	});
+*/
+	/*
+$(".shopping-bag").hover(function() {
+		$('.dropdown').stop(true,true).slideDown(500);
+		},
+		function() {
+		$('.dropdown').stop(true,true).delay(2000).slideUp(500);
+	});
+*/
+	
+	$('.shopping-bag').hover(function() {
+		    $('.dropdown').animate({'height':"toggle", 'opacity':1}, 300);
+		    return false;
+		    e.preventDefault();
+		  }, function() {
+		    $('.dropdown').delay(2000).animate({'height':"toggle", 'opacity':0}, 300);
+		    return false;
+		    e.preventDefault();
+		});
+	
+	
 	//append shop bag pointer
 	$('.dropdown').append('<div class="pointer"/></div>');
 	
@@ -67,43 +89,7 @@ $(function() {
     	$(this).attr('data-rollover',swapImageUrl);
  	});
     
-    // couresel arrover mouse follow
-
-    /*
-$(".arrow-holder").mousemove(function(e){
-  		$(this).find('.arrow-icon').stop().css({top:(e.pageY - $(this).offset().top)});
- 	});
- 	$(".arrow-holder").mouseleave(function(){
- 		var containerHeight = $('#carousel').height();
- 		var newPosition = containerHeight / 2;
-  		$(this).find('.arrow-icon').animate({top:newPosition+'px'}, 300);
- 	});
-*/
-	
-	// slideshow
-    /*
-$('.slideshow').royalSlider({
-    	autoPlay: { enabled: true, pauseOnHover: true },
-    	arrowsNav: true,
-    	transitionSpeed: 500,
-    	delay:3000,
-    	controlNavigation: 'none',
-    	arrowsNavAutoHide: true,
-    	fadeinLoadedSlide: true,
-    	imageScaleMode: 'fill',
-    	imageAlignCenter:true,
-    	imageScalePadding: 0,
-    	loop: false,
-    	loopRewind: false,
-    	slidesOrientation: 'horizontal',
-    	slidesSpacing: 0,
-    	sliderDrag: true,
-    	swipe: true,
-    	keyboardNavEnabled: true,
-    	autoScaleSlider: true
-    });
-    
-*/
+    // boutique dragable slideshow
 	$('#boutiques-gallery').royalSlider({
     	autoPlay: { enabled: true, pauseOnHover: true },
     	arrowsNav: true,
