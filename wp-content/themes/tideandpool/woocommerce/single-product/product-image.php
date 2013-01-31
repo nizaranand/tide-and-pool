@@ -18,7 +18,7 @@ global $post, $woocommerce;
 		<?php $images = get_field('product_gallery'); if( $images ): ?>
 		<?php foreach( $images as $image ): ?>
 		<article>
-			<a id="<?php echo $image['id']; ?>" href="<?php echo $image['url']; ?>" rel="zoom-id:zoom;" class="selector" rev="<?php echo $image['sizes']['large']; ?>">
+			<a id="<?php echo $image['id']; ?>" href="<?php echo $image['url']; ?>" rel="zoom-id:zoom;" class="selector" rev="<?php echo $image['sizes']['shop_single']; ?>">
 				<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
 			</a>
 		</article>
@@ -30,11 +30,17 @@ global $post, $woocommerce;
 	
 	<!-- main img -->
 	<div class="main-img">
-		<?php if ( has_post_thumbnail() ) : ?>
+		<!--
+<?php if ( has_post_thumbnail() ) : ?>
 		<a href="<?php echo wp_get_attachment_url( get_post_thumbnail_id() ); ?>" class="MagicZoom" id="zoom" class="active" rel="selectors-class: active;">
 			<?php echo get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ) ) ?>
 		</a>
 		<?php endif; ?>
+-->
+		<?php $images = get_field('product_gallery'); $image = $images[0]; ?>
+		<a href="<?php echo $image['url']; ?>" class="MagicZoom" id="zoom" class="active" rel="selectors-class: active;">
+			<img src="<?php echo $image['sizes']['shop_single']; ?>" alt="<?php echo $image['alt']; ?>" />
+		</a>
 	</div>
 	<!-- end main img -->
 </section>
