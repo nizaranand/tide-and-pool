@@ -76,17 +76,17 @@ $(".shopping-bag").hover(function() {
     
     // product carousel hover image swap
     $("ul.touchcarousel-container li.slide img").hover(function() {
-    	var initialImage = $(this).attr('src');
-    	var swapImageUrl = $(this).attr('data-rollover');
-    	$(this).attr('src',swapImageUrl);
-    	$(this).attr('data-rollover',initialImage);
- 		$(this).delay(500).fadeIn(1000);
+	var initialImage = $(this).attr('src');
+	var swapImageUrl = $(this).attr('data-rollover');
+	$(this).attr('src',swapImageUrl);
+	$(this).attr('data-rollover',initialImage);
+	$(this).delay(500).fadeIn(1000);
 
  	}, function() {
-    	var initialImage = $(this).attr('data-rollover');
-    	var swapImageUrl = $(this).attr('src');
-    	$(this).attr('src',initialImage);
-    	$(this).attr('data-rollover',swapImageUrl);
+	var initialImage = $(this).attr('data-rollover');
+	var swapImageUrl = $(this).attr('src');
+	$(this).attr('src',initialImage);
+	$(this).attr('data-rollover',swapImageUrl);
  	});
     
     // boutique dragable slideshow
