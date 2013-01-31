@@ -130,6 +130,17 @@ $(".shopping-bag").hover(function() {
 		'scrolling': 'no'
 	});
 	
+	//customer service fancybox
+	$(".fancybox-iframe a").fancybox({
+		maxWidth:779,
+		maxHeight:589,
+		width:779,
+		height:589,
+		padding:0,
+		type:'iframe',
+		autoScale:false
+	});
+	
 	// collections isotope
 	/*$('#collections').isotope({
 		sortBy: 'original-order',

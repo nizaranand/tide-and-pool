@@ -67,7 +67,7 @@ wp_title( '|', true, 'right' );
 <script src="<?php bloginfo( 'template_url' ); ?>/js/plugins.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/main.js"></script>
 
-<?php if ( ! in_category('boutiques')) { ?>
+<?php if ( ! in_category('boutiques') && ! is_page('customer-service') )  { ?>
 <?php
 /* We add some JavaScript to pages with the comment form
 * to support sites with threaded comments (when in use).
@@ -87,7 +87,7 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
-<?php if ( ! in_category('boutiques')) { ?>
+<?php if ( ! in_category('boutiques') && ! is_page('customer-service') )  { ?>
 <header role="banner" class="main-header">
 
 <div class="inner">
