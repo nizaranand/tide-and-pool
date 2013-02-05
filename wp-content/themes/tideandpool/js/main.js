@@ -20,6 +20,10 @@ $(function() {
 		
 	});
 	
+	$('.mc-field-group').click(function(){
+		$('div.mce_inline_error', this).fadeOut(500);
+	});
+	
         
 	// magic zoom active thumb class
 	$(".thumbnails article a:first").addClass("first-active");
@@ -138,7 +142,8 @@ $(".shopping-bag").hover(function() {
 		height:589,
 		padding:0,
 		type:'iframe',
-		autoScale:false
+		autoScale:false,
+		scrolling: 'no'
 	});
 	
 	// collections isotope

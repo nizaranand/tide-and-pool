@@ -62,7 +62,7 @@ get_header(); ?>
 	<?php if(get_field('boutique_location')): ?>
 	<?php while(the_repeater_field('boutique_location')): ?>			
 	<!-- phone -->
-	<div class="phone"><?php the_sub_field('phone_no'); ?></div>
+	<div class="phone"><span class="phone">Phone:</span><?php the_sub_field('phone_no'); ?></div>
 	<!-- end phone -->
 	
 	<!-- website url -->
