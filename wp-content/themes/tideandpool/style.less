@@ -640,6 +640,9 @@ body.fixed {
 		}
 	}
 }
+body.woocommerce-cart .my-shopping-bag {
+	background: #1093ab url('css/img/shop-bag-icon.png')no-repeat 10px -30px;
+}
 .shopping-bag {
 	position: absolute;
     right: 0;
@@ -807,6 +810,9 @@ body.fixed {
 			cursor: pointer;
 				
 		}
+		span.font-11pt {
+			font-family: 'ProximaNovaBold';
+		}
 	}
 	.free-shipping-flyaway a {
 				width:248px;
@@ -901,7 +907,7 @@ article#about {
 		text-indent: -10000px;
 		background: url('css/img/instagram-btn.png')no-repeat;
 		float:right;
-		margin:20px 0 10px 0;
+		margin:20px 22px 10px 0;
 	}
 	.instagram-img {
 		clear: both;
@@ -912,7 +918,7 @@ article#boutiques {
 	h1 {
 		width:100%;
 		padding: 0 0 24px 0;
-		border-bottom: 2px solid #cbcbcb;
+		border-bottom: 1px solid #cbcbcb;
 	}
 	.left {
 		width:230px;
@@ -939,7 +945,7 @@ article#boutiques {
 			font-size: 0.95em;
 			text-transform: none;
 			letter-spacing: 1px;
-			color:#333;
+			/* color:#333; */
 		}
 		h2:hover {
 			color:#1093AB;
@@ -1009,7 +1015,7 @@ article.product-nav {
 	height: 50px;
 	line-height: 50px;
 	position: relative;
-	margin:0 auto;
+	margin:5px auto;
 	font-family: 'futura_condensedbold';
 	color:#1093ab;
 	text-transform: uppercase;
@@ -1106,7 +1112,7 @@ section.product {
 	a.view-larger {
 		position: relative;
 		top:10px;
-		margin:0 0 0 80px;
+		margin:0 0 0 60px;
 	}
 	.left {
 		position: relative;
@@ -1348,10 +1354,10 @@ article.body-content {
 				font-family: 'ProximaNovaBold';
 				.sale-price {
 					text-decoration: line-through;
-					color:black;
+					color:#8a018c;
 				}
 				.regular-price {
-					color:#4d004e;
+					color:black;
 				}
 				
 			}
@@ -1844,6 +1850,7 @@ section#customer-service {
 					height: 30px;
 					line-height: 30px;
 					border-top:1px solid white;
+					text-align: right;
 					a.active {
 						color:#632879;
 					}
@@ -1873,7 +1880,7 @@ section#customer-service {
 			letter-spacing: 2px;
 			color:white;	
 		}
-		article#contact {
+		article#entry-743 {
 			width:80%;
 			margin:0 0 20px 0;
 			span.call-us {
@@ -1993,8 +2000,8 @@ section#video-tutorials {
 		a{
 			float: left;
 			display: block;
-			padding:0 10px;
-			font-size: 0.9em !important;
+			padding:0 5px;
+			font-size: 0.85em !important;
 			/* margin:0 20px 0 0; */
 		}
 	}
@@ -2006,6 +2013,7 @@ section#video-tutorials {
 	display: inline;
 	line-height: 32px;
 	font-style: normal;
+	font-size: 0.85em;
 }
 .main-footer {
 	address {
@@ -2018,9 +2026,10 @@ section#video-tutorials {
 	display: block;
 	line-height: 30px;
 	border-right:1px solid white;
+	border-left:1px solid white;
 	position: relative;
 		.email-signup {
-			width:177px;
+			width:155px;
 			height: 30px;
 			display: inline-block;
 			text-indent: -10000px;
@@ -2033,7 +2042,7 @@ section#video-tutorials {
 				background: url('css/img/global/email-signup-bg.png') no-repeat;
 				position: absolute;
 				bottom:2px;
-				right:-21px;
+				right:-32px;
 				color:#1093AB !important;
 				/* border:1px solid red; */
 				input {

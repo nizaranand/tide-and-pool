@@ -836,6 +836,9 @@ body.fixed .main-nav {
 .user-utility right:0ul li {
   display: inline;
 }
+body.woocommerce-cart .my-shopping-bag {
+  background: #1093ab url('css/img/shop-bag-icon.png') no-repeat 10px -30px;
+}
 .shopping-bag {
   position: absolute;
   right: 0;
@@ -1001,6 +1004,9 @@ body.fixed .main-nav {
   font-family: serif;
   cursor: pointer;
 }
+.announcement p span.font-11pt {
+  font-family: 'ProximaNovaBold';
+}
 .announcement .free-shipping-flyaway a {
   width: 248px;
   height: 254px;
@@ -1095,7 +1101,7 @@ article#about a.instagram {
   text-indent: -10000px;
   background: url('css/img/instagram-btn.png') no-repeat;
   float: right;
-  margin: 20px 0 10px 0;
+  margin: 20px 22px 10px 0;
 }
 article#about .instagram-img {
   clear: both;
@@ -1107,7 +1113,7 @@ article#boutiques {
 article#boutiques h1 {
   width: 100%;
   padding: 0 0 24px 0;
-  border-bottom: 2px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
 }
 article#boutiques .left {
   width: 230px;
@@ -1133,7 +1139,8 @@ article#boutiques .left p {
   font-size: 0.95em;
   text-transform: none;
   letter-spacing: 1px;
-  color: #333;
+  /* color:#333; */
+
 }
 article#boutiques .left h2:hover {
   color: #1093AB;
@@ -1203,7 +1210,7 @@ article.product-nav {
   height: 50px;
   line-height: 50px;
   position: relative;
-  margin: 0 auto;
+  margin: 5px auto;
   font-family: 'futura_condensedbold';
   color: #1093ab;
   text-transform: uppercase;
@@ -1308,7 +1315,7 @@ section.product {
 section.product a.view-larger {
   position: relative;
   top: 10px;
-  margin: 0 0 0 80px;
+  margin: 0 0 0 60px;
 }
 section.product .left {
   position: relative;
@@ -1554,10 +1561,10 @@ article.body-content table tbody td.product-price {
 }
 article.body-content table tbody td.product-price .sale-price {
   text-decoration: line-through;
-  color: black;
+  color: #8a018c;
 }
 article.body-content table tbody td.product-price .regular-price {
-  color: #4d004e;
+  color: black;
 }
 article.body-content table tbody td.product-quantity .amount {
   float: left;
@@ -2044,6 +2051,7 @@ section#customer-service .left nav#customer-service ul li {
   height: 30px;
   line-height: 30px;
   border-top: 1px solid white;
+  text-align: right;
 }
 section#customer-service .left nav#customer-service ul li a.active {
   color: #632879;
@@ -2071,11 +2079,11 @@ section#customer-service .right h2 {
   letter-spacing: 2px;
   color: white;
 }
-section#customer-service .right article#contact {
+section#customer-service .right article#entry-743 {
   width: 80%;
   margin: 0 0 20px 0;
 }
-section#customer-service .right article#contact span.call-us {
+section#customer-service .right article#entry-743 span.call-us {
   float: left;
   width: 30%;
   display: block;
@@ -2083,7 +2091,7 @@ section#customer-service .right article#contact span.call-us {
   background: url('css/img/contact-phone.png') 0px 5px no-repeat;
   padding: 0 0 0 40px;
 }
-section#customer-service .right article#contact span.email-us {
+section#customer-service .right article#entry-743 span.email-us {
   float: right;
   width: 30%;
   display: block;
@@ -2091,7 +2099,7 @@ section#customer-service .right article#contact span.email-us {
   background: url('css/img/email.png') 0px 5px no-repeat;
   padding: 0 0 0 40px;
 }
-section#customer-service .right article#contact p {
+section#customer-service .right article#entry-743 p {
   margin: 20px 0;
 }
 section#customer-service .right article.text-panel {
@@ -2189,8 +2197,8 @@ section#video-tutorials article.video-panel .video {
 .main-footer ul li a {
   float: left;
   display: block;
-  padding: 0 10px;
-  font-size: 0.9em !important;
+  padding: 0 5px;
+  font-size: 0.85em !important;
   /* margin:0 20px 0 0; */
 
 }
@@ -2201,6 +2209,7 @@ section#video-tutorials article.video-panel .video {
   display: inline;
   line-height: 32px;
   font-style: normal;
+  font-size: 0.85em;
 }
 .main-footer address {
   float: right;
@@ -2212,10 +2221,11 @@ section#video-tutorials article.video-panel .video {
   display: block;
   line-height: 30px;
   border-right: 1px solid white;
+  border-left: 1px solid white;
   position: relative;
 }
 .main-footer .signup .email-signup {
-  width: 177px;
+  width: 155px;
   height: 30px;
   display: inline-block;
   text-indent: -10000px;
@@ -2230,7 +2240,7 @@ section#video-tutorials article.video-panel .video {
   background: url('css/img/global/email-signup-bg.png') no-repeat;
   position: absolute;
   bottom: 2px;
-  right: -21px;
+  right: -32px;
   color: #1093AB !important;
   /* border:1px solid red; */
 

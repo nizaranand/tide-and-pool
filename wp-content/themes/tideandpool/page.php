@@ -117,7 +117,7 @@ get_header(); ?>
 	<!-- end instagram link -->
 	
 	<!-- instagram img -->
-	<a class="instagram-img" href="http://pinterest.com/TideandPool">
+	<a class="instagram-img" href="http://instagram.com/tideandpool">
 		<?php $image = wp_get_attachment_image_src(get_field('instagram_image'), 'imstagram-img'); ?>
 		<img src="<?php echo $image[0]; ?>" alt="" />
 	</a>
