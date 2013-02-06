@@ -13,7 +13,7 @@
 ?>
 </section>
 <!-- .content -->
-<?php if ( ! is_page('customer-service') )  { ?>
+<?php if ( ! is_page('customer-service') && ! in_category('customer-service') && ! is_page('terms-and-privacy') )  { ?>
 <footer role="contentinfo" class="main-footer clear">
 <div class="inner">
 	<ul class="social">

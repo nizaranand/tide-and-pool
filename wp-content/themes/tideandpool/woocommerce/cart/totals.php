@@ -22,7 +22,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 			<tbody>
 
 				<tr class="cart-subtotal">
-					<th width="178" align="right"><h2><?php _e('Subtotal', 'woocommerce'); ?></h2></th>
+					<th width="178" align="right"><h2><?php _e('Subtotal:', 'woocommerce'); ?></h2></th>
 					<td align="right"><strong><?php echo $woocommerce->cart->get_cart_subtotal(); ?></strong></td>
 				</tr>
 				
@@ -207,7 +207,7 @@ $available_methods = $woocommerce->shipping->get_available_shipping_methods();
 				<?php endif; ?>
 
 				<tr class="total">
-					<th width="178" align="right"><strong>Total</strong><br>Before shipping, discounts and tax.</th>
+					<th width="178" align="right"><strong>Total:</strong><br>Before shipping, discounts and tax.</th>
 					<td align="right" class="price"><?php
 
 						if (get_option('woocommerce_display_cart_taxes')=='no' && !$woocommerce->cart->prices_include_tax) :

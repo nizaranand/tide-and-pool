@@ -185,7 +185,13 @@ get_header(); ?>
 	$(document).ready(function(){
 		
 		//stylised scroll pane
-		$('#boutiques-scroll').jScrollPane();
+		$('#boutiques-scroll').jScrollPane({
+			autoReinitialise: true,
+			animateScroll: true,
+			showArrows: true,
+			verticalDragMinHeight: 110,
+			verticalDragMaxHeight: 110
+		});
 		
 		// add sequential numbers to each list item
 		$("ol#boutiques li .city-and-state").each(function (i) {

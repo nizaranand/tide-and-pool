@@ -23,12 +23,12 @@ global $woocommerce, $post, $product;
 	<thead>
 		<tr>
 			<!-- <th class="product-remove">&nbsp;</th> -->
-			<th class="product-thumbnail"><?php _e('Items', 'woocommerce'); ?></th>
+			<th class="product-thumbnail"><?php _e('Items:', 'woocommerce'); ?></th>
 			<th class="product-name" width="500"></th>
-			<th class="product-name" width="250"><?php _e('Availability', 'woocommerce'); ?></th>
-			<th class="product-price" width="250"><?php _e('Price', 'woocommerce'); ?></th>
-			<th class="product-quantity" width="250"><?php _e('Quantity', 'woocommerce'); ?></th>
-			<th class="product-subtotal" style="text-align:right;padding-right:30px;" width="100"><?php _e('SubTotal', 'woocommerce'); ?></th>
+			<th class="product-name" width="250"><?php _e('Availability:', 'woocommerce'); ?></th>
+			<th class="product-price" width="250"><?php _e('Price:', 'woocommerce'); ?></th>
+			<th class="product-quantity" width="250"><?php _e('Qty:', 'woocommerce'); ?></th>
+			<th class="product-subtotal" style="text-align:right;padding-right:30px;" width="100"><?php _e('SubTotal:', 'woocommerce'); ?></th>
 		</tr>
 	</thead>
 	<tr>

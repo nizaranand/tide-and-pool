@@ -55,7 +55,7 @@ wp_title( '|', true, 'right' );
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/touchcarousel/jquery.touchcarousel-1.1.min.js"></script>
 <?php if ( ! in_category('boutiques')) { ?>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.mousewheel.js"></script>
-<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.jscrollpane.min.js"></script>
+<script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/jquery.jscrollpane-tp.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/fancybox/jquery.fancybox.pack.js"></script>
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/galleria-1.2.9.min.js"></script> 
 <script src="<?php bloginfo( 'template_url' ); ?>/js/vendor/galleria/themes/classic/galleria.classic.min.js"></script>
@@ -87,7 +87,7 @@ wp_head();
 </head>
 <body <?php body_class(); ?>>
 
-<?php if ( ! in_category('boutiques') && ! is_page('customer-service') )  { ?>
+<?php if ( ! in_category('boutiques') && ! in_category('customer-service') && ! is_page('terms-and-privacy') && ! is_page('customer-service') )  { ?>
 <header role="banner" class="main-header">
 
 <div class="inner">

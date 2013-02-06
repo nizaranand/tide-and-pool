@@ -397,6 +397,11 @@ strong {
 #fancybox-right {
   background: none !important;
 }
+.fancybox-opened .fancybox-skin {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
 .MagicZoomPup {
   /*
 border:none !important;
@@ -477,17 +482,47 @@ a.arrow-holder:hover {
 
 }
 .jspVerticalBar {
-  width: 13px !important;
-  right: 1px !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 13px;
+  height: 100%;
+  display: block;
 }
 .jspTrack {
-  width: 14px;
-  height: 616px;
-  display: block;
-  background: #ffffff url('css/img/scroll-bar-bg-boutiques.png') no-repeat !important;
+  border: 1px solid #fff;
+  position: relative;
+  width: 11px;
+  /* background: white url('css/img/scroll-bar-bg-boutiques.png')no-repeat !important; */
+
+}
+#privacy-text-scroll .jspTrack,
+#text-scroll .jspTrack {
+  background: #9fc9d2 !important;
+}
+#privacy-text-scroll .jspArrow,
+#text-scroll .jspArrow {
+  height: 2px !important;
+  background: #9fc9d2 !important;
+}
+#boutiques-scroll .jspVerticalBar {
+  background: white !important;
+}
+#boutiques-scroll .jspVerticalBar .jspTrack {
+  border: 1px solid #cbcbcb!important;
+}
+#boutiques-scroll .jspVerticalBar .jspDrag {
+  opacity: 0.3;
 }
 .jspDrag {
-  background: #a8ced6 url('css/img/scroll-arrow-down.png') bottom left no-repeat !important;
+  width: 11px;
+  background: #a8ced6 url('css/img/scroll-arrow-down.png') bottom left no-repeat;
+  /* height: 110px !important; */
+
+}
+.jspArrow {
+  height: 2px !important;
+  background: transparent !important;
 }
 body.page-template-customer-service-php {
   overflow: hidden !important;
@@ -1145,7 +1180,7 @@ article#boutiques .right .boutique-view {
 .boutique-content .right .opening-hours {
   padding: 0 0 40px 0;
   margin: 0 0 10px 0;
-  border-bottom: 2px solid #EEE;
+  border-bottom: 1px solid #cbcbcb;
   width: 205px;
 }
 .boutique-content .right .phone {
@@ -1415,7 +1450,7 @@ section.product .right .inner .addthis_toolbox a.addthis_button_pinterest_pinit 
   margin: 0 0 0 -20px;
 }
 section.product .right .inner .addthis_toolbox a.addthis_button_email {
-  margin: 0 0 0 -45px;
+  margin: 0 0 0 -30px;
 }
 #collections {
   /* width:1300px; */
@@ -1997,7 +2032,7 @@ section#customer-service {
 }
 section#customer-service h1 {
   color: white;
-  margin: 0 0 28px 0;
+  margin: 0 0 26px 0;
   font-family: 'ProximaNovaLight';
 }
 section#customer-service .left {
@@ -2019,6 +2054,12 @@ section#customer-service .left nav#customer-service ul li:last-child {
 section#customer-service .left nav#customer-service ul li:hover {
   color: #632879;
 }
+section#customer-service .left .sidebar-img {
+  width: 100%;
+  height: 313px;
+  display: block;
+  overflow: hidden;
+}
 section#customer-service .right {
   width: 563px;
   float: right;
@@ -2026,7 +2067,8 @@ section#customer-service .right {
 section#customer-service .right h2 {
   font-family: 'ProximaNovaBold';
   text-transform: none;
-  font-size: 1.1em;
+  font-size: 1.3em;
+  letter-spacing: 2px;
   color: white;
 }
 section#customer-service .right article#contact {
@@ -2057,7 +2099,7 @@ section#customer-service .right article.text-panel {
 }
 section#customer-service .right #text-scroll {
   width: 563px;
-  height: 365px;
+  height: 500px;
   overflow: auto;
 }
 section#customer-service .right #text-scroll p {
@@ -2065,13 +2107,37 @@ section#customer-service .right #text-scroll p {
   padding: 0 30px 0 0;
   text-align: justify;
 }
-section#customer-service .right #text-scroll .jspTrack {
-  border: 1px solid white;
-  background: #9fc9d2 !important;
-}
 section#customer-service .right #text-scroll .jspDrag {
-  background: #1093ab url('css/img/scroll-arrow-down.png') bottom left no-repeat !important;
-  height: 108px !important;
+  background: #1093ab url('css/img/scroll-arrow-down.png') bottom left no-repeat;
+}
+section#terms-and-privacy {
+  width: 729px;
+  height: 448px;
+  display: block;
+  background: #9fc9d2;
+  color: white;
+  padding: 25px;
+}
+section#terms-and-privacy h1 {
+  color: white;
+}
+section#terms-and-privacy #privacy-text-scroll {
+  width: 729px;
+  height: 394px;
+  overflow: auto;
+  margin: 30px 0 0 0;
+}
+section#terms-and-privacy #privacy-text-scroll p {
+  margin: 0 0 10px 0;
+  padding: 0 20px 0 0;
+  font-family: 'ProximaNovaRegular';
+}
+section#terms-and-privacy #privacy-text-scroll strong {
+  font-size: 1.1em;
+}
+section#terms-and-privacy #privacy-text-scroll .jspTrack {
+  /* background: #9fc9d2 url('css/img/scroll-bar-bg-customer-service.png') no-repeat !important; */
+
 }
 section#video-tutorials {
   margin: 20px 0 0 0;
@@ -2124,6 +2190,7 @@ section#video-tutorials article.video-panel .video {
   float: left;
   display: block;
   padding: 0 10px;
+  font-size: 0.9em !important;
   /* margin:0 20px 0 0; */
 
 }

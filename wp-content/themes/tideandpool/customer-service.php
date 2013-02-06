@@ -39,7 +39,9 @@ get_header(); ?>
 	
 	<!-- right -->
 	<div class="right">
-		<!-- contact details -->
+		<!-- text scroll -->
+		<div id="text-scroll" class="scroll-pane">
+			<!-- contact details -->
 		<article id="contact">
 			<!-- header -->
 			<h2>Contact</h2>
@@ -55,8 +57,6 @@ get_header(); ?>
 		</article>
 		<!-- end contact details -->
 		
-		<!-- text scroll -->
-		<div id="text-scroll" class="scroll-pane">
 			<?php $my_query = new WP_Query('cat=18&order=asc&showposts=-1'); ?>
 			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			<article id="entry-<?php the_ID(); ?>" class="text-panel">
@@ -89,7 +89,10 @@ get_header(); ?>
 		//stylised scroll pane
 		$('#text-scroll').jScrollPane( {
 			autoReinitialise: true,
-			animateScroll: true
+			animateScroll: true,
+			showArrows: true,
+			verticalDragMinHeight: 110,
+			verticalDragMaxHeight: 110
 		});
 		
 		<?php $my_query = new WP_Query('cat=18&showposts=-1'); ?>

@@ -49,7 +49,7 @@ $(".shopping-bag").hover(function() {
 	});
 */
 	
-	$('.shopping-bag').hover(function() {
+	$('.my-shopping-bag').hover(function() {
 		    $('.dropdown').animate({'height':"toggle", 'opacity':1}, 300);
 		    return false;
 		    e.preventDefault();
@@ -135,11 +135,23 @@ $(".shopping-bag").hover(function() {
 	});
 	
 	//customer service fancybox
-	$(".fancybox-iframe a").fancybox({
+	$(".fancybox-customer-service a").fancybox({
 		maxWidth:779,
 		maxHeight:589,
 		width:779,
 		height:589,
+		padding:0,
+		type:'iframe',
+		autoScale:false,
+		scrolling: 'no'
+	});
+	
+	//customer service fancybox
+	$(".fancybox-terms-and-privacy a").fancybox({
+		maxWidth:779,
+		maxHeight:498,
+		width:779,
+		height:498,
 		padding:0,
 		type:'iframe',
 		autoScale:false,

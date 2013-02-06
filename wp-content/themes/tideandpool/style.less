@@ -189,6 +189,11 @@ strong {
 .fancybox-left, #fancybox-right {
 	background: none !important;
 }
+.fancybox-opened .fancybox-skin {
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+}
 .MagicZoomPup {
 	/*
 border:none !important;
@@ -264,17 +269,47 @@ a.arrow-holder:hover  {
 	/* overflow: auto !important; */
 }
 .jspVerticalBar {
-	width:13px !important;
-	right:1px !important;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 13px;
+	height: 100%;
+	display: block;
 }
 .jspTrack {
-	width:14px;
-	height: 616px;
-	display: block;
-	background: white url('css/img/scroll-bar-bg-boutiques.png')no-repeat !important;
+	border: 1px solid #fff;
+	position: relative;
+	width: 11px;
+	/* background: white url('css/img/scroll-bar-bg-boutiques.png')no-repeat !important; */
+}
+#privacy-text-scroll, #text-scroll {
+	.jspTrack {
+	background: #9fc9d2 !important;
+	}
+	.jspArrow  {
+	height: 2px !important;
+	background: #9fc9d2 !important;
+	}
+}
+#boutiques-scroll {
+	.jspVerticalBar {
+		background: white !important;
+		.jspTrack {
+			border:1px solid #cbcbcb!important;
+		}
+		.jspDrag {
+			opacity: 0.3;
+		}	
+	}
 }
 .jspDrag {
-	background: #a8ced6 url('css/img/scroll-arrow-down.png') bottom left no-repeat !important;
+	width:11px;
+	background: #a8ced6 url('css/img/scroll-arrow-down.png') bottom left no-repeat;
+	/* height: 110px !important; */
+}
+.jspArrow  {
+	height: 2px !important;
+	background: transparent !important;
 }
 body.page-template-customer-service-php {
 	overflow: hidden !important;
@@ -950,7 +985,7 @@ article#boutiques {
 		.opening-hours {
 			padding:0 0 40px 0;
 			margin:0 0 10px 0;
-			border-bottom: 2px solid #EEE;
+			border-bottom: 1px solid #cbcbcb;
 			width:205px;
 		}
 		.phone {
@@ -1214,7 +1249,7 @@ section.product {
 					margin:0 0 0 -20px;
 				}
 				a.addthis_button_email {
-					margin:0 0 0 -45px;
+					margin:0 0 0 -30px;
 				}
 			}
 		}
@@ -1796,7 +1831,7 @@ section#customer-service {
 	font-family: 'ProximaNovaRegular';
 	h1 {
 		color:white;
-		margin:0 0 28px 0;
+		margin:0 0 26px 0;
 		font-family: 'ProximaNovaLight';
 	}
 	.left {
@@ -1821,6 +1856,12 @@ section#customer-service {
 				}
 			}
 		}
+		.sidebar-img {
+			width:100%;
+			height: 313px;
+			display: block;
+			overflow: hidden;
+		}
 	}
 	.right {
 		width:563px;
@@ -1828,7 +1869,8 @@ section#customer-service {
 		h2 {
 			font-family: 'ProximaNovaBold';
 			text-transform: none;
-			font-size: 1.1em;
+			font-size: 1.3em;
+			letter-spacing: 2px;
 			color:white;	
 		}
 		article#contact {
@@ -1859,21 +1901,44 @@ section#customer-service {
 		}
 		#text-scroll {
 			width:563px;
-			height: 365px;
+			height: 500px;
 			overflow: auto;
 			p {
 				margin:0 0 10px 0;
 				padding:0 30px 0 0;
 				text-align: justify;
 			}
-			.jspTrack {
-				border:1px solid white;
-				background: #9fc9d2 !important;
-			}
 			.jspDrag {
-				background: #1093ab url('css/img/scroll-arrow-down.png') bottom left no-repeat !important;
-				height: 108px !important;
+				background: #1093ab url('css/img/scroll-arrow-down.png') bottom left no-repeat;
 			}
+		}
+	}
+}
+section#terms-and-privacy {
+	width:729px;
+	height: 448px;
+	display: block;
+	background: #9fc9d2;
+	color:white;
+	padding:25px;
+	h1 {
+		color:white;
+	}
+	#privacy-text-scroll {
+		width:729px;
+		height: 394px;
+		overflow: auto;
+		margin:30px 0 0 0;
+		p {
+			margin:0 0 10px 0;
+			padding:0 20px 0 0;
+			font-family: 'ProximaNovaRegular';
+		}
+		strong {
+			font-size: 1.1em;
+		}
+		.jspTrack {
+			/* background: #9fc9d2 url('css/img/scroll-bar-bg-customer-service.png') no-repeat !important; */
 		}
 	}
 }
@@ -1929,6 +1994,7 @@ section#video-tutorials {
 			float: left;
 			display: block;
 			padding:0 10px;
+			font-size: 0.9em !important;
 			/* margin:0 20px 0 0; */
 		}
 	}
