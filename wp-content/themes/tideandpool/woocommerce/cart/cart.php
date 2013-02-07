@@ -161,13 +161,13 @@ global $woocommerce, $post, $product;
 	<div class="left">
 		<h2>Dont Love It?</h2>
 		<p>No problem. Returns are easy and FREE for 30 days!</p>
-		<a class="cross-sell-btn" href="<?php echo home_url( '/' ); ?>returns-information/">Returns Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
+		<a class="cross-sell-btn fancybox-customer-service" href="<?php echo home_url( '/' ); ?>customer-service/returns/">Returns Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
 	</div>
 	
 	<div class="right">
 		<h2>Express Shipping</h2>
 		<p>Need it fast? Select our 2-day Shipping.<br>  Find out more about shipping rates and times.</p>
-		<a class="cross-sell-btn" href="<?php echo home_url( '/' ); ?>express-shipping/">Shipping Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
+		<a class="cross-sell-btn fancybox-customer-service" href="<?php echo home_url( '/' ); ?>customer-service/shipping-and-handiling/">Shipping Information<span class="sm-arrow-right"><img src="<?php bloginfo( 'template_url' ); ?>/css/img/sm-arrow-right.png"></span></a>
 	</div>
 </div>
 <!-- end cross sells -->

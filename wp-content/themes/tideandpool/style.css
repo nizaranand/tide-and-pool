@@ -414,7 +414,7 @@ border:none !important;
 .MagicZoomBigImageCont {
   /* position: fixed !important; */
 
-  top: 162px !important;
+  top: 172px !important;
   width: 418px !important;
   height: 566px !important;
   overflow: hidden !important;
@@ -453,6 +453,9 @@ input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
 /* IE7 */
 body.woocommerce-cart a.continue-shopping {
   margin: 0;
+}
+body.woocommerce-cart .dropdown {
+  display: none !important;
 }
 a.continue-shopping {
   width: 175px;
@@ -620,6 +623,7 @@ header.main-header .inner a.swimclub-signup:hover {
 #swimclub-popup .content .left p {
   color: #1093ab;
   margin: 15px 0;
+  font-size: 1.1em;
 }
 #swimclub-popup .content .left form {
   font-family: 'Geogia', serif;
@@ -959,13 +963,11 @@ body.woocommerce-cart .my-shopping-bag {
   right: 12px;
   width: 127px;
   height: 30px;
-  line-height: 30px;
-  text-align: center;
-  background: #1093ab;
-  color: white;
-  font-family: 'futura_condensedbold';
-  font-size: 1em;
-  text-transform: uppercase;
+  text-indent: -10000px;
+  background: url('css/img/shopping-bag-checkout-btn.png') no-repeat;
+}
+.shopping-bag .dropdown a.go-to-checkout:hover {
+  background-position: 0px -30px;
 }
 /* body content */
 /* ------------------------------------------------------------------------- */
@@ -1007,12 +1009,12 @@ body.woocommerce-cart .my-shopping-bag {
 .announcement p span.font-11pt {
   font-family: 'ProximaNovaBold';
 }
-.announcement .free-shipping-flyaway a {
+.announcement .free-shipping-flyaway {
   width: 248px;
   height: 254px;
-  display: block;
   text-indent: -10000px;
-  background: url('css/img/global/free-shipping-flyaway.png') no-repeat;
+  /* background: url('css/img/global/free-shipping-flyaway.png') no-repeat; */
+
   position: absolute;
   right: -110px;
   top: 20px;
@@ -1074,6 +1076,9 @@ article.body-content a.order-confirm-img {
   border-top: 1px solid #cbcbcb;
   border-bottom: 1px solid #cbcbcb;
   margin: 70px 0 0 0;
+}
+article#about h1 {
+  font-size: 1.82em;
 }
 article#about .body-content {
   width: 970px;
@@ -1261,22 +1266,30 @@ section.products ul li.slide {
   /* padding:0 100px 0 0; */
 
 }
-section.products ul li.slide img {
-  /*
-width:auto !important;
-					height: 100% !important;
-*/
+section.products ul li.slide .thumbnail {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  /* z-index: 100; */
+}
+section.products ul li.slide .overlay {
+  width: 408px;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* z-index: 200; */
 
 }
-section.products ul li.slide .product-details {
+section.products ul li.slide .overlay .product-details {
   width: 100%;
   height: 71px;
   padding: 30px 0 0 0;
   text-transform: uppercase;
   font-size: 1.2em;
   font-weight: normal;
-  /* line-height: 1.5em ;*/
-
   text-align: center;
   background: rgba(59, 163, 182, 0.8);
   color: white;
@@ -1286,18 +1299,18 @@ section.products ul li.slide .product-details {
   margin: -50px 0 0 0;
   font-family: 'ProximaNovaLight';
 }
-section.products ul li.slide .product-details h3 {
+section.products ul li.slide .overlay .product-details h3 {
   color: white;
   font-size: 1.0em;
 }
-section.products ul li.slide .product-details span.price {
+section.products ul li.slide .overlay .product-details span.price {
   font-family: 'ProximaNovaLight';
   font-size: 1.0em;
 }
-section.products ul li.slide .product-details span.price ins {
+section.products ul li.slide .overlay .product-details span.price ins {
   text-decoration: none !important;
 }
-section.products ul li.slide .product-details span.price ins span.amount {
+section.products ul li.slide .overlay .product-details span.price ins span.amount {
   text-decoration: none !important;
   color: #38193a;
 }
@@ -1538,11 +1551,15 @@ article.body-content table thead th {
   font-size: 1em;
   text-align: left;
 }
+article.body-content table thead th.product-thumbnail {
+  padding: 0 0 0 20px;
+}
 article.body-content table tbody {
   padding: 20px 0 0 0;
 }
 article.body-content table tbody td.product-thumbnail {
   width: 130px;
+  padding: 0 0 0 20px;
 }
 article.body-content table tbody td.product-name a {
   font-family: 'ProximaNovaBold';
@@ -1693,12 +1710,15 @@ article.body-content .cart-collaterals .totals tr.cart-subtotal th {
   font-size: 1em;
   font-style: normal;
 }
+article.body-content .cart-collaterals .totals tr.cart-subtotal th h2 {
+  padding: 10px 0 15px 0;
+}
 article.body-content .cart-collaterals .totals tr.cart-subtotal td {
   height: 30px;
   line-height: 15px;
   font-size: 1em;
   border-bottom: 3px solid #1093ab;
-  padding: 0 30px 0 0;
+  padding: 10px 30px 0 0;
 }
 article.body-content .cart-collaterals .cart-btns {
   margin: 20px 0 0 0;

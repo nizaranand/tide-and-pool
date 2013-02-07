@@ -33,21 +33,35 @@ $woocommerce_loop['loop']++;
 
 	<a href="<?php the_permalink(); ?>">
 
-		<!-- thumbnail -->
+		
 		<?php if(get_field('product_carousel')): ?>
 		<?php while(the_repeater_field('product_carousel')): ?>
-		<img src="<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_main_image'), 'product-carousel'); ?><?php echo $image[0]; ?>" data-rollover="<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_hover_image'), 'product-carousel'); ?><?php echo $image[0]; ?>"/>
+		<!-- thumbnail -->
+		<div class="thumbnail">
+			<img src="<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_main_image'), 'product-carousel'); ?><?php echo $image[0]; ?>"/>
+		</div>
+		<!-- end thumbnail -->
+		
+		<!-- overlay -->
+		<div class="overlay">
+			<!-- hover img -->
+			<div class="hover-img">
+				<?php $image = wp_get_attachment_image_src(get_sub_field('carousel_hover_image'), 'product-carousel'); ?>
+				<img src="<?php echo $image[0]; ?>"/>
+			</div>
+			<!-- end hover img -->
+			
+			<!-- product details -->
+			<div class="product-details">
+				<h3><?php the_title(); ?></h3>
+				<?php do_action( 'woocommerce_after_shop_loop_item_title' );?>
+			</div>
+			<!-- end product details -->
+		</div>
+		<!-- end overlay -->
+		
 		<?php endwhile; ?>
 		<?php endif; ?>
-		<!-- end thumbnail -->
-
-		<!-- product details -->
-		<div class="product-details hide">
-			<h3><?php the_title(); ?></h3>
-			<?php do_action( 'woocommerce_after_shop_loop_item_title' );?>
-		</div>
-		<!-- end product details -->
-
 	</a>
 
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>

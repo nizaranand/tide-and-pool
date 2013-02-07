@@ -191,18 +191,28 @@ wp_head();
 <section class="content" role="main">
 
 <?php if (is_front_page())  { ?>
+
+<?php $my_query = new WP_Query('page_id=21&showposts=1'); ?>
+<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+<?php while(the_repeater_field('home_page_promo')): ?>
+<?php if (get_sub_field('enable_promo')=="ON") { ?>			
+<!-- announcement -->
 <div class="announcement">
 	<p>
 		<span class="font-18pt">Free shipping</span>
 		<span class="font-11pt">on orders of 2 towels or more!</span>
 		<span class="details-btn italic">Details
-			<span class="free-shipping-flyaway hide">
-				<a href="#">Free Shipping</a>
-			</span>
+			<?php $image = wp_get_attachment_image_src(get_sub_field('promo_image'), 'full'); ?>
+			<span class="free-shipping-flyaway hide" style="background: url('<?php echo $image[0]; ?>')no-repeat;"></span>
 		</span>
 	</p>
 	
-</div><!-- END announcement -->
+</div>
+<!-- end announcement -->
+<?php } ?>
+<?php endwhile; ?>
+<?php endwhile; ?>
+			
 <?php  } ?>
 
 <?php } ?>

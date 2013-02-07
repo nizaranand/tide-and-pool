@@ -204,7 +204,7 @@ border:none !important;
 }
 .MagicZoomBigImageCont {
 	/* position: fixed !important; */
-	top:162px !important;
+	top:172px !important;
 	width:418px !important;
 	height: 566px !important;
 	overflow: hidden !important;
@@ -240,6 +240,9 @@ input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner{
 body.woocommerce-cart {
 	a.continue-shopping {
 		margin:0;
+	}
+	.dropdown {
+		display: none !important;
 	}
 }
 a.continue-shopping {
@@ -403,6 +406,7 @@ header.main-header {
 			p {
 				color:#1093ab;
 				margin:15px 0;
+				font-size: 1.1em;
 				
 			}
 			form {
@@ -761,14 +765,11 @@ body.woocommerce-cart .my-shopping-bag {
 		    right:12px;
 		    width:127px;
 		    height: 30px;
-		    line-height: 30px;
-		    text-align: center;
-		    background: #1093ab;
-		    color:white;
-		    font-family: 'futura_condensedbold';
-		    font-size: 1em;
-		    text-transform: uppercase;
-		    
+		    text-indent: -10000px;
+		    background: url('css/img/shopping-bag-checkout-btn.png')no-repeat;
+	    }
+	    a.go-to-checkout:hover {
+		    background-position: 0px -30px;
 	    }
     }
 }
@@ -814,12 +815,11 @@ body.woocommerce-cart .my-shopping-bag {
 			font-family: 'ProximaNovaBold';
 		}
 	}
-	.free-shipping-flyaway a {
+	.free-shipping-flyaway {
 				width:248px;
 				height: 254px;
-				display: block;
 				text-indent: -10000px;
-				background: url('css/img/global/free-shipping-flyaway.png') no-repeat;
+				/* background: url('css/img/global/free-shipping-flyaway.png') no-repeat; */
 				position: absolute;
 				right:-110px;
 				top:20px;
@@ -881,6 +881,9 @@ article.body-content {
 	}
 }
 article#about {
+	h1 {
+		font-size: 1.82em;
+	}
 	.body-content {
 		width:970px;
 		height: 449px;
@@ -1060,40 +1063,49 @@ section.products {
 				position: relative;
 				/* background: blue; */
 				/* padding:0 100px 0 0; */
-				img {
-					/*
-width:auto !important;
-					height: 100% !important;
-*/
-				}
-				.product-details {
+				.thumbnail {
 					width:100%;
-					height: 71px;
-					padding:30px 0 0 0;
-					text-transform: uppercase;
-					font-size: 1.2em;
-					font-weight: normal;
-					/* line-height: 1.5em ;*/
-					text-align: center;
-					background: rgba(59,163,182,0.8);
-					color:white;
+					height: 100%;
+					display: block;
+					position: relative;
+					/* z-index: 100; */	
+				}
+				.overlay {
+					width:408px;
+					height: 100%;
+					display: none;
 					position: absolute;
 					left:0;
-					top:50%;
-					margin:-50px 0 0 0;
-					font-family: 'ProximaNovaLight';
-					h3 {
+					top:0;
+					/* z-index: 200; */
+					.product-details {
+						width:100%;
+						height: 71px;
+						padding:30px 0 0 0;
+						text-transform: uppercase;
+						font-size: 1.2em;
+						font-weight: normal;
+						text-align: center;
+						background: rgba(59,163,182,0.8);
 						color:white;
-						font-size: 1.0em;
-					}
-					span.price {
+						position: absolute;
+						left:0;
+						top:50%;
+						margin:-50px 0 0 0;
 						font-family: 'ProximaNovaLight';
-						font-size: 1.0em;
-						ins {
-							text-decoration: none !important;
-							span.amount {
+						h3 {
+							color:white;
+							font-size: 1.0em;
+						}
+						span.price {
+							font-family: 'ProximaNovaLight';
+							font-size: 1.0em;
+							ins {
 								text-decoration: none !important;
-								color:#38193a;
+								span.amount {
+									text-decoration: none !important;
+									color:#38193a;
+								}
 							}
 						}
 					}
@@ -1330,11 +1342,15 @@ article.body-content {
 				font-size:1em;
 				text-align: left;
 			}
+			th.product-thumbnail {
+				padding:0 0 0 20px;
+			}
 		}
 		tbody {
 			padding:20px 0 0 0;
 			td.product-thumbnail {
 				width:130px;
+				padding:0 0 0 20px;
 			}
 			td.product-name {
 				a {
@@ -1495,13 +1511,16 @@ article.body-content {
 					text-transform: uppercase;
 					font-size: 1em;
 					font-style: normal;
+					h2 {
+						padding:10px 0 15px 0;
+					}
 				}
 				td {
 					height: 30px;
 					line-height: 15px;
 					font-size: 1em;
 					border-bottom: 3px solid #1093ab;
-					padding:0 30px 0 0;
+					padding:10px 30px 0 0;
 				}
 			}	
 		}
