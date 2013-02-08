@@ -23,9 +23,10 @@
 		<li class="instagram"><a href="http://instagram.com/tideandpool" target="blank">INSTAGRAM</a></li>
 	</ul>
 	
-	<!-- <?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?> -->
+	<?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?>
 
-	<div class="menu-footer-menu-container">
+	<!--
+<div class="menu-footer-menu-container">
 		<ul id="menu-footer-menu" class="menu">
 			<?php $my_query = new WP_Query('cat=18&order=asc&showposts=-1'); ?>
 			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
@@ -33,6 +34,7 @@
 			<?php endwhile; ?>
 		</ul>
 	</div>
+-->
 	
 	<script type="text/javascript">
 	$(document).ready(function(){

@@ -530,6 +530,21 @@ a.arrow-holder:hover {
 body.page-template-customer-service-php {
   overflow: hidden !important;
 }
+#mce-error-response,
+#mce-success-response {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  z-index: 1000;
+  width: 367px;
+  background: rgba(16, 147, 171, 0.8);
+  padding: 10px;
+  display: block;
+  font-family: 'ProximaNovaRegular';
+  font-style: normal;
+  font-size: 1.1em;
+  color: white;
+}
 /* header */
 /* ------------------------------------------------------------------------- */
 body.home header.main-header {
@@ -590,6 +605,7 @@ header.main-header .inner a.swimclub-signup:hover {
 #swimclub-popup {
   width: 779px;
   height: 498px;
+  overflow: hidden;
   position: relative;
   font-family: 'ProximaNovaRegular';
 }
