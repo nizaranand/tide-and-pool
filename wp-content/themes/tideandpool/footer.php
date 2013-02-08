@@ -23,17 +23,25 @@
 		<li class="instagram"><a href="http://instagram.com/tideandpool" target="blank">INSTAGRAM</a></li>
 	</ul>
 	
-	<?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?>
-	<!--
-<div class="menu-footer-menu-container">
-		<ul id="menu-footer-menu">
+	<!-- <?php wp_nav_menu( array( 'menu' => 'Footer Menu' )); ?> -->
+
+	<div class="menu-footer-menu-container">
+		<ul id="menu-footer-menu" class="menu">
 			<?php $my_query = new WP_Query('cat=18&order=asc&showposts=-1'); ?>
 			<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			<li id="menu-<?php the_ID(); ?>"><a class="fancybox-iframe" href="<?php echo home_url( '/' ); ?>customer-service/#<?php the_ID(); ?>"><?php the_title(); ?></a></li>
 			<?php endwhile; ?>
 		</ul>
 	</div>
--->
+	
+	<script type="text/javascript">
+	$(document).ready(function(){
+		<?php $my_query = new WP_Query('cat=18&showposts=-1'); ?>
+		<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+		$('#menu-footer-menu a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#<?php the_ID(); ?>');
+		<?php endwhile; ?>
+	});
+	</script>
 	
 	
 <!--

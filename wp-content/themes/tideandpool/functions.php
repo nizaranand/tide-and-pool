@@ -68,6 +68,7 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
  	add_image_size( 'home-slideshow',1500, 9999 ); // Permalink thumbnail
  	add_image_size( 'zoom-thumb',77, 93, true ); // Permalink thumbnail
  	add_image_size( 'zoom-large',1500, 9999 ); // Permalink thumbnail
+ 	add_image_size( 'collections-zoom',9999, 1000 ); // Permalink thumbnail
  	add_image_size( 'swimclub-text',269, 9999 ); // Permalink thumbnail
  	add_image_size( 'swimclub-body',387, 498, true ); // Permalink thumbnail
  	add_image_size( 'product-carousel',410, 500, true ); // Permalink thumbnail

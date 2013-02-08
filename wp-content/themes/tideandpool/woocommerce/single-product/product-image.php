@@ -19,7 +19,7 @@ global $post, $woocommerce;
 		<?php foreach( $images as $image ): ?>
 		<article>
 			<a id="<?php echo $image['id']; ?>" href="<?php echo $image['url']; ?>" rel="zoom-id:zoom;" class="selector" rev="<?php echo $image['sizes']['shop_single']; ?>">
-				<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+				<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
 			</a>
 		</article>
 		

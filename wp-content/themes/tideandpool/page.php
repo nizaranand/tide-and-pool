@@ -28,7 +28,7 @@ get_header(); ?>
 			<?php if(get_field('home_page_slideshow')): ?>
 			<?php while(the_repeater_field('home_page_slideshow')): ?>
 			<?php $image = wp_get_attachment_image_src(get_sub_field('home_slideshow_image'), 'home-slideshow'); ?>
-			{ image :'<?php echo $image[0]; ?>', link: '<?php the_sub_field('home_slideshow_link'); ?>'},
+			{ image :'<?php echo $image[0]; ?>', link: '<?php the_sub_field('home_slideshow_link'); ?>', title: '<?php the_title_attribute(); ?> '},
 			<?php endwhile; ?>
 			<?php endif; ?>
 			<?php endwhile; ?>
@@ -78,12 +78,12 @@ get_header(); ?>
 				the_sub_field('link');
 				}
 				else {
-					$image = wp_get_attachment_image_src(get_sub_field('zoom_image'), 'large');
+					$image = wp_get_attachment_image_src(get_sub_field('zoom_image'), 'collections-zoom');
 					echo $image[0];
 				}
 			?>
 			">
-			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'large'); ?>
+			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'collections-zoom'); ?>
 			<img src="<?php echo $image[0]; ?>" alt="" />
 		</a>
 	</article>
