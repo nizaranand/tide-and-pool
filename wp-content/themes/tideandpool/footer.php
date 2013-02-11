@@ -38,10 +38,19 @@
 	
 	<script type="text/javascript">
 	$(document).ready(function(){
-		<?php $my_query = new WP_Query('cat=18&showposts=-1'); ?>
+		/*
+<?php $my_query = new WP_Query('cat=18&showposts=-1'); ?>
 		<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-		$('#menu-footer-menu a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#<?php the_ID(); ?>');
+		$('#menu-item-761 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#contact/<?php the_ID(); ?>');
 		<?php endwhile; ?>
+*/
+		
+		$('#menu-item-761 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/contact-us/#entry-743/');
+		$('#menu-item-762 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/ordering/#entry-401/');
+		$('#menu-item-763 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/shipping-and-handiling/#entry-405/');
+		$('#menu-item-764 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#entry-409/');
+		$('#menu-item-765 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#entry-411/');
+		$('#menu-item-766 a').attr('href', '<?php echo home_url( '/' ); ?>customer-service/#entry-413/');
 	});
 	</script>
 	

@@ -331,6 +331,9 @@ body.page-template-customer-service-php {
 	font-size: 1.1em;
 	color:white;
 }
+input.qty:-webkit-input-placeholder, input.qty:-moz-placeholder, input.qty:-moz-placeholder, input.qty:-ms-input-placeholder {
+	color:#333 !important;
+}
 /* header */
 /* ------------------------------------------------------------------------- */
 
@@ -1139,7 +1142,7 @@ section.product {
 	a.view-larger {
 		position: relative;
 		top:10px;
-		margin:0 0 0 60px;
+		margin:0 0 0 85px;
 	}
 	.left {
 		position: relative;
@@ -1271,6 +1274,29 @@ section.product {
 				}
 				button.single_add_to_cart_button:hover {
 					background-position: 0px -30px;
+				}
+				.quanity-input {
+					input.qty {
+						width: 25px;
+						height: 25px;
+						line-height: 25px;
+						text-align: center;
+						border: 2px solid #1093ab;
+						margin: 0 10px 0 0;
+						color:#333;
+					}
+					::-webkit-input-placeholder {
+						color: #333 !important;
+					}
+					:-moz-placeholder {
+						color: #333 !important;
+					}
+					::-moz-placeholder {
+						color: #333 !important;
+					}
+					:-ms-input-placeholder {
+						color: #333 !important;
+					}
 				}
 			}
 			.addthis_toolbox {

@@ -75,6 +75,8 @@
 			<?php endif; ?>
 			<!-- end in stock -->
 			
+			<p>Maximum quantity of 5 items per order.</p>
+			
 			<!-- add to cart -->
 			<?php
 				/**

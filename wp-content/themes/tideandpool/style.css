@@ -545,6 +545,12 @@ body.page-template-customer-service-php {
   font-size: 1.1em;
   color: white;
 }
+input.qty:-webkit-input-placeholder,
+input.qty:-moz-placeholder,
+input.qty:-moz-placeholder,
+input.qty:-ms-input-placeholder {
+  color: #333 !important;
+}
 /* header */
 /* ------------------------------------------------------------------------- */
 body.home header.main-header {
@@ -1344,7 +1350,7 @@ section.product {
 section.product a.view-larger {
   position: relative;
   top: 10px;
-  margin: 0 0 0 60px;
+  margin: 0 0 0 85px;
 }
 section.product .left {
   position: relative;
@@ -1475,6 +1481,27 @@ section.product .right .inner form.cart button.single_add_to_cart_button {
 }
 section.product .right .inner form.cart button.single_add_to_cart_button:hover {
   background-position: 0px -30px;
+}
+section.product .right .inner form.cart .quanity-input input.qty {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  border: 2px solid #1093ab;
+  margin: 0 10px 0 0;
+  color: #333;
+}
+section.product .right .inner form.cart .quanity-input ::-webkit-input-placeholder {
+  color: #333 !important;
+}
+section.product .right .inner form.cart .quanity-input :-moz-placeholder {
+  color: #333 !important;
+}
+section.product .right .inner form.cart .quanity-input ::-moz-placeholder {
+  color: #333 !important;
+}
+section.product .right .inner form.cart .quanity-input :-ms-input-placeholder {
+  color: #333 !important;
 }
 section.product .right .inner .addthis_toolbox {
   width: 500px;
