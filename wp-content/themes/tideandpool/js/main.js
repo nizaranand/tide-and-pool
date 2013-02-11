@@ -93,12 +93,11 @@ $('button.single_add_to_cart_button').click(function(){
     });
     
     // product carousel hover image swap
-    $("ul.touchcarousel-container li.slide img").hover(function() {
+    $(".masonry-brick img").hover(function() {
 	var initialImage = $(this).attr('src');
 	var swapImageUrl = $(this).attr('data-rollover');
 	$(this).attr('src',swapImageUrl);
 	$(this).attr('data-rollover',initialImage);
-	$(this).delay(500).fadeIn(1000);
 
  	}, function() {
 	var initialImage = $(this).attr('data-rollover');
@@ -229,14 +228,24 @@ $container.imagesLoaded(function() {
 	  var $this = $(this);
     $this.stop(true,true).animate({
         'width' : $this.width() * 1.6
-    });
+    }, 300);
     },function() {
        var $this = $(this);
        $this.stop(true,true).animate({
         'width' : $this.width() / 1.6
-    });
+    }, 300);
+    
+  
 });
 
+// image hover grow
+    $(".thumb img").hover(function() {
+      var initialImage = $(this).attr('src');
+      var swapImageUrl = $(this).attr('data-rollover');
+	  $(this).attr('src',swapImageUrl);
+	  $(this).attr('data-rollover',initialImage);
+	 
+    });
 
 });
     // free shipping fly away fade in/out

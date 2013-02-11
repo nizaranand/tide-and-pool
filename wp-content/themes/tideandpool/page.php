@@ -83,8 +83,8 @@ get_header(); ?>
 				}
 			?>
 			">
-			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'wpse_60890_retina_scaled'); ?>
-			<img src="<?php echo $image[0]; ?>" />
+			
+			<img src="<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'wpse_60890_retina_scaled'); ?><?php echo $image[0]; ?>" data-rollover="<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'large'); ?><?php echo $image[0]; ?>"/>
 		</a>
 	</article>
 	<!-- end thumb -->
