@@ -83,8 +83,8 @@ get_header(); ?>
 				}
 			?>
 			">
-			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'collections-zoom'); ?>
-			<img src="<?php echo $image[0]; ?>" alt="" />
+			<?php $image = wp_get_attachment_image_src(get_sub_field('collections_thumbnail'), 'wpse_60890_retina_scaled'); ?>
+			<img src="<?php echo $image[0]; ?>" />
 		</a>
 	</article>
 	<!-- end thumb -->

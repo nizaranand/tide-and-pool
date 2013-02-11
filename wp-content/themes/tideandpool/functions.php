@@ -37,7 +37,51 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
- 
+ add_filter( 'image_downsize', 'wpse_60890_retina_scale', 10, 3 );
+
+function wpse_60890_retina_scale( $value, $id, $size ) {
+    if ( $size == 'wpse_60890_retina_scaled' ) {
+        if ( !is_array( $imagedata = wp_get_attachment_metadata( $id ) ) )
+            return false;
+
+        $img_url          = wp_get_attachment_url( $id );
+        $img_url_basename = wp_basename( $img_url );
+
+        if ( isset( $imagedata['sizes']['wpse_60890_retina_scaled'] ) ) {
+            $intermediate = $imagedata['sizes']['wpse_60890_retina_scaled'];
+            $url  = str_replace($img_url_basename, $intermediate['file'], $img_url);
+
+            return array( $url, $data['width'], $data['height'] );
+        }
+
+        $file = get_attached_file( $id );
+        $image = wp_load_image( $file );
+
+        if ( !is_resource( $image ) )
+            return new WP_Error( 'error_loading_image', $image, $file );
+
+        $size = @getimagesize( $file );
+        if ( !$size )
+            return new WP_Error( 'invalid_image', __('Could not read image size'), $file );
+
+        list( $orig_w, $orig_h, $orig_type ) = $size;
+
+        $max_w = round( $orig_w / 2 );
+        $max_h = round( $orig_h / 2 );
+
+        $resized = image_make_intermediate_size( $file, $max_w, $max_h );
+
+        $imagedata['sizes']['wpse_60890_retina_scaled'] = $resized;
+
+        wp_update_attachment_metadata( $id, $imagedata );
+
+        $url = str_replace($img_url_basename, $resized['file'], $img_url);
+
+        return array( $url, $resized['width'], $resized['height'] );
+    }
+
+    return $value;
+}
 /* remove wooCommerce block */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);	
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);

@@ -222,7 +222,7 @@ $container.imagesLoaded(function() {
     function() {
 		$(this).removeClass('img-hover'); 
     });
-
+    
     // image hover grow
     $(".thumb img").hover(function() {
       

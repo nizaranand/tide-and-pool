@@ -1557,8 +1557,10 @@ section.product .right .inner .addthis_toolbox a.addthis_button_email {
 
 }
 #collections .thumb img {
-  display: block;
-  width: 100%;
+  /* display: block; */
+
+  width: auto;
+  height: auto;
 }
 #collections .img-hover {
   position: relative;
