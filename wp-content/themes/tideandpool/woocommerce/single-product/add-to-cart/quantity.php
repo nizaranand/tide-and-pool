@@ -19,4 +19,4 @@
 	</select>
 </div>
 -->
-<div class="quanity-input"><input name="<?php echo $input_name; ?>" data-min="1" data-max="5" placeholder="<?php echo $input_value; ?>" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>
+<div class="quanity-input"><input name="<?php echo $input_name; ?>" data-min="1" data-max="5" placeholder="<?php echo $input_value; ?>" value="1" size="4" title="Qty" class="input-text qty text" maxlength="12" /></div>
