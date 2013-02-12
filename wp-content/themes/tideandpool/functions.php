@@ -37,6 +37,8 @@
  * @subpackage Boilerplate
  * @since Boilerplate 1.0
  */
+ 
+ /* 50% image size */
  add_filter( 'image_downsize', 'wpse_60890_retina_scale', 10, 3 );
 
 function wpse_60890_retina_scale( $value, $id, $size ) {
@@ -118,6 +120,22 @@ if ( function_exists( 'add_theme_support' ) ) { // Added in 2.9
  	add_image_size( 'product-carousel',410, 500, true ); // Permalink thumbnail
  	add_image_size( 'promo',248, 254, true ); // Permalink thumbnail
 }
+
+/* exclude PO Boxes from shipping */
+add_action('woocommerce_after_checkout_validation', 'deny_pobox_postcode');
+ 
+function deny_pobox_postcode( $posted ) {
+  global $woocommerce;
+  
+  $postcode = ( isset( $this->posted['shipping_postcode'] ) ) ? $this->posted['shipping_postcode'] : $this->posted['billing_postcode'];
+ 
+  $postcode = strtolower(str_replace( ' ', '', $postcode ));
+ 
+  if ( strstr( $postcode, 'pobox' ) ) {
+    $woocommerce->add_error( "Sorry, we don't ship to PO BOX addresses." );
+  }
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *

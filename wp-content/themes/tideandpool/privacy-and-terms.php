@@ -37,4 +37,10 @@ get_header(); ?>
 	});
 </script>
 
+<style>
+	html,body {
+		overflow: hidden !important;
+	}
+</style>
+
 <?php get_footer(); ?>

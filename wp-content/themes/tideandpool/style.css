@@ -358,7 +358,7 @@ strong {
   right: 0px !important;
   border: none !important;
   top: 20px !important;
-  right: 10px !important;
+  right: 20px !important;
 }
 .fancybox-left:hover span {
   left: 0 !important;
@@ -644,7 +644,7 @@ header.main-header .inner a.swimclub-signup:hover {
 }
 #swimclub-popup .content .left p {
   color: #1093ab;
-  margin: 15px 0;
+  margin: 10px 0;
   font-size: 1.1em;
 }
 #swimclub-popup .content .left form {
@@ -1140,6 +1140,8 @@ article#boutiques {
 article#boutiques h1 {
   width: 100%;
   padding: 0 0 24px 0;
+  margin: 55px 0 15px 0;
+  font-size: 1.9em;
   border-bottom: 1px solid #cbcbcb;
 }
 article#boutiques .left {
@@ -1165,7 +1167,8 @@ article#boutiques .left li.boutique:hover {
 article#boutiques .left p {
   font-size: 0.95em;
   text-transform: none;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
+
   /* color:#333; */
 
 }
@@ -1188,7 +1191,7 @@ article#boutiques .right .boutique-view {
   width: 700px;
   height: 344px;
   display: block;
-  margin: 0 0 30px 0;
+  margin: 0 0 23px 0;
   overflow: hidden;
 }
 .boutique-content .left {
@@ -1196,14 +1199,19 @@ article#boutiques .right .boutique-view {
   float: left;
 }
 .boutique-content .left .location {
-  margin: 0 0 20px 0;
+  margin: 0 0 22px 0;
 }
 .boutique-content .left .location h2 {
   color: #333;
+  margin: 0 0 5px 0;
 }
 .boutique-content .left .location a.google {
   color: #1093ab;
   text-transform: uppercase;
+  font-family: 'ProximaNovaBold';
+}
+.boutique-content .left .location .address {
+  margin: 0 0 5px 0;
 }
 .boutique-content .right {
   width: 205px !important;
@@ -1212,7 +1220,7 @@ article#boutiques .right .boutique-view {
   float: right;
 }
 .boutique-content .right .opening-hours {
-  padding: 0 0 40px 0;
+  padding: 0 0 20px 0;
   margin: 0 0 10px 0;
   border-bottom: 1px solid #cbcbcb;
   width: 205px;
@@ -2171,7 +2179,7 @@ section#customer-service .right article.text-panel {
   margin: 0 0 20px 0;
 }
 section#customer-service .right #text-scroll {
-  width: 563px;
+  width: 557px;
   height: 500px;
   overflow: auto;
 }
@@ -2195,7 +2203,7 @@ section#terms-and-privacy h1 {
   color: white;
 }
 section#terms-and-privacy #privacy-text-scroll {
-  width: 729px;
+  width: 728px;
   height: 394px;
   overflow: auto;
   margin: 30px 0 0 0;

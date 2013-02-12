@@ -196,6 +196,7 @@ get_header(); ?>
 		// add sequential numbers to each list item
 		$("ol#boutiques li .city-and-state").each(function (i) {
 			i = i+1;
+			if(i < 10) i = "0"+i;
 			$(this).prepend('<span class="number">' +i+ '.</span>');
 		});
 		
